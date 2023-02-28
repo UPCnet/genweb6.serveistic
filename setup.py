@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Installer for the genweb6.upc package."""
+"""Installer for the genweb6.serveistic package."""
 
 from setuptools import find_packages
 from setuptools import setup
@@ -13,9 +13,9 @@ long_description = '\n\n'.join([
 
 
 setup(
-    name='genweb6.upc',
+    name='genweb6.serveistic',
     version='1.0a1',
-    description="Genweb 6 UPC package",
+    description=" Genweb 6 Serveistic package",
     long_description=long_description,
     # Get more from https://pypi.org/classifiers/
     classifiers=[
@@ -34,12 +34,12 @@ setup(
     keywords='Python Plone CMS',
     author='Plone Team',
     author_email='ploneteam@upcnet.es',
-    url='https://github.com/collective/genweb6.upc',
+    url='https://github.com/collective/genweb6.serveistic',
     project_urls={
-        'PyPI': 'https://pypi.python.org/pypi/genweb6.upc',
-        'Source': 'https://github.com/collective/genweb6.upc',
-        'Tracker': 'https://github.com/collective/genweb6.upc/issues',
-        # 'Documentation': 'https://genweb6.upc.readthedocs.io/en/latest/',
+        'PyPI': 'https://pypi.python.org/pypi/genweb6.serveistic',
+        'Source': 'https://github.com/collective/genweb6.serveistic',
+        'Tracker': 'https://github.com/collective/genweb6.serveistic/issues',
+        # 'Documentation': 'https://genweb6.serveistic.readthedocs.io/en/latest/',
     },
     license='GPL version 2',
     packages=find_packages('src', exclude=['ez_setup']),
@@ -72,6 +72,6 @@ setup(
     [z3c.autoinclude.plugin]
     target = plone
     [console_scripts]
-    update_locale = genweb6.upc.locales.update:update_locale
+    update_locale = genweb6.serveistic.locales.update:update_locale
     """,
 )

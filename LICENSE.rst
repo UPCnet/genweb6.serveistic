@@ -1,4 +1,4 @@
-genweb6.upc Copyright 2022, Plone Team
+genweb6.serveistic Copyright 2022, Plone Team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License version 2

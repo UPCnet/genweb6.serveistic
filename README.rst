@@ -2,36 +2,36 @@
    If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide.html
    This text does not appear on pypi or github. It is a comment.
 
-.. image:: https://github.com/collective/genweb6.upc/actions/workflows/plone-package.yml/badge.svg
-    :target: https://github.com/collective/genweb6.upc/actions/workflows/plone-package.yml
+.. image:: https://github.com/collective/genweb6.serveistic/actions/workflows/plone-package.yml/badge.svg
+    :target: https://github.com/collective/genweb6.serveistic/actions/workflows/plone-package.yml
 
-.. image:: https://coveralls.io/repos/github/collective/genweb6.upc/badge.svg?branch=main
-    :target: https://coveralls.io/github/collective/genweb6.upc?branch=main
+.. image:: https://coveralls.io/repos/github/collective/genweb6.serveistic/badge.svg?branch=main
+    :target: https://coveralls.io/github/collective/genweb6.serveistic?branch=main
     :alt: Coveralls
 
-.. image:: https://codecov.io/gh/collective/genweb6.upc/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/collective/genweb6.upc
+.. image:: https://codecov.io/gh/collective/genweb6.serveistic/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/collective/genweb6.serveistic
 
-.. image:: https://img.shields.io/pypi/v/genweb6.upc.svg
-    :target: https://pypi.python.org/pypi/genweb6.upc/
+.. image:: https://img.shields.io/pypi/v/genweb6.serveistic.svg
+    :target: https://pypi.python.org/pypi/genweb6.serveistic/
     :alt: Latest Version
 
-.. image:: https://img.shields.io/pypi/status/genweb6.upc.svg
-    :target: https://pypi.python.org/pypi/genweb6.upc
+.. image:: https://img.shields.io/pypi/status/genweb6.serveistic.svg
+    :target: https://pypi.python.org/pypi/genweb6.serveistic
     :alt: Egg Status
 
-.. image:: https://img.shields.io/pypi/pyversions/genweb6.upc.svg?style=plastic   :alt: Supported - Python Versions
+.. image:: https://img.shields.io/pypi/pyversions/genweb6.serveistic.svg?style=plastic   :alt: Supported - Python Versions
 
-.. image:: https://img.shields.io/pypi/l/genweb6.upc.svg
-    :target: https://pypi.python.org/pypi/genweb6.upc/
+.. image:: https://img.shields.io/pypi/l/genweb6.serveistic.svg
+    :target: https://pypi.python.org/pypi/genweb6.serveistic/
     :alt: License
 
 
 ===========
-genweb6.upc
+genweb6.serveistic
 ===========
 
-Genweb 6 UPC package
+ Genweb 6 Serveistic package
 
 Features
 --------
@@ -63,14 +63,14 @@ This product has been translated into
 Installation
 ------------
 
-Install genweb6.upc by adding it to your buildout::
+Install genweb6.serveistic by adding it to your buildout::
 
     [buildout]
 
     ...
 
     eggs =
-        genweb6.upc
+        genweb6.serveistic
 
 
 and then running ``bin/buildout``
@@ -93,8 +93,8 @@ Put your name here, you deserve it!
 Contribute
 ----------
 
-- Issue Tracker: https://github.com/collective/genweb6.upc/issues
-- Source Code: https://github.com/collective/genweb6.upc
+- Issue Tracker: https://github.com/collective/genweb6.serveistic/issues
+- Source Code: https://github.com/collective/genweb6.serveistic
 - Documentation: https://docs.plone.org/foo/bar
 
 
