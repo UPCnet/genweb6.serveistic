@@ -1,0 +1,46 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="genweb6.serveistic">
+
+    <i18n:registerTranslations directory="locales" />
+
+    <include package=".content" />
+    <include package=".controlpanels" />
+    <include package=".portlets" />
+
+    <include file="upgrades.zcml" />
+
+    <genericsetup:registerProfile
+        name="default"
+        title="genweb6.serveistic"
+        directory="profiles/default"
+        description="Installs the genweb6.serveistic add-on."
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        post_handler=".setuphandlers.post_install"
+        />
+
+    <genericsetup:registerProfile
+        name="uninstall"
+        title="genweb6.serveistic (uninstall)"
+        directory="profiles/uninstall"
+        description="Uninstalls the genweb6.serveistic add-on."
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        post_handler=".setuphandlers.uninstall"
+        />
+
+    <utility
+        factory=".setuphandlers.HiddenProfiles"
+        name="genweb6.serveistic-hiddenprofiles"
+        />
+
+    <plone:static
+        directory="theme"
+        type="theme"
+        name="genweb6.serveistic"
+        />
+
+</configure>
