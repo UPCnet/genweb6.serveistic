@@ -3,6 +3,12 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="genweb6.serveistic">
 
+    <records
+        interface="genweb6.serveistic.controlpanels.serveistic.IServeisTICControlPanelSettings"
+        purge="False"/>
 
+    <records
+        interface="genweb6.serveistic.controlpanels.facetes.IServeisTICFacetesControlPanelSettings"
+        purge="False"/>
 
 </registry>

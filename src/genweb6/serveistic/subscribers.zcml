@@ -1,0 +1,55 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="genweb">
+
+    <subscriber
+        handler=".subscribers.Added"
+        for="plone.app.contenttypes.interfaces.IDocument
+             zope.lifecycleevent.interfaces.IObjectAddedEvent"
+        />
+
+    <subscriber
+        handler=".subscribers.Added"
+        for="plone.app.contenttypes.interfaces.IFile
+             zope.lifecycleevent.interfaces.IObjectAddedEvent"
+        />
+
+    <subscriber
+        handler=".subscribers.Added"
+        for="plone.app.contenttypes.interfaces.ILink
+             zope.lifecycleevent.interfaces.IObjectAddedEvent"
+        />
+
+    <subscriber
+        handler=".subscribers.Added"
+        for="plone.app.contenttypes.interfaces.IImage
+             zope.lifecycleevent.interfaces.IObjectAddedEvent"
+        />
+
+    <subscriber
+        handler=".subscribers.Added"
+        for="plone.app.contenttypes.interfaces.IImage
+             zope.lifecycleevent.interfaces.IObjectAddedEvent"
+        />
+
+    <subscriber
+        handler=".subscribers.Added"
+        for="plone.app.contenttypes.interfaces.IImage
+             zope.lifecycleevent.interfaces.IObjectAddedEvent"
+        />
+
+    <subscriber
+        handler=".subscribers.update_indicators_on_serveitic_deletion"
+        for="zope.lifecycleevent.interfaces.IObjectRemovedEvent
+             genweb6.serveistic.content.serveitic.serveitic.IServeiTIC"
+        />
+
+    <subscriber
+        handler=".subscribers.update_indicators_on_serveitic_review_state_change"
+        for="Products.CMFCore.interfaces.IActionSucceededEvent
+             genweb6.serveistic.content.serveitic.serveitic.IServeiTIC"
+        />
+
+</configure>

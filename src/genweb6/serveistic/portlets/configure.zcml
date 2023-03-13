@@ -6,6 +6,39 @@
 
     <include package="plone.app.portlets" />
 
+    <plone:portlet
+        name="serveistic.portlets.notificacions"
+        interface=".notificacions.notificacions.INotificationsPortlet"
+        assignment=".notificacions.notificacions.Assignment"
+        renderer=".notificacions.notificacions.Renderer"
+        addview=".notificacions.notificacions.AddForm"
+        editview=".notificacions.notificacions.EditForm"
+        />
 
+    <plone:portlet
+        name="serveistic.portlets.banners"
+        interface=".bannersportlet.bannersportlet.IBannersPortlet"
+        assignment=".bannersportlet.bannersportlet.Assignment"
+        renderer=".bannersportlet.bannersportlet.Renderer"
+        addview=".bannersportlet.bannersportlet.AddForm"
+        />
+
+    <plone:portlet
+        name="serveistic.portlets.problemes"
+        interface=".problemes.problemes.IProblemesPortlet"
+        assignment=".problemes.problemes.Assignment"
+        renderer=".problemes.problemes.Renderer"
+        addview=".problemes.problemes.AddForm"
+        editview=".problemes.problemes.EditForm"
+        />
+
+    <plone:portlet
+        name="serveistic.portlets.indicadors"
+        interface=".indicadors.indicadors.IIndicadorsPortlet"
+        assignment=".indicadors.indicadors.Assignment"
+        renderer=".indicadors.indicadors.Renderer"
+        addview=".indicadors.indicadors.AddForm"
+        editview=".indicadors.indicadors.EditForm"
+        />
 
 </configure>

@@ -1,111 +1,64 @@
-.. This README is meant for consumption by humans and pypi. Pypi can render rst files so please do not use Sphinx features.
-   If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide.html
-   This text does not appear on pypi or github. It is a comment.
-
-.. image:: https://github.com/collective/genweb6.serveistic/actions/workflows/plone-package.yml/badge.svg
-    :target: https://github.com/collective/genweb6.serveistic/actions/workflows/plone-package.yml
-
-.. image:: https://coveralls.io/repos/github/collective/genweb6.serveistic/badge.svg?branch=main
-    :target: https://coveralls.io/github/collective/genweb6.serveistic?branch=main
-    :alt: Coveralls
-
-.. image:: https://codecov.io/gh/collective/genweb6.serveistic/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/collective/genweb6.serveistic
-
-.. image:: https://img.shields.io/pypi/v/genweb6.serveistic.svg
-    :target: https://pypi.python.org/pypi/genweb6.serveistic/
-    :alt: Latest Version
-
-.. image:: https://img.shields.io/pypi/status/genweb6.serveistic.svg
-    :target: https://pypi.python.org/pypi/genweb6.serveistic
-    :alt: Egg Status
-
-.. image:: https://img.shields.io/pypi/pyversions/genweb6.serveistic.svg?style=plastic   :alt: Supported - Python Versions
-
-.. image:: https://img.shields.io/pypi/l/genweb6.serveistic.svg
-    :target: https://pypi.python.org/pypi/genweb6.serveistic/
-    :alt: License
-
-
-===========
+====================
 genweb6.serveistic
-===========
+====================
 
- Genweb 6 Serveistic package
+Serveis TIC de la UPC és un portal que proporciona una visió integrada i
+unificada dels Serveis TIC que s'ofereixen a la universitat.
 
-Features
---------
+How it works
+============
 
-- Can be bullet points
+Quan s'instal·la el paquet a un lloc Genweb, una sèrie de components com ara
+tipus de dades, vistes, *portlets*, etc. es fan automàticament disponibles.
 
+Tipus de dades
+##############
 
-Examples
---------
+* **serveitic**: servei oferit per la UPC.
+* **problema**: problema associat a un servei.
+* **notificaciotic**: notificació referent a un servei o al lloc web en general.
 
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
+Vistes
+######
 
+* **homepage**: cercador *facetat* de serveis.
+* **serveistic-controlpanel**: paràmetres de configuració del paquet.
+* **update_indicadors**: actualitza els indicadors relacionats amb el nombre
+  de visites.
 
-Documentation
--------------
+Portlets
+########
 
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
+* **banners**: mostra banners associats a un servei o al portal en general.
+* **indicadors**: mostra propietats registrades com a indicadors d'un servei TIC.
+* **notificacios**: mostra les notificacions associades a un servei TIC.
+* **problemes**: mostra els problemes associats a un servei TIC.
 
+Per a recollir la informació sobre els indicadors i problemes associats als
+serveis, el paquet disposa de dos clients web configurables mitjançant la vista
+*serveistic-controlpanel*.
 
-Translations
-------------
+Subscriptors
+############
 
-This product has been translated into
+* **IServeiTIC on IObjectRemovedEvent**: Actualitza els indicadors.
+* **IServeiTIC on IActionSucceededEvent**: Actualitza els indicadors.
 
-- Klingon (thanks, K'Plai)
+Camps de registre
+#################
 
+Afegeix al registre els camps definits en ``genweb6.serveistic.controlpanels.serveistic.IServeisTICControlPanelSettings``.
 
 Installation
-------------
+============
 
-Install genweb6.serveistic by adding it to your buildout::
+To install `genweb6.serveistic` you simply add ``genweb6.serveistic``
+to the list of eggs in your buildout, run buildout and restart Plone.
+Then, install `genweb6.serveistic` using the Add-ons control panel.
 
-    [buildout]
+Configuration
+=============
 
-    ...
-
-    eggs =
-        genweb6.serveistic
-
-
-and then running ``bin/buildout``
-
-
-Authors
--------
-
-Provided by awesome people ;)
-
-
-Contributors
-------------
-
-Put your name here, you deserve it!
-
-- ?
-
-
-Contribute
-----------
-
-- Issue Tracker: https://github.com/collective/genweb6.serveistic/issues
-- Source Code: https://github.com/collective/genweb6.serveistic
-- Documentation: https://docs.plone.org/foo/bar
-
-
-Support
--------
-
-If you are having issues, please let us know.
-We have a mailing list located at: project@example.com
-
-
-License
--------
-
-The project is licensed under the GPLv2.
+To import the faceted search settings browse the "Faceted criteria" tab
+in the faceted search view and import the file
+``genweb/serveistic/data/faceted_settings.xml``.

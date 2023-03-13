@@ -5,4 +5,51 @@
 
     <include package="plone.app.contentmenu" />
 
+    <browser:page
+        name="view"
+        for="genweb6.serveistic.content.serveitic.serveitic.IServeiTIC"
+        class=".serveitic.serveitic.View"
+        layer="..interfaces.IGenweb6ServeisticLayer"
+        permission="zope2.View"
+        template="serveitic/serveitic.pt"
+        />
+
+    <browser:page
+        name="view"
+        for="genweb6.serveistic.content.notificaciotic.notificaciotic.INotificacioTIC"
+        class=".notificaciotic.notificaciotic.View"
+        layer="..interfaces.IGenweb6ServeisticLayer"
+        permission="zope2.View"
+        template="notificaciotic/notificaciotic.pt"
+        />
+
+    <adapter
+        factory=".notificaciotic.notificaciotic.tipus"
+        name="tipus"
+        />
+
+    <class class=".notificaciotic.notificaciotic.AddView">
+        <require
+            permission="cmf.AddPortalContent"
+            interface="zope.publisher.interfaces.browser.IBrowserPage"
+            />
+    </class>
+
+    <browser:page
+        name="edit"
+        for=".notificaciotic.notificaciotic.INotificacioTIC"
+        class=".notificaciotic.notificaciotic.EditForm"
+        layer="..interfaces.IGenweb6ServeisticLayer"
+        permission="cmf.ModifyPortalContent"
+        />
+
+    <browser:page
+        name="view"
+        for="genweb6.serveistic.content.problema.problema.IProblema"
+        class=".problema.problema.View"
+        layer="..interfaces.IGenweb6ServeisticLayer"
+        permission="zope2.View"
+        template="problema/problema.pt"
+        />
+
 </configure>

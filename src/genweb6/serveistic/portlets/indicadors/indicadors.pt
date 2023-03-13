@@ -1,0 +1,13 @@
+<tal:block i18n:domain="genweb6.serveistic">
+
+<div class="portlet portlet-indicadors">
+
+    <h2 i18n:translate="Indicadors">Indicadors</h2>
+
+    <div id="indicadors"></div>
+
+    <script type="text/javascript" tal:content="view/js_retrieve"></script>
+
+</div>
+
+</tal:block>

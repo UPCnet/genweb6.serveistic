@@ -13,6 +13,7 @@
     <include package=".portlets" />
 
     <include file="upgrades.zcml" />
+    <include file="subscribers.zcml" />
 
     <genericsetup:registerProfile
         name="default"
@@ -41,6 +42,175 @@
         directory="theme"
         type="theme"
         name="genweb6.serveistic"
+        />
+
+    <browser:page
+        name="serveistic-controlpanel"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".controlpanels.serveistic.ServeisTICControlPanel"
+        permission="cmf.ManagePortal"
+        />
+
+    <browser:page
+        name="serveistic-facetes-controlpanel"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".controlpanels.facetes.ServeisTICFacetesControlPanel"
+        permission="genweb.webmaster"
+        />
+
+    <browser:jbot
+        directory="templates"
+        layer=".interfaces.IGenweb6ServeisticLayer"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        factory=".utilities.FacetsVocabulary"
+        name="genweb.serveistic.vocabularies.facets"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        factory=".utilities.CAFaceta1Vocabulary"
+        name="genweb.serveistic.vocabularies.cafaceta1"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        factory=".utilities.CAFaceta2Vocabulary"
+        name="genweb.serveistic.vocabularies.cafaceta2"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        factory=".utilities.CAFaceta3Vocabulary"
+        name="genweb.serveistic.vocabularies.cafaceta3"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        factory=".utilities.CAFaceta4Vocabulary"
+        name="genweb.serveistic.vocabularies.cafaceta4"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        factory=".utilities.CAFaceta5Vocabulary"
+        name="genweb.serveistic.vocabularies.cafaceta5"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        factory=".utilities.CAFaceta6Vocabulary"
+        name="genweb.serveistic.vocabularies.cafaceta6"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        factory=".utilities.CAFaceta7Vocabulary"
+        name="genweb.serveistic.vocabularies.cafaceta7"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        factory=".utilities.CAFaceta8Vocabulary"
+        name="genweb.serveistic.vocabularies.cafaceta8"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        factory=".utilities.ESFaceta1Vocabulary"
+        name="genweb.serveistic.vocabularies.esfaceta1"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        factory=".utilities.ESFaceta2Vocabulary"
+        name="genweb.serveistic.vocabularies.esfaceta2"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        factory=".utilities.ESFaceta3Vocabulary"
+        name="genweb.serveistic.vocabularies.esfaceta3"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        factory=".utilities.ESFaceta4Vocabulary"
+        name="genweb.serveistic.vocabularies.esfaceta4"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        factory=".utilities.ESFaceta5Vocabulary"
+        name="genweb.serveistic.vocabularies.esfaceta5"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        factory=".utilities.ESFaceta6Vocabulary"
+        name="genweb.serveistic.vocabularies.esfaceta6"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        factory=".utilities.ESFaceta7Vocabulary"
+        name="genweb.serveistic.vocabularies.esfaceta7"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        factory=".utilities.ESFaceta8Vocabulary"
+        name="genweb.serveistic.vocabularies.esfaceta8"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        factory=".utilities.ENFaceta1Vocabulary"
+        name="genweb.serveistic.vocabularies.enfaceta1"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        factory=".utilities.ENFaceta2Vocabulary"
+        name="genweb.serveistic.vocabularies.enfaceta2"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        factory=".utilities.ENFaceta3Vocabulary"
+        name="genweb.serveistic.vocabularies.enfaceta3"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        factory=".utilities.ENFaceta4Vocabulary"
+        name="genweb.serveistic.vocabularies.enfaceta4"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        factory=".utilities.ENFaceta5Vocabulary"
+        name="genweb.serveistic.vocabularies.enfaceta5"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        factory=".utilities.ENFaceta6Vocabulary"
+        name="genweb.serveistic.vocabularies.enfaceta6"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        factory=".utilities.ENFaceta7Vocabulary"
+        name="genweb.serveistic.vocabularies.enfaceta7"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        factory=".utilities.ENFaceta8Vocabulary"
+        name="genweb.serveistic.vocabularies.enfaceta8"
         />
 
 </configure>

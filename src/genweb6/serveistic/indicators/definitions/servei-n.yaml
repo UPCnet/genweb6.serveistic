@@ -1,0 +1,8 @@
+id: servei-n
+description: Nombre de serveis
+service: serveistic
+categories:
+  - id: total
+    description: Total
+    type: online
+    calculator: genweb6.serveistic.indicators.calculators.ServeiNumber

@@ -1,0 +1,48 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="genweb.serveistic">
+
+<body class="homepage">
+
+  <metal:custom_title fill-slot="content-title">
+    <h1 class="documentFirstHeading" tal:content="context/Title"></h1>
+  </metal:custom_title>
+
+  <metal:content-core fill-slot="content-core">
+  <div class="col-md-12">
+    <div class="serveitic-desc col-md-12">
+      <!-- General info -->
+      <div tal:replace="structure view/descripcio" />
+
+      <!-- Portlets -->
+      <div class="row">
+
+        <div class="col-md-4"
+          tal:define="manager_name string:genweb.portlets.HomePortletManager3"
+          tal:attributes="class python:'col-md-' + view.getColValueForManager(manager_name)">
+          <span tal:replace="structure python:view.renderProviderByName(manager_name)" />
+        </div>
+
+        <div class="col-md-4"
+          tal:define="manager_name string:genweb.portlets.HomePortletManager4"
+          tal:attributes="class python:'col-md-' + view.getColValueForManager(manager_name)">
+          <span tal:replace="structure python:view.renderProviderByName(manager_name)" />
+        </div>
+
+        <div class="col-md-4"
+          tal:define="manager_name string:genweb.portlets.HomePortletManager5"
+          tal:attributes="class python:'col-md-' + view.getColValueForManager(manager_name)">
+          <span tal:replace="structure python:view.renderProviderByName(manager_name)" />
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</metal:content-core>
+
+</body>
+</html>

@@ -55,7 +55,12 @@ setup(
         'plone.api>=1.8.4',
         'plone.app.dexterity',
         'collective.z3cform.datagridfield',
-        'z3c.form'
+        'z3c.form',
+        'eea.facetednavigation',
+        'simplejson',
+        'google-api-python-client',
+        'oauth2client',
+        'pyOpenSSL',
     ],
     extras_require={
         'test': [

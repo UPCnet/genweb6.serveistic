@@ -1,0 +1,13 @@
+<tal:block i18n:domain="genweb6.serveistic">
+
+<div class="portlet portlet-problemes" tal:define="portal_url context/portal_url">
+
+    <h2 i18n:translate="Problemes">Problemes</h2>
+
+    <div id="problemes"></div>
+
+    <script type="text/javascript" tal:content="view/js_retrieve"></script>
+
+</div>
+
+</tal:block>

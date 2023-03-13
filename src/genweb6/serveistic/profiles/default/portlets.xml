@@ -3,6 +3,16 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="genweb">
 
+  <portlet addview="serveistic.portlets.banners"
+           title="Serveistic Banners"/>
 
+  <portlet addview="serveistic.portlets.notificacions"
+           title="Serveistic Notificacions"/>
+
+  <portlet addview="serveistic.portlets.problemes"
+           title="Serveistic Problemes"/>
+
+  <portlet addview="serveistic.portlets.indicadors"
+           title="Serveistic Indicadors"/>
 
 </portlets>
