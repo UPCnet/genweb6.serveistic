@@ -1,16 +1,19 @@
 # -*- coding: utf-8 -*-
+from Products.statusmessages.interfaces import IStatusMessage
 
 from collective.z3cform.datagridfield.datagridfield import DataGridFieldFactory
 from collective.z3cform.datagridfield.registry import DictRow
 from plone.app.registry.browser import controlpanel
 from plone.autoform import directives
 from plone.supermodel import model
+from z3c.form import button
 from zope import schema
 
 from genweb6.serveistic import _
 
 
 class ITableFacetes(model.Schema):
+
     faceta = schema.Choice(
         title=_(u'Faceta'),
         vocabulary='genweb.serveistic.vocabularies.facets',
@@ -35,12 +38,8 @@ class IServeisTICFacetesControlPanelSettings(model.Schema):
     directives.widget(facetes_table=DataGridFieldFactory)
     facetes_table = schema.List(
         title=_(u'Facetes'),
-        description=_(
-            u'help_facetes_table',
-            default=u'Afegir els valors per facetes de cerca'),
-        value_type=DictRow(
-            title=_(u'help_facetes_table'),
-            schema=ITableFacetes),
+        description=_(u'help_facetes_table'),
+        value_type=DictRow(schema=ITableFacetes),
         required=False
         )
 
@@ -58,6 +57,30 @@ class ServeisTICFacetesControlPanelSettingsForm(controlpanel.RegistryEditForm):
 
     def updateWidgets(self):
         super(ServeisTICFacetesControlPanelSettingsForm, self).updateWidgets()
+
+    @button.buttonAndHandler(_('Save'), name='save')
+    def handleSave(self, action):
+        data, errors = self.extractData()
+        if errors:
+            self.status = self.formErrorsMessage
+            return
+
+        replace_facetes_table = []
+        facetes_table = data.get('facetes_table', [])
+        for facet in facetes_table:
+            facet['faceta'] = facet['faceta'][0]
+            replace_facetes_table.append(facet)
+
+        data['facetes_table'] = replace_facetes_table
+        self.applyChanges(data)
+
+        IStatusMessage(self.request).addStatusMessage(_("Changes saved"), "info")
+        self.request.response.redirect(self.request.getURL())
+
+    @button.buttonAndHandler(_("Cancel"), name='cancel')
+    def handleCancel(self, action):
+        IStatusMessage(self.request).addStatusMessage(_("Changes canceled."), "info")
+        self.request.response.redirect(self.context.absolute_url() + '/' + self.control_panel_view)
 
 
 class ServeisTICFacetesControlPanel(controlpanel.ControlPanelFormWrapper):

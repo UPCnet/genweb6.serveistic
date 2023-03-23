@@ -36,7 +36,10 @@ module.exports = function (grunt) {
         },
         uglify: {
             js: {
-                files: {}
+                files: {
+                    'js/faceted_container.min.js': '../browser/views_templates/faceted_container/faceted_container.js',
+                    'js/faceted_container_filters.min.js': '../browser/views_templates/faceted_container/faceted_container_filters.js'
+                }
             }
         },
         browserSync: {

@@ -1,0 +1,19 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="genweb">
+
+    <include package ="plone.app.portlets" />
+
+    <browser:viewlet
+        name="genweb.manage_portlets_fallback_serveitic"
+        for="genweb6.serveistic.content.serveitic.serveitic.IServeiTIC"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContent"
+        class="genweb6.serveistic.portlets.manage_portlets.manager.gwManagePortletsFallbackViewletForServeiTic"
+        layer="genweb6.serveistic.interfaces.IGenweb6ServeisticLayer"
+        permission="zope2.View"
+        template="templates/manage_portlets_fallback_serveitic.pt"
+        />
+
+</configure>

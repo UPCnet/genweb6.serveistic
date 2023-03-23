@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from plone.app.contenttypes.behaviors.richtext import IRichTextBehavior
 from plone.app.dexterity import textindexer
 from plone.app.textfield import RichText
 from plone.app.users.schema import checkEmailAddress
@@ -85,13 +86,14 @@ class IServeiTIC(model.Schema):
     serveiDescription = RichText(
         title=_(u"Breu resum del servei"),
         required=False,
-        default=u"""<p><strong>RESPON A LA PREGUNTA: Quin és el benefici per l'usuari d'utilitzar el servei</strong></p>
+        default=IRichTextBehavior['text'].fromUnicode(
+                u"""<p><strong>RESPON A LA PREGUNTA: Quin és el benefici per l'usuari d'utilitzar el servei</strong></p>
                     <p>Emplena la descripció del servei amb la proposta de valor del servei.</p>
                     <p>Explica-hi per quina raó ha d’utilitzar el servei l’usuari. Utilitza les següents fórmules de redacció:</p>
                     <p>-          <b>Acció</b> (imperatiu, segona persona del singular) + <b>objecte + [qualitat/avantatge]</b></p>
                     <p>“Rep i envia missatges de correu electrònic des de qualsevol lloc” “Llegeix llibres amb el mòbil” “Obre, edita i crea documents en línia”</p>
                     <p> </p>
-                    <p>Nota: en les etiquetes posa totes les paraules que puguin identificar el servei </p>"""
+                    <p>Nota: en les etiquetes posa totes les paraules que puguin identificar el servei </p>""")
     )
 
     textindexer.searchable('website_url')

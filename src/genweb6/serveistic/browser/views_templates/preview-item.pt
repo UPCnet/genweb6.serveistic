@@ -1,0 +1,49 @@
+<tal:comment replace="nothing">
+  Modificamos el card para ajustarla a las necessidades de serveistic
+</tal:comment>
+
+<div class="col">
+
+  <a class="preview-item text-decoration-none px-0"
+     tal:attributes="href view/url">
+
+    <div class="card eea-preview-item h-100 shadow-sm">
+
+      <div tal:define="scale view/preview_url"
+           class="card-image d-flex justify-content-center align-items-center">
+
+        <img tal:condition="scale"
+             tal:replace="structure scale" />
+
+        <img tal:condition="not:scale" class="card-img-top"
+             tal:attributes="src view/default_preview_url;
+                             title view/description;
+                             alt view/title" />
+
+      </div>
+
+      <div class="card-body">
+
+        <h5 class="card-title text-dark"
+            tal:content="view/title">Image title</h5>
+
+        <p class="card-text text-dark"
+           tal:content="view/description">Description</p>
+
+        <tal:comment replace="nothing">
+
+          <a class="card-link stretched-link"  i18n:translate=""
+             tal:attributes="href view/url;
+                             title view/description">
+            Read more
+          </a>
+
+        </tal:comment>
+
+      </div>
+
+    </div>
+
+  </a>
+
+</div>

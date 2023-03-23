@@ -41,6 +41,12 @@
         />
 
     <subscriber
+        handler=".subscribers.initialize_servei"
+        for="genweb6.serveistic.content.serveitic.serveitic.IServeiTIC
+             zope.lifecycleevent.interfaces.IObjectAddedEvent"
+        />
+
+    <subscriber
         handler=".subscribers.update_indicators_on_serveitic_deletion"
         for="zope.lifecycleevent.interfaces.IObjectRemovedEvent
              genweb6.serveistic.content.serveitic.serveitic.IServeiTIC"

@@ -5,6 +5,7 @@ from zope.schema.vocabulary import SimpleVocabulary
 
 import configparser
 import os
+import unicodedata
 
 
 def get_absolute_path(relative_path):
@@ -14,11 +15,7 @@ def get_absolute_path(relative_path):
 
 
 def build_facets_vocabulary():
-    facets = ["Proveïdor / Unitat",
-              "Usuaris",
-              "Servei / Àrea",
-              "Àmbit",
-              "Faceta 1",
+    facets = ["Faceta 1",
               "Faceta 2",
               "Faceta 3",
               "Faceta 4",
@@ -28,11 +25,8 @@ def build_facets_vocabulary():
               "Faceta 8"]
 
     return SimpleVocabulary([
-        SimpleTerm(
-            title=facet,
-            value=facet,
-            token=index)
-        for index, facet in enumerate(facets)])
+        SimpleTerm(title=facet, value=unicodedata.normalize('NFKD', facet))
+        for facet in facets])
 
 config = configparser.ConfigParser()
 config.read(get_absolute_path('serveistic.cfg'))

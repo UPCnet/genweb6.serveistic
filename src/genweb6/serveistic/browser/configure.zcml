@@ -1,0 +1,44 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:plone="http://namespaces.plone.org/plone"
+  i18n_domain="genweb6.serveistic">
+
+  <include file="viewlets.zcml" />
+
+  <browser:page
+    for="*"
+    name="sitemap"
+    layer="..interfaces.IGenweb6ServeisticLayer"
+    class=".views.SitemapView"
+    template="views_templates/sitemap.pt"
+    permission="zope.Public"
+    />
+
+  <browser:page
+    for="eea.facetednavigation.subtypes.interfaces.IFacetedNavigable"
+    name="facetednavigation_view"
+    layer="..interfaces.IGenweb6ServeisticLayer"
+    class=".views.FacetedContainerView"
+    template="views_templates/faceted_container/faceted_container.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    for="zope.interface.Interface"
+    name="faceted-serveistic-preview-brain"
+    layer="..interfaces.IGenweb6ServeisticLayer"
+    class=".views.ServeisTICPreviewBrain"
+    template="views_templates/preview-item.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    for="*"
+    name="setup-serveistic"
+    layer="..interfaces.IGenweb6ServeisticLayer"
+    class=".setup.SetupServeistic"
+    permission="zope2.View"
+    />
+
+</configure>

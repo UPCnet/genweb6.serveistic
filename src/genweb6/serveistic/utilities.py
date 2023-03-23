@@ -104,6 +104,10 @@ def get_site_path(context):
     return '/'.join(portal_url.getPortalObject().getPhysicalPath())
 
 
+def default_serveistic_url_preview_image():
+    return api.portal.get().absolute_url() + '/++theme++genweb6.serveistic/img/capcalera_mini.jpg'
+
+
 @implementer(IVocabularyFactory)
 class FacetsVocabulary(object):
 

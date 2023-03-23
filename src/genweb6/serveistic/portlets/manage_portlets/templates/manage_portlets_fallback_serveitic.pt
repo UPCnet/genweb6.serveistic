@@ -1,0 +1,16 @@
+<div tal:condition="view/available"
+     class="d-grid gap-2 mb-4">
+
+  <a class="btn btn-secondary"
+     tal:attributes="href view/managePortletsURL">
+
+   <span class="icon-cog"></span>
+
+   <tal:adminPortlets i18n:domain="genweb"
+                      i18n:translate="manage_serveiticportlets_link">
+                        Administra el servei
+   </tal:adminPortlets>
+
+  </a>
+
+</div>

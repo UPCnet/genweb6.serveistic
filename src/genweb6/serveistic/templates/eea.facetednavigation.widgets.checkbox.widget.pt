@@ -1,0 +1,108 @@
+<tal:comment replace="nothing">
+  Modificamos el template para usar el componente de bootstrap de card
+  https://getbootstrap.com/docs/5.2/components/card/#header-and-footer
+</tal:comment>
+
+<div class="faceted-widget faceted-checkboxes-widget card shadow-sm" style="display: none"
+     i18n:domain="eea"
+     tal:define="error_view nocall:context/@@faceted.widget.error;
+                 wid python:view.data.getId();
+                 hidden python:view.hidden;
+                 hidezerocount python:view.hidezerocount;
+                 sortcountable python:view.sortcountable;
+                 css string:faceted-widget ${view/css_class} card shadow-sm;
+                 css python:hidden and css + ' faceted-widget-hidden' or css;
+                 css python:view.countable and css + ' faceted-count' or css;
+                 css python:hidezerocount and css + ' faceted-zero-count-hidden' or css;
+                 css python:sortcountable and css + ' faceted-sortcountable' or css;
+                 maxitems python:view.data.get('maxitems', 0) or 0;
+                 operator python:view.operator;
+                 operator_visible python:view.operator_visible;
+                 operator_lable python: 'any' if operator == 'or' else 'all';
+                 vocabulary view/vocabulary;
+                 mode view/mode|string:display;
+                 visible python:mode == 'input' or vocabulary"
+     tal:condition="visible"
+     tal:attributes="id string:${wid}_widget;
+                     class css;
+                     data-operator python:operator"
+     data-more="More" data-less="Less"
+     i18n:attributes="data-more;
+                      data-less">
+
+
+  <div class="card-header">
+
+    <legend class="mb-0 fs-xxl" tal:define="title python:view.data.get('title', '')">
+
+      <strong tal:content="python:view.translate(title)"
+            i18n:translate="">HTML Widget</strong>
+
+    </legend>
+
+  </div>
+
+  <div class="card-body">
+
+    <tal:facet on-error="structure python:error_view(error=error, cid=wid)">
+
+      <div tal:condition="not:vocabulary" class="faceted-widget-error">
+        <div i18n:translate="">Invalid or empty vocabulary provided for this widget. This widget will be ignored in view mode.</div>
+      </div>
+
+      <div class="faceted-operator" tal:condition="operator_visible"
+           title="match any/all filters bellow" i18n:attributes="title">
+
+        <label class="form-check-label" tal:attributes="for string:$wid-operator" i18n:translate="">match</label>
+
+        <a data-or="any" data-and="all" data-name="operator"
+           i18n:attributes="data-or; data-and"
+           tal:attributes="href string:#$wid-operator=$operator;
+                           data-value string:$operator"
+          tal:content="operator_lable" />
+
+      </div>
+
+      <form action="." method="get">
+
+        <ul class="list-unstyled mb-0">
+
+          <tal:items repeat="term vocabulary">
+
+            <li tal:define="term_id python:term[0];
+                            term_label python:term[1];
+                            term_label python:view.translate(term_label);
+                            wbr_term_label python:view.word_break(term_label);
+                            chbox_id string:${wid}_${term_id};
+                            chbox_id python:view.cleanup(chbox_id);
+                            option_id string:${wid}_option_${chbox_id}"
+                tal:attributes="id option_id"
+                class="mb-2">
+
+              <input type="checkbox" class="form-check-input mt-1"
+                     tal:attributes="checked python:view.selected(term_id);
+                                     name string:${wid};
+                                     id chbox_id;
+                                     title term_label;
+                                     value term_id" />
+
+              <label class="form-check-label"
+                     tal:attributes="for chbox_id;
+                                     title term_label"
+                     tal:content="structure wbr_term_label">term label</label>
+
+            </li>
+
+          </tal:items>
+
+        </ul>
+
+      </form>
+
+      <span style="display:none" tal:content="maxitems" />
+
+    </tal:facet>
+
+  </div>
+
+</div>

@@ -1,0 +1,59 @@
+<tal:comment replace="nothing">
+  Añadimos algunas class de bootstrap
+</tal:comment>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+  xmlns:tal="http://xml.zope.org/namespaces/tal"
+  xmlns:metal="http://xml.zope.org/namespaces/metal"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  metal:use-macro="context/main_template/macros/master"
+  i18n:domain="eea">
+
+<body>
+
+  <metal:content-core fill-slot="content-core">
+
+    <metal:block define-macro="content-core">
+
+      <div class="py-4 mt-4 border-top"
+           tal:define="folderContents folderContents | python:context.getFolderContents();
+                       Batch python:modules['Products.CMFPlone'].Batch;
+                       b_start python:request.get('b_start', 0);
+                       batch python:isinstance(folderContents, Batch) and folderContents or Batch(folderContents, 100, int(b_start), orphan=2);">
+
+        <div metal:use-macro="context/batch_macros/macros/navigation" />
+
+        <p i18n:domain="genweb6.serveistic">
+          <strong><tal:block i18n:translate="">Resultats</tal:block>:</strong>
+        </p>
+
+        <div class="eea-preview-items row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 g-3">
+
+          <tal:entries repeat="brain batch">
+
+            <tal:entry tal:define="view python:context.restrictedTraverse('@@faceted-serveistic-preview-brain')">
+
+              <tal:preview tal:replace="structure python:view(brain=brain)" />
+
+            </tal:entry>
+
+          </tal:entries>
+
+          <span tal:condition="not: batch/sequence_length"
+                class="text-muted mt-0"
+                i18n:domain="plone"
+                i18n:translate="description_no_results_found">No results were found.</span>
+
+        </div>
+
+        <div metal:use-macro="context/batch_macros/macros/navigation" />
+
+      </div>
+
+    </metal:block>
+
+  </metal:content-core>
+
+</body>
+
+</html>

@@ -8,12 +8,14 @@
 
     <i18n:registerTranslations directory="locales" />
 
+    <include package=".browser" />
     <include package=".content" />
     <include package=".controlpanels" />
     <include package=".portlets" />
 
-    <include file="upgrades.zcml" />
+    <include file="patches.zcml" />
     <include file="subscribers.zcml" />
+    <include file="upgrades.zcml" />
 
     <genericsetup:registerProfile
         name="default"

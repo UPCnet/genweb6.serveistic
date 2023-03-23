@@ -1,0 +1,107 @@
+body.template-facetednavigation_view {
+
+    /* BUSCADOR */
+
+    .faceted-text-widget {
+
+        fieldset {
+            border: 0px solid transparent;
+            padding: 1rem 0;
+        }
+    }
+
+    /* POPULARES */
+
+    #popular {
+        width: calc(100dvw - 75px);
+        left: calc(-1 * (100dvw - 100% - var(--plone-toolbar-width-collapsed) - 15px) / 2);
+    }
+
+    &.plone-toolbar-left-expanded {
+
+        #popular {
+            width: calc(100dvw - 235px);
+            left: calc(-1 * (100dvw - 100% - var(--plone-toolbar-width) - 15px) / 2);
+        }
+    }
+
+    /* FILTROS */
+
+    #center-top-area {
+        display: none;
+
+        &:has(li:not(.faceted-checkbox-item-disabled)) {
+            display: block;
+        }
+
+        #toggleFilters:not(.collapsed) {
+
+            i.bi-chevron-down:before {
+                transform: rotate(180deg);
+            }
+        }
+
+        div.faceted-center-widgets {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+
+            div.faceted-checkboxes-widget {
+                display: none;
+                flex-grow: 1;
+                width: calc(calc(100% / 4) - calc(3rem / 4));
+
+                @media (max-width: 992px) {
+                  width: calc(calc(100% / 3) - calc(2rem / 3));
+                }
+
+                @media (max-width: 768px) {
+                  width: calc(calc(100% / 2) - calc(1rem / 2));
+                }
+
+                &:has(li:not(.faceted-checkbox-item-disabled)) {
+                    display: flex;
+                }
+
+                li {
+                    display: flex;
+                    gap: 0.5rem;
+                    align-items: flex-start;
+
+                    &.faceted-checkbox-item-disabled.faceted-checkbox-item-zerocount {
+                        display: none;
+                    }
+                }
+
+                input {
+                    min-width: 18px;
+
+                    & + label {
+                        line-height: 1.5rem;
+
+                        span {
+                            color: var(--bs-gray-500);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* ITEM */
+
+    .preview-item {
+
+        .card.shadow-sm {
+            transition: ease-out .35s;
+        }
+
+        &:hover {
+
+            .card.shadow-sm {
+                box-shadow: 0 0.5rem 1rem #00000026;
+            }
+        }
+    }
+}

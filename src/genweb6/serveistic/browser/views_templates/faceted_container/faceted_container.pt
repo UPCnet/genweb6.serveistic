@@ -1,0 +1,115 @@
+<tal:left define="hidden python:request.set('disable_plone.leftcolumn', view.hide_left_portlets)" />
+<tal:right define="hidden python:request.set('disable_plone.rightcolumn', view.hide_right_portlets)" />
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US"
+  lang="en-US"
+  metal:use-macro="here/main_template/macros/master"
+  i18n:domain="eea">
+
+<body>
+
+<div metal:fill-slot="content-core">
+
+<metal:block tal:define="doctext view/page_content">
+
+    <span tal:replace="structure doctext"></span>
+
+</metal:block>
+
+<!-- Folder contents -->
+<div class="faceted-form" metal:define-macro="widgets" id="faceted-form"
+     tal:define="mode view/mode | string:view"
+     tal:attributes="data-mode mode;
+                     data-baseurl string:${context/absolute_url}/">
+
+
+  <div id="popular" tal:condition="populars" tal:define="populars view/get_populars"
+       i18n:domain="genweb6.serveistic" class="bg-light my-4 pt-4 pb-1 position-relative">
+
+    <div class="container">
+
+      <h2 class="fs-xxl" i18n:translate="most_popular">Serveis més populars</h2>
+
+      <div id="faceted-populars"
+           class="eea-preview-items row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 g-3 mb-4"
+           tal:define="default_preview_url view/default_preview_url">
+
+        <div class="col" tal:repeat="popular populars">
+
+          <a class="preview-item text-decoration-none px-0"
+             tal:attributes="href popular/absolute_url">
+
+            <div class="card eea-preview-item h-100 shadow-sm">
+
+              <div class="card-image d-flex justify-content-center align-items-center">
+
+                <tal:if>
+
+                  <tal:then tal:condition="popular/image_item">
+
+                    <img class="card-img-top"
+                         tal:attributes="src string:${popular/absolute_url}/@@images/image_item/preview;
+                                         title popular/description;
+                                         alt popular/title" />
+
+                  </tal:then>
+
+                  <tal:then tal:condition="popular/image">
+
+                    <img class="card-img-top"
+                         tal:attributes="src string:${popular/absolute_url}/@@images/image/preview;
+                                         title popular/description;
+                                         alt popular/title" />
+
+                  </tal:then>
+
+                  <tal:then tal:condition="python: not popular.image_item or not popular.image">
+
+                    <img class="card-img-top"
+                         tal:attributes="src default_preview_url;
+                                         title popular/description;
+                                         alt popular/title" />
+
+                  </tal:then>
+
+                </tal:if>
+
+              </div>
+
+              <div class="card-body">
+
+                <h5 class="card-title text-dark"
+                    tal:content="popular/title">Image title</h5>
+
+                <p class="card-text text-dark"
+                   tal:content="popular/description">Description</p>
+
+              </div>
+
+            </div>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <metal:widgets use-macro="here/@@faceted_widgets_macros/macros/widgets" />
+
+  <script type="text/javascript"
+          tal:attributes="src string:${context/absolute_url}/++theme++genweb6.serveistic/js/faceted_container.min.js">
+  </script>
+
+  <script type="text/javascript" tal:condition="view/showFilters"
+          tal:attributes="src string:${context/absolute_url}/++theme++genweb6.serveistic/js/faceted_container_filters.min.js">
+  </script>
+
+</div>
+
+</div>
+</body>
+</html>

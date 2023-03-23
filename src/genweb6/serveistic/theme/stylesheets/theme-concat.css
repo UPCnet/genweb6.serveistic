@@ -1,0 +1,93 @@
+/* line 1, ../scss/_homepage.scss */
+body.template-facetednavigation_view {
+  /* BUSCADOR */
+  /* POPULARES */
+  /* FILTROS */
+  /* ITEM */
+}
+/* line 7, ../scss/_homepage.scss */
+body.template-facetednavigation_view .faceted-text-widget fieldset {
+  border: 0px solid transparent;
+  padding: 1rem 0;
+}
+/* line 15, ../scss/_homepage.scss */
+body.template-facetednavigation_view #popular {
+  width: calc(100dvw - 75px);
+  left: calc(-1 * (100dvw - 100% - var(--plone-toolbar-width-collapsed) - 15px) / 2);
+}
+/* line 22, ../scss/_homepage.scss */
+body.template-facetednavigation_view.plone-toolbar-left-expanded #popular {
+  width: calc(100dvw - 235px);
+  left: calc(-1 * (100dvw - 100% - var(--plone-toolbar-width) - 15px) / 2);
+}
+/* line 30, ../scss/_homepage.scss */
+body.template-facetednavigation_view #center-top-area {
+  display: none;
+}
+/* line 33, ../scss/_homepage.scss */
+body.template-facetednavigation_view #center-top-area:has(li:not(.faceted-checkbox-item-disabled)) {
+  display: block;
+}
+/* line 39, ../scss/_homepage.scss */
+body.template-facetednavigation_view #center-top-area #toggleFilters:not(.collapsed) i.bi-chevron-down:before {
+  transform: rotate(180deg);
+}
+/* line 44, ../scss/_homepage.scss */
+body.template-facetednavigation_view #center-top-area div.faceted-center-widgets {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+/* line 50, ../scss/_homepage.scss */
+body.template-facetednavigation_view #center-top-area div.faceted-center-widgets div.faceted-checkboxes-widget {
+  display: none;
+  flex-grow: 1;
+  width: calc(calc(100% / 4) - calc(3rem / 4));
+}
+@media (max-width: 992px) {
+  /* line 50, ../scss/_homepage.scss */
+  body.template-facetednavigation_view #center-top-area div.faceted-center-widgets div.faceted-checkboxes-widget {
+    width: calc(calc(100% / 3) - calc(2rem / 3));
+  }
+}
+@media (max-width: 768px) {
+  /* line 50, ../scss/_homepage.scss */
+  body.template-facetednavigation_view #center-top-area div.faceted-center-widgets div.faceted-checkboxes-widget {
+    width: calc(calc(100% / 2) - calc(1rem / 2));
+  }
+}
+/* line 63, ../scss/_homepage.scss */
+body.template-facetednavigation_view #center-top-area div.faceted-center-widgets div.faceted-checkboxes-widget:has(li:not(.faceted-checkbox-item-disabled)) {
+  display: flex;
+}
+/* line 67, ../scss/_homepage.scss */
+body.template-facetednavigation_view #center-top-area div.faceted-center-widgets div.faceted-checkboxes-widget li {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+/* line 72, ../scss/_homepage.scss */
+body.template-facetednavigation_view #center-top-area div.faceted-center-widgets div.faceted-checkboxes-widget li.faceted-checkbox-item-disabled.faceted-checkbox-item-zerocount {
+  display: none;
+}
+/* line 77, ../scss/_homepage.scss */
+body.template-facetednavigation_view #center-top-area div.faceted-center-widgets div.faceted-checkboxes-widget input {
+  min-width: 18px;
+}
+/* line 80, ../scss/_homepage.scss */
+body.template-facetednavigation_view #center-top-area div.faceted-center-widgets div.faceted-checkboxes-widget input + label {
+  line-height: 1.5rem;
+}
+/* line 83, ../scss/_homepage.scss */
+body.template-facetednavigation_view #center-top-area div.faceted-center-widgets div.faceted-checkboxes-widget input + label span {
+  color: var(--bs-gray-500);
+}
+/* line 96, ../scss/_homepage.scss */
+body.template-facetednavigation_view .preview-item .card.shadow-sm {
+  transition: ease-out .35s;
+}
+/* line 102, ../scss/_homepage.scss */
+body.template-facetednavigation_view .preview-item:hover .card.shadow-sm {
+  box-shadow: 0 0.5rem 1rem #00000026;
+}
