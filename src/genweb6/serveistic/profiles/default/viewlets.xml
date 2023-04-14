@@ -23,7 +23,6 @@
  <order manager="plone.portalfooter" skinname="Plone Default">
   <viewlet name="genweb.logosfooter"/>
   <viewlet name="genweb.linksfooter"/>
-  <viewlet name="genweb.serveistic.linksfooter"/>
   <viewlet name="genweb.upc.footer.contact"/>
   <viewlet name="genweb.upc.footer"/>
   <viewlet name="genweb.footer"/>
@@ -62,7 +61,6 @@
   <viewlet name="plone.footer"/>
   <viewlet name="plone.colophon"/>
   <viewlet name="plone.site_actions"/>
-  <viewlet name="genweb.footer"/>
   <viewlet name="genweb.linksfooter"/>
  </hidden>
  <hidden manager="plone.portalheader" skinname="Plone Default">

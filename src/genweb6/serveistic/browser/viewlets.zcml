@@ -15,15 +15,6 @@
       template="viewlets_templates/header/header.pt"
       />
 
-    <browser:viewlet
-      name="genweb.serveistic.linksfooter"
-      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
-      class="genweb6.serveistic.browser.viewlets.linksFooterViewlet"
-      layer="genweb6.serveistic.interfaces.IGenweb6ServeisticLayer"
-      permission="zope2.View"
-      template="viewlets_templates/footer/linksfooter.pt"
-      />
-
   </configure>
 
   <browser:viewlet
