@@ -1,0 +1,64 @@
+<tal:hero_serveistic tal:define="custom_hero view/custom_hero">
+
+  <block tal:condition="not:custom_hero/is_servei"
+         metal:use-macro="context/macros-genweb-hero/content"></block>
+
+  <tal:hero_custom tal:condition="custom_hero/is_servei"
+                   tal:define="pref_lang context/@@genweb.utils/pref_lang;
+                               header_config context/@@genweb.utils/genwebHeaderConfig;
+                               style view/getClass">
+
+    <div id="hero"
+         tal:attributes="class style"
+         tal:define="hero_title python:getattr(header_config, 'html_title_' + pref_lang, '');">
+
+      <img alt="" title="" 
+           tal:define="heroImage custom_hero/image"
+           tal:condition="heroImage"
+           tal:attributes="src heroImage;
+                           alt custom_hero/title;
+                           title custom_hero/title" />
+
+      <div class="site_title">
+
+        <div class="h1" tal:condition="not:custom_hero/is_current_servei">
+
+            <a accesskey="1" class="text-decoration-none"
+               tal:attributes="href string:${view/root_url}/${view/pref_lang}">
+
+                <tal:block tal:replace="structure hero_title"></tal:block>
+
+            </a>
+
+        </div>
+
+        <h1 tal:condition="custom_hero/is_current_servei">
+
+            <a accesskey="1" class="text-decoration-none"
+               tal:attributes="href string:${view/root_url}/${view/pref_lang}">
+
+                <tal:block tal:replace="structure hero_title"></tal:block>
+
+            </a>
+
+        </h1>
+
+      </div>
+
+      <div class="servei_title">
+
+        <h2>
+        
+          <a class="text-decoration-none"
+             tal:attributes="href custom_hero/servei_url"
+             tal:content="custom_hero/title"></a>
+      
+        </h2>
+
+      </div>
+
+    </div>
+    
+  </tal:hero_custom>
+
+</tal:hero_serveistic>

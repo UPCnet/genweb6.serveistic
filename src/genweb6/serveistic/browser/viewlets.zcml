@@ -4,5 +4,35 @@
   xmlns:plone="http://namespaces.plone.org/plone"
   i18n_domain="genweb6.serveistic">
 
+  <configure package="genweb6.core.browser">
+
+    <browser:viewlet
+      name="genweb.serveistic.header"
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+      class="genweb6.serveistic.browser.viewlets.headerViewlet"
+      layer="genweb6.serveistic.interfaces.IGenweb6ServeisticLayer"
+      permission="zope2.View"
+      template="viewlets_templates/header/header.pt"
+      />
+
+    <browser:viewlet
+      name="genweb.serveistic.linksfooter"
+      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      class="genweb6.serveistic.browser.viewlets.linksFooterViewlet"
+      layer="genweb6.serveistic.interfaces.IGenweb6ServeisticLayer"
+      permission="zope2.View"
+      template="viewlets_templates/footer/linksfooter.pt"
+      />
+
+  </configure>
+
+  <browser:viewlet
+    name="genweb.serveistic.hero"
+    manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+    class=".viewlets.heroViewlet"
+    layer="..interfaces.IGenweb6ServeisticLayer"
+    permission="zope2.View"
+    template="viewlets_templates/hero.pt"
+    />
 
 </configure>

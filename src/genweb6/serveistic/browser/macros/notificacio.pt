@@ -1,0 +1,47 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="genweb6.serveistic">
+
+<tal:comment replace="nothing">
+    Necesitamos definir previamente notificacions
+</tal:comment>
+
+<metal:block metal:define-macro="content" i18n:domain="plone">
+
+    <ul class="list-group list-group-flush mb-2"
+        tal:condition="notificacions">
+
+        <tal:item tal:repeat="notificacio notificacions">
+
+            <li class="list-group-item ps-0">
+
+                <a class="d-block text-decoration-none"
+                   tal:define="class_icon python:view.get_bootstrap_icon_class(notificacio)"
+                   tal:attributes="href notificacio/url">
+
+                    <i tal:condition="class_icon"
+                       tal:attributes="class string:${class_icon} me-1 text-secondary"></i>
+
+                    <span tal:replace="notificacio/titol">Title</span>
+
+                </a>
+
+                <time class="smaller"
+                      tal:content="notificacio/data">
+                    Date
+                </time>
+
+            </li>
+
+        </tal:item>
+
+    </ul>
+
+    <p tal:condition="not:notificacions"
+       i18n:translate="">No hi ha notificacions</p>
+
+</metal:block>
+
+</html>

@@ -47,25 +47,25 @@
 
                   <tal:then tal:condition="popular/image_item">
 
-                    <img class="card-img-top"
+                    <img class="card-img-top object-fit-cover"
                          tal:attributes="src string:${popular/absolute_url}/@@images/image_item/preview;
                                          title popular/description;
                                          alt popular/title" />
 
                   </tal:then>
 
-                  <tal:then tal:condition="popular/image">
+                  <tal:then tal:condition="python: not popular.image_item and popular.image">
 
-                    <img class="card-img-top"
+                    <img class="card-img-top object-fit-cover"
                          tal:attributes="src string:${popular/absolute_url}/@@images/image/preview;
                                          title popular/description;
                                          alt popular/title" />
 
                   </tal:then>
 
-                  <tal:then tal:condition="python: not popular.image_item or not popular.image">
+                  <tal:then tal:condition="python: not popular.image_item and not popular.image">
 
-                    <img class="card-img-top"
+                    <img class="card-img-top object-fit-cover"
                          tal:attributes="src default_preview_url;
                                          title popular/description;
                                          alt popular/title" />

@@ -1,46 +1,20 @@
 # -*- coding: utf-8 -*-
 
-from Acquisition import aq_inner
-from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.browser.interfaces import ISitemapView
 from Products.Five import BrowserView
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 from eea.facetednavigation.browser.app.view import FacetedContainerView
 from eea.facetednavigation.views.preview import PreviewBrain
+from plone import api
 from plone.registry.interfaces import IRegistry
 from zope.component import getMultiAdapter
 from zope.component import queryMultiAdapter
 from zope.component import queryUtility
 from zope.component.hooks import getSite
-from zope.interface import implementer
 
 from genweb6.serveistic.controlpanels.serveistic import IServeisTICControlPanelSettings
 from genweb6.serveistic.data_access.notificacio import NotificacioDataReporter
 from genweb6.serveistic.utilities import default_serveistic_url_preview_image
 from genweb6.serveistic.utilities import NotificacioViewHelper
-
-
-@implementer(ISitemapView)
-class SitemapView(BrowserView):
-
-    item_template = ViewPageTemplateFile('views_templates/sitemap-item.pt')
-
-    def createSiteMap(self):
-        context = aq_inner(self.context)
-        view = getMultiAdapter((context, self.request),
-                               name='sitemap_builder_view')
-        data = view.siteMap()
-        return self._renderLevel(children=data.get('children', []))
-
-    def _renderLevel(self, children=[]):
-        output = ''
-        for node in children:
-            output += '<li class="navTreeItem visualNoMarker">\n'
-            output += self.item_template(node=node)
-            output += '</li>\n'
-
-        return output
 
 
 class FacetedContainerView(FacetedContainerView, NotificacioViewHelper):
@@ -49,8 +23,7 @@ class FacetedContainerView(FacetedContainerView, NotificacioViewHelper):
 
     @property
     def notificacions(self):
-        reporter = NotificacioDataReporter(
-            getToolByName(self.context, 'portal_catalog'))
+        reporter = NotificacioDataReporter(api.portal.get_tool('portal_catalog'))
         return reporter.list_by_general()
 
     def page_content(self):
@@ -65,7 +38,7 @@ class FacetedContainerView(FacetedContainerView, NotificacioViewHelper):
             else:
                 benvingut = self.context["benvingut"]
 
-            wf_tool = getToolByName(self.context, 'portal_workflow')
+            wf_tool = api.portal.get_tool("portal_workflow")
             tools = getMultiAdapter((self.context, self.request), name='plone_tools')
             workflows = tools.workflow().getWorkflowsFor(benvingut)[0]
             benvingut_workflow = wf_tool.getWorkflowsFor(benvingut)[0].id
@@ -78,7 +51,7 @@ class FacetedContainerView(FacetedContainerView, NotificacioViewHelper):
             return None
 
     def get_populars(self):
-        catalog = getToolByName(self.context, 'portal_catalog')
+        catalog = api.portal.get_tool('portal_catalog')
         serveitics = catalog(portal_type='serveitic', sort_on='sortable_title', path='/'.join(self.context.getPhysicalPath()))
         populars = []
         for item in serveitics:
@@ -105,10 +78,11 @@ class ServeisTICPreviewBrain(PreviewBrain):
         if not image_scale:
             return None
         try:
-            if self.brain.image_item:
-                return image_scale.tag(self.brain, "image_item", scale="preview", css_class="card-img-top")
-            elif self.brain.image:
-                return image_scale.tag(self.brain, "image", scale="preview", css_class="card-img-top")
+            servei = self.brain.getObject()
+            if servei.image_item:
+                return image_scale.tag(self.brain, "image_item", scale="preview", css_class="card-img-top object-fit-cover")
+            elif servei.image:
+                return image_scale.tag(self.brain, "image", scale="preview", css_class="card-img-top object-fit-cover")
             else:
                 return None
         except AttributeError:
@@ -116,3 +90,34 @@ class ServeisTICPreviewBrain(PreviewBrain):
 
     def default_preview_url(self):
         return default_serveistic_url_preview_image()
+
+
+class PortletIndicadorsReinstallAll(BrowserView):
+
+    def __call__(self):
+        from plone.protect.interfaces import IDisableCSRFProtection
+        alsoProvides(self.request, IDisableCSRFProtection)
+
+        service_id_updated = []
+        catalog = api.portal.get_tool("portal_catalog")
+        for servei in catalog.searchResults(portal_type='serveitic'):
+            assignments = self._get_portlet_assignments(
+                servei.getObject(), 'genweb.portlets.HomePortletManager5')
+            if 'indicadors' in assignments:
+                del assignments['indicadors']
+            assignments['indicadors'] = IndicadorsAssignment(
+                count_indicator=5, count_category=4)
+            service_id_updated.append(servei.id)
+
+        report = "{0} serveis have been updated:\n\n".format(
+            len(service_id_updated))
+        report += '\n'.join(sorted(service_id_updated))
+        return report
+
+    def _get_portlet_assignments(self, context, name):
+        portlet_manager = queryUtility(
+            IPortletManager,
+            name=name,
+            context=context)
+        return getMultiAdapter(
+            (context, portlet_manager), IPortletAssignmentMapping)

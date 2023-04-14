@@ -1,3 +1,39 @@
+/* line 5, ../scss/_content_serveitic.scss */
+body.portaltype-serveitic.template-manage-homeportlets .menu_l2 {
+  display: none;
+}
+/* line 11, ../scss/_content_serveitic.scss */
+body.portaltype-serveitic.template-manage-homeportlets #content .col-md-10 {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* line 3, ../scss/_hero.scss */
+#hero .servei_title {
+  order: 2;
+  padding: 0.5em 4em;
+  text-align: left;
+  border-bottom: 1px solid var(--bs-gray-300);
+}
+@media (max-width: 992px) {
+  /* line 3, ../scss/_hero.scss */
+  #hero .servei_title {
+    padding: 0.5em 1em;
+  }
+}
+/* line 13, ../scss/_hero.scss */
+#hero .servei_title h2 {
+  font-size: 1.75rem;
+}
+/* line 16, ../scss/_hero.scss */
+#hero .servei_title h2 a {
+  color: var(---bs-black);
+}
+/* line 19, ../scss/_hero.scss */
+#hero .servei_title h2 a:hover {
+  color: var(--bs-primary);
+}
+
 /* line 1, ../scss/_homepage.scss */
 body.template-facetednavigation_view {
   /* BUSCADOR */
@@ -87,7 +123,11 @@ body.template-facetednavigation_view #center-top-area div.faceted-center-widgets
 body.template-facetednavigation_view .preview-item .card.shadow-sm {
   transition: ease-out .35s;
 }
-/* line 102, ../scss/_homepage.scss */
+/* line 99, ../scss/_homepage.scss */
+body.template-facetednavigation_view .preview-item .card.shadow-sm img {
+  height: 56px;
+}
+/* line 106, ../scss/_homepage.scss */
 body.template-facetednavigation_view .preview-item:hover .card.shadow-sm {
   box-shadow: 0 0.5rem 1rem #00000026;
 }

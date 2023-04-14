@@ -1,0 +1,25 @@
+#hero {
+
+  .servei_title {
+    order: 2;
+    padding: 0.5em 4em;
+    text-align: left;
+    border-bottom: 1px solid var(--bs-gray-300);
+
+    @media (max-width: 992px) {
+      padding: 0.5em 1em;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+
+      a {
+        color: var(---bs-black);
+  
+        &:hover {
+          color: var(--bs-primary);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="genweb">
+
+    <browser:page
+        name="macros-serveistic-problema"
+        for="*"
+        permission="zope.Public"
+        template="problema.pt"
+        />
+
+    <browser:page
+        name="macros-serveistic-indicador"
+        for="*"
+        permission="zope.Public"
+        template="indicador.pt"
+        />
+
+    <browser:page
+        name="macros-serveistic-notificacio"
+        for="*"
+        permission="zope.Public"
+        template="notificacio.pt"
+        />
+
+</configure>

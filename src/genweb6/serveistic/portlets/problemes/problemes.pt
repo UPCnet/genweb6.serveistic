@@ -1,13 +1,22 @@
-<tal:block i18n:domain="genweb6.serveistic">
+<div class="portlet portlet-problemes portlet-list"
+     tal:define="problemes view/problemes"
+     i18n:domain="genweb6.serveistic">
 
-<div class="portlet portlet-problemes" tal:define="portal_url context/portal_url">
+    <h2 class="portlet-title" i18n:domain="genweb"
+        i18n:translate="">Problemes</h2>
 
-    <h2 i18n:translate="Problemes">Problemes</h2>
+    <tal:content metal:use-macro="context/macros-serveistic-problema/content"></tal:content>
 
-    <div id="problemes"></div>
+    <div class="portlet-footer" tal:condition="problemes">
 
-    <script type="text/javascript" tal:content="view/js_retrieve"></script>
+        <a class="portlet-show-more small text-decoration-none"
+           tal:attributes="href view/problemes_href"
+           i18n:translate="">
+            Tots els problemes
+        </a>
+
+    </div>
 
 </div>
 
-</tal:block>
+

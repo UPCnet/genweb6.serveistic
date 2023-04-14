@@ -1,13 +1,20 @@
-<tal:block i18n:domain="genweb6.serveistic">
+<div class="portlet portlet-indicadors portlet-list"
+     tal:define="indicadors view/indicadors"
+     i18n:domain="genweb6.serveistic">
 
-<div class="portlet portlet-indicadors">
+    <h2 class="portlet-title" i18n:domain="genweb"
+        i18n:translate="">Indicadors</h2>
 
-    <h2 i18n:translate="Indicadors">Indicadors</h2>
+    <tal:content metal:use-macro="context/macros-serveistic-indicador/content"></tal:content>
 
-    <div id="indicadors"></div>
+    <div class="portlet-footer" tal:condition="indicadors">
 
-    <script type="text/javascript" tal:content="view/js_retrieve"></script>
+        <a class="portlet-show-more small text-decoration-none"
+           tal:attributes="href view/indicadors_href"
+           i18n:translate="">
+            Tot els indicadors
+        </a>
+
+    </div>
 
 </div>
-
-</tal:block>

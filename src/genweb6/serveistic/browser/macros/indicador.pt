@@ -1,0 +1,100 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="genweb6.serveistic">
+
+<metal:block metal:define-macro="content" i18n:domain="plone">
+
+    <div class="mb-4" tal:repeat="indicador indicadors">
+
+        <p class="title-indicador mb-1"
+            tal:content="indicador/description"></p>
+
+        <div class="accordion">
+
+            <tal:item tal:repeat="category indicador/categories">
+
+                <div class="accordion-item"
+                     tal:define="category_id python:category['identifier'].lower();
+                                 category_id_collpase string:${category_id}-collapse">
+
+                    <h2 class="accordion-header"
+                        tal:attributes="id category_id">
+
+                        <button class="accordion-button collapsed py-2 px-3" type="button"
+                                data-bs-toggle="collapse" aria-expanded="false"
+                                tal:attributes="data-bs-target string:#${category_id_collpase};
+                                                aria-controls category_id_collpase">
+
+                            <p class="d-flex mb-0">
+
+                                <i class="bi bi-bar-chart-line-fill me-2 text-secondary"></i>
+
+                                <span class="d-flex flex-column">
+
+                                    <span class="indicador-category-value"
+                                          tal:content="category/value"></span>
+
+                                    <span class="indicador-category-description"
+                                          tal:content="category/description"></span>
+
+                                </span>
+
+                            </p>
+
+                        </button>
+
+                    </h2>
+
+                    <div class="accordion-collapse collapse"
+                         tal:attributes="id category_id_collpase;
+                                         aria-labelledby category_id">
+
+                        <div class="accordion-body py-2 px-3 d-flex flex-column">
+
+                            <tal:block tal:condition="not:category/is_online">
+
+                                <span class="data-inline smaller">
+
+                                    <tal:prefix i18n:translate="updated_on">Updated on</tal:prefix>
+
+                                    <time tal:attributes="datetime category/date_modified"
+                                          tal:content="category/date_modified"></time>
+
+                                </span>
+
+                                <span tal:condition="category/frequency" class="data-inline smaller">
+
+                                    <tal:prefix i18n:translate="update_frequency">Update frequency</tal:prefix>
+
+                                    <tal:frequency tal:content="category/frequency">Daily</tal:frequency>
+
+                                </span>
+
+                            </tal:block>
+
+                            <span tal:condition="category/is_online" class="data-inline smaller">
+
+                                <tal:prefix i18n:translate="updated_now">Updated now</tal:prefix>
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </tal:item>
+
+        </div>
+
+    </div>
+
+    <p tal:condition="not:indicadors"
+       i18n:translate="">No hi ha cap indicador enregistrat relacionat amb aquest servei</p>
+
+</metal:block>
+
+</html>

@@ -3,18 +3,24 @@
 from Products.CMFPlone import PloneMessageFactory as _
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
+from plone import api
 from plone.app.portlets.portlets import base
 from plone.portlets.interfaces import IPortletDataProvider
 from zope import schema
 from zope.formlib import form
 from zope.interface import implementer
 
+from genweb6.serveistic.data_access.problemes import ProblemesDataReporter
+from genweb6.serveistic.utilities import get_servei
+from genweb6.serveistic.utilities import get_ws_problemes_client
+
 
 class IProblemesPortlet(IPortletDataProvider):
+
     count = schema.Int(
         title=_(u'Nombre màxim de problemes'),
         required=True,
-        defaultFactory=lambda: 5)
+        default=5)
 
 
 @implementer(IProblemesPortlet)
@@ -32,31 +38,38 @@ class Assignment(base.Assignment):
 class Renderer(base.Renderer):
     render = ViewPageTemplateFile('problemes.pt')
 
-    def js_retrieve(self):
-        return """
-    $(document).ready(function()
-    {{
-        var url = '{url}';
-        var count = {count};
-        retrieve_problemes(url, count);
-    }});
-       """.format(
-            url="retrieve_problemes",
-            count=self.data.count)
+    @property
+    def problemes(self):
+        reporter = ProblemesDataReporter(api.portal.get_tool("portal_catalog"), get_ws_problemes_client())
+
+        product_id = self.context.product_id
+        servei_path = '/'.join(self.context.getPhysicalPath())
+
+        if product_id:
+            return reporter.list_by_product_id(product_id, self.data.count)
+        elif servei_path:
+            return reporter.list_by_servei_path(servei_path, self.data.count)
+        else:
+            return None
+
+    @property
+    def problemes_href(self):
+        servei = get_servei(self)
+        return servei.absolute_url() + "/problemes_list"
 
 
 class AddForm(base.AddForm):
-        form_fields = form.Fields(IProblemesPortlet)
-        label = _(u"Afegeix portlet de problemes")
-        description = _(u"Llistat de problemes associats a un Servei TIC")
+    schema = IProblemesPortlet
+    label = _(u"Afegeix portlet de problemes")
+    description = _(u"Llistat de problemes associats a un Servei TIC")
 
-        def create(self, data):
-            return Assignment(
-                count=data.get('count', 5),
-                showdata=data.get('showdata', True))
+    def create(self, data):
+        return Assignment(
+            count=data.get('count', 5),
+            showdata=data.get('showdata', True))
 
 
 class EditForm(base.EditForm):
-    form_fields = form.Fields(IProblemesPortlet)
+    schema = IProblemesPortlet
     label = _(u"Edita el portlet de problemes")
     description = _(u"Llistat de problemes associats amb un Servei TIC")

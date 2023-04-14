@@ -72,13 +72,13 @@ class Renderer(base.Renderer):
             el literal Obriu l'enllac en una finestra nova.
         """
         if open_in_new_window:
-            return '%s, %s' % (altortitle.decode('utf-8'), self.portal().translate(_('obrir_link_finestra_nova', default=u"(obriu en una finestra nova)")))
+            return '%s, %s' % (altortitle, self.portal().translate(_('obrir_link_finestra_nova', default=u"(obriu en una finestra nova)")))
         else:
-            return '%s' % (altortitle.decode('utf-8'))
+            return '%s' % (altortitle)
 
 
 class AddForm(base.AddForm):
-    form_fields = form.Fields(IBannersPortlet)
+    schema = IBannersPortlet
     label = _(u"Afegeix portlet de notifications")
     description = _(u"Aquest portlet mostra les notificacions")
 
@@ -88,6 +88,6 @@ class AddForm(base.AddForm):
 
 
 class EditForm(base.EditForm):
-    form_fields = form.Fields(IBannersPortlet)
+    schema = IBannersPortlet
     label = _(u"Edita el portlet de banners TIC")
     description = _(u"Aquest portlet mostra els banners TIC")

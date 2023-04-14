@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="genweb6.serveistic">
+
+<tal:comment replace="nothing">
+    Necesitamos definir previamente problemes
+</tal:comment>
+
+<metal:block metal:define-macro="content" i18n:domain="plone">
+
+    <ul class="list-group list-group-flush mb-2"
+        tal:condition="problemes">
+
+        <tal:item tal:repeat="problema problemes">
+
+            <li class="list-group-item ps-0">
+
+                <a class="d-block text-decoration-none"
+                   tal:attributes="href problema/url">
+
+                    <i class="bi bi-gear me-1"></i>
+
+                    <span tal:replace="problema/titol">Title</span>
+
+                </a>
+
+                <time class="smaller"
+                      tal:content="problema/data">
+                    Date
+                </time>
+
+            </li>
+
+        </tal:item>
+
+    </ul>
+
+    <p tal:condition="not:problemes"
+       i18n:translate="">No hi ha cap problema enregistrat relacionat amb aquest servei</p>
+
+</metal:block>
+
+</html>

@@ -24,13 +24,13 @@ from genweb6.serveistic.ws_client.problems import Client as ProblemesClient
 
 class NotificacioViewHelper(object):
 
-    def get_awesome_icon_class(self, notificacio):
+    def get_bootstrap_icon_class(self, notificacio):
         if notificacio["tipus"] == u"Avís":
-            return "fa fa-warning"
+            return "bi bi-exclamation-triangle-fill"
         elif notificacio["tipus"] == u"Notificació":
-            return "fa fa-info-circle"
+            return "bi bi-info-circle-fill"
         elif notificacio["tipus"] == u"Novetat":
-            return "fa fa-exclamation-circle"
+            return "bi bi-exclamation-circle-fill"
         else:
             return ""
 
@@ -133,11 +133,12 @@ class FacetValuesVocabularyBase(object):
         facets = [] if facets is None else facets
 
         vocabulary = []
+        # import ipdb; ipdb.set_trace()  # TODO: Revisar
         for facet in facets:
             if facet['faceta'] == self.facet_id and facet['valor']:
                 vocabulary.append(SimpleTerm(
-                    value=getUtility(IIDNormalizer).normalize(facet['valor'].encode('utf-8')),
-                    title=facet['valor' + self.lang].encode('utf-8') if facet['valor' + self.lang] else '-'
+                    value=getUtility(IIDNormalizer).normalize(facet['valor']),
+                    title=facet['valor' + self.lang] if facet['valor' + self.lang] else '-'
                 ))
 
         return SimpleVocabulary(vocabulary)

@@ -1,0 +1,17 @@
+body.portaltype-serveitic {
+
+    &.template-manage-homeportlets {
+
+        .menu_l2 {
+            display: none;
+        }
+
+        #content {
+
+            .col-md-10 {
+                width: 100%;
+                margin-top: 1rem;
+            }
+        }
+    }
+}

@@ -23,8 +23,6 @@
     <element value="plone.ownership" />
     <element value="plone.namefromtitle" />
     <element value="plone.excludefromnavigation" />
-    <element value="plone.multilingualbehavior" />
-    <element value="plone.selectablecontrainstypes" />
     <element value="plone.textindexer" />
     <element value="plone.versioning" />
   </property>

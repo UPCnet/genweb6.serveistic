@@ -95,6 +95,10 @@ body.template-facetednavigation_view {
 
         .card.shadow-sm {
             transition: ease-out .35s;
+
+            img {
+                height: 56px;
+            }
         }
 
         &:hover {

@@ -57,7 +57,7 @@ class Client(object):
             'login.username': login_username,
             'login.password': login_password,
             'Authorization': "Basic {0}".format(
-                base64.b64encode(':'.join([login_username, login_password])))}
+                base64.b64encode(':'.join([login_username, login_password]).encode("utf-8")))}
 
     def _parse_response_result(self, response):
         if 'resultat' not in response:

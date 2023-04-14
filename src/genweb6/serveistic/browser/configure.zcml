@@ -6,14 +6,7 @@
 
   <include file="viewlets.zcml" />
 
-  <browser:page
-    for="*"
-    name="sitemap"
-    layer="..interfaces.IGenweb6ServeisticLayer"
-    class=".views.SitemapView"
-    template="views_templates/sitemap.pt"
-    permission="zope.Public"
-    />
+  <include package=".macros" />
 
   <browser:page
     for="eea.facetednavigation.subtypes.interfaces.IFacetedNavigable"
@@ -34,10 +27,53 @@
     />
 
   <browser:page
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    name="touch_portlet_indicadors_reinstall_all"
+    layer="..interfaces.IGenweb6ServeisticLayer"
+    class=".views.PortletIndicadorsReinstallAll"
+    permission="cmf.ManagePortal"
+    />
+
+  <browser:page
     for="*"
     name="setup-serveistic"
     layer="..interfaces.IGenweb6ServeisticLayer"
     class=".setup.SetupServeistic"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    for="genweb6.serveistic.content.serveitic.serveitic.IServeiTIC"
+    name="indicadors_list"
+    layer="..interfaces.IGenweb6ServeisticLayer"
+    class=".indicador_views.Indicadors"
+    template="views_templates/indicadors.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    for="*"
+    name="update_indicadors"
+    layer="..interfaces.IGenweb6ServeisticLayer"
+    class=".indicador_views.UpdateIndicadors"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    for="genweb6.serveistic.content.serveitic.serveitic.IServeiTIC"
+    name="notificacions_list"
+    layer="..interfaces.IGenweb6ServeisticLayer"
+    class=".notificacio_views.Notificacions"
+    template="views_templates/notificacions.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    for="genweb6.serveistic.content.serveitic.serveitic.IServeiTIC"
+    name="problemes_list"
+    layer="..interfaces.IGenweb6ServeisticLayer"
+    class=".problema_views.Problemes"
+    template="views_templates/problemes.pt"
     permission="zope2.View"
     />
 
