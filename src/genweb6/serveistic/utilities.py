@@ -137,7 +137,6 @@ class FacetValuesVocabularyBase(object):
         facets = [] if facets is None else facets
 
         vocabulary = []
-        # import ipdb; ipdb.set_trace()  # TODO: Revisar
         for facet in facets:
             if facet['faceta'] == self.facet_id and facet['valor']:
                 vocabulary.append(SimpleTerm(
