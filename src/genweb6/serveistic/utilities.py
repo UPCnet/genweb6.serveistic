@@ -6,7 +6,9 @@ from Products.CMFPlone.browser.navtree import getNavigationRoot
 
 from plone import api
 from plone.i18n.normalizer.interfaces import IIDNormalizer
+from plone.memoize import ram
 from plone.registry.interfaces import IRegistry
+from time import time
 from zope.component import getUtility
 from zope.component import queryUtility
 from zope.interface import implementer
@@ -41,12 +43,14 @@ def build_vocabulary(values):
         for token, value in enumerate(values)])
 
 
+@ram.cache(lambda *args: time() // (24 * 60 * 60))
 def serveistic_config():
     """ Funcio que retorna les configuracions del controlpanel """
     registry = queryUtility(IRegistry)
     return registry.forInterface(IServeisTICControlPanelSettings)
 
 
+@ram.cache(lambda *args: time() // (24 * 60 * 60))
 def serveistic_facetes_config():
     """ Funcio que retorna les configuracions del controlpanel """
     registry = queryUtility(IRegistry)

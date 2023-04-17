@@ -6,6 +6,7 @@ from plone.app.registry.browser import controlpanel
 from plone.supermodel import model
 from z3c.form import button
 from zope import schema
+from zope.ramcache import ram 
 
 from genweb6.serveistic import _
 
@@ -138,8 +139,12 @@ class ServeisTICControlPanelSettingsForm(controlpanel.RegistryEditForm):
         if errors:
             self.status = self.formErrorsMessage
             return
+        
         self.fix_password_fields(data)
         self.applyChanges(data)
+        
+        ram.cache.clear()
+        
         IStatusMessage(self.request).addStatusMessage(_(u'Changes saved'),
                                                       'info')
         self.context.REQUEST.RESPONSE.redirect('@@serveistic-controlpanel')
