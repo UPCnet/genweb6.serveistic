@@ -75,7 +75,7 @@ class ServeisTICFacetesControlPanelSettingsForm(controlpanel.RegistryEditForm):
         data['facetes_table'] = replace_facetes_table
         self.applyChanges(data)
         
-        ram.cache.clear()
+        ram.caches.clear()
 
         IStatusMessage(self.request).addStatusMessage(_("Changes saved"), "info")
         self.request.response.redirect(self.request.getURL())

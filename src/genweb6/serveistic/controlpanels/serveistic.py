@@ -143,7 +143,7 @@ class ServeisTICControlPanelSettingsForm(controlpanel.RegistryEditForm):
         self.fix_password_fields(data)
         self.applyChanges(data)
         
-        ram.cache.clear()
+        ram.caches.clear()
         
         IStatusMessage(self.request).addStatusMessage(_(u'Changes saved'),
                                                       'info')
