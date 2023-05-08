@@ -202,12 +202,6 @@ folder_structure = (
         ()
     ),
     (
-        "Problemes", "Folder", True, False,
-        ('problema',),
-        None, None,
-        ()
-    ),
-    (
         "Banners", "BannerContainer", True, False,
         ('Banner',),
         None, None,

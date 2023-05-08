@@ -21,7 +21,6 @@ from genweb6.serveistic.config_helper import facets_vocabulary
 from genweb6.serveistic.content.serveitic.serveitic import IServeiTIC
 from genweb6.serveistic.controlpanels.serveistic import IServeisTICControlPanelSettings
 from genweb6.serveistic.controlpanels.facetes import IServeisTICFacetesControlPanelSettings
-from genweb6.serveistic.ws_client.problems import Client as ProblemesClient
 
 
 class NotificacioViewHelper(object):
@@ -63,13 +62,6 @@ def get_servei(self):
         if IServeiTIC.providedBy(obj):
             return obj
     return None
-
-
-def get_ws_problemes_client():
-    endpoint = serveistic_config().ws_problemes_endpoint
-    login_username = serveistic_config().ws_problemes_login_username
-    login_password = serveistic_config().ws_problemes_login_password
-    return ProblemesClient(endpoint, login_username, login_password)
 
 
 def get_ws_indicadors_client():

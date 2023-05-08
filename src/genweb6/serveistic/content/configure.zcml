@@ -43,13 +43,4 @@
         permission="cmf.ModifyPortalContent"
         />
 
-    <browser:page
-        name="view"
-        for="genweb6.serveistic.content.problema.problema.IProblema"
-        class=".problema.problema.View"
-        layer="..interfaces.IGenweb6ServeisticLayer"
-        permission="zope2.View"
-        template="problema/problema.pt"
-        />
-
 </configure>

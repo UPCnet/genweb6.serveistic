@@ -24,7 +24,6 @@ from genweb6.serveistic.indicators.updating import update_indicators_if_state
 from genweb6.serveistic.portlets.bannersportlet.bannersportlet import Assignment as BannersAssignment
 from genweb6.serveistic.portlets.indicadors.indicadors import Assignment as IndicadorsAssignment
 from genweb6.serveistic.portlets.notificacions.notificacions import Assignment as NotificacionsAssignment
-from genweb6.serveistic.portlets.problemes.problemes import Assignment as ProblemesAssignment
 from genweb6.serveistic.utilities import serveistic_config
 
 import logging
@@ -62,10 +61,6 @@ def initialize_servei(serveitic, event):
         assignments['notificacions'] = NotificacionsAssignment()
 
     assignments = get_portlet_assignments(serveitic, 'genweb.portlets.HomePortletManager4')
-    if 'problemes' not in assignments:
-        assignments['problemes'] = ProblemesAssignment()
-
-    assignments = get_portlet_assignments(serveitic, 'genweb.portlets.HomePortletManager5')
     if 'indicadors' not in assignments:
         assignments['indicadors'] = IndicadorsAssignment()
 

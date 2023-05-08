@@ -25,15 +25,6 @@
         />
 
     <plone:portlet
-        name="serveistic.portlets.problemes"
-        interface=".problemes.problemes.IProblemesPortlet"
-        assignment=".problemes.problemes.Assignment"
-        renderer=".problemes.problemes.Renderer"
-        addview=".problemes.problemes.AddForm"
-        editview=".problemes.problemes.EditForm"
-        />
-
-    <plone:portlet
         name="serveistic.portlets.indicadors"
         interface=".indicadors.indicadors.IIndicadorsPortlet"
         assignment=".indicadors.indicadors.Assignment"

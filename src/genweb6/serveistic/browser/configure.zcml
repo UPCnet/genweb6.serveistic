@@ -68,13 +68,4 @@
     permission="zope2.View"
     />
 
-  <browser:page
-    for="genweb6.serveistic.content.serveitic.serveitic.IServeiTIC"
-    name="problemes_list"
-    layer="..interfaces.IGenweb6ServeisticLayer"
-    class=".problema_views.Problemes"
-    template="views_templates/problemes.pt"
-    permission="zope2.View"
-    />
-
 </configure>
