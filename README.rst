@@ -15,7 +15,6 @@ Tipus de dades
 ##############
 
 * **serveitic**: servei oferit per la UPC.
-* **problema**: problema associat a un servei.
 * **notificaciotic**: notificació referent a un servei o al lloc web en general.
 
 Vistes
@@ -32,7 +31,6 @@ Portlets
 * **banners**: mostra banners associats a un servei o al portal en general.
 * **indicadors**: mostra propietats registrades com a indicadors d'un servei TIC.
 * **notificacios**: mostra les notificacions associades a un servei TIC.
-* **problemes**: mostra els problemes associats a un servei TIC.
 
 Per a recollir la informació sobre els indicadors i problemes associats als
 serveis, el paquet disposa de dos clients web configurables mitjançant la vista
