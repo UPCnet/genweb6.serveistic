@@ -60,6 +60,8 @@
         permission="genweb.webmaster"
         />
 
+    <include package="z3c.jbot" file="meta.zcml" />
+
     <browser:jbot
         directory="templates"
         layer=".interfaces.IGenweb6ServeisticLayer"
