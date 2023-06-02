@@ -443,7 +443,7 @@ msgstr "Valor ES"
 
 #: ./genweb/serveistic/setuphandlers.py:26
 msgid "category_freq_anual"
-msgstr ""
+msgstr "Anual"
 
 #: ./genweb/serveistic/setuphandlers.py:20
 msgid "category_freq_diaria"
