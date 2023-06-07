@@ -43,6 +43,14 @@
     />
 
   <browser:page
+    for="*"
+    name="setup-serveistic-in-folder"
+    layer="..interfaces.IGenweb6ServeisticLayer"
+    class=".setup.SetupServeisticInFolder"
+    permission="zope2.View"
+    />
+
+  <browser:page
     for="genweb6.serveistic.content.serveitic.serveitic.IServeiTIC"
     name="indicadors_list"
     layer="..interfaces.IGenweb6ServeisticLayer"

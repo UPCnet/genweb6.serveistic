@@ -9,6 +9,7 @@ from eea.facetednavigation.settings.interfaces import IDisableSmartFacets
 from eea.facetednavigation.settings.interfaces import IHidePloneLeftColumn
 from eea.facetednavigation.settings.interfaces import IHidePloneRightColumn
 from eea.facetednavigation.subtypes.interfaces import IFacetedNavigable
+from eea.facetednavigation.subtypes.interfaces import IPossibleFacetedNavigable
 from plone import api
 from zope.annotation.interfaces import IAnnotations
 from zope.component import queryMultiAdapter
@@ -30,6 +31,7 @@ class SetupServeistic(BrowserView):
             alsoProvides(portal_ca, IHidePloneLeftColumn)
             alsoProvides(portal_ca, IHidePloneRightColumn)
             alsoProvides(portal_ca, IDisableSmartFacets)
+            alsoProvides(portal_ca, IPossibleFacetedNavigable)
             IAnnotations(portal_ca)[ANNO_FACETED_LAYOUT] = "faceted-preview-items"
             environ = SnapshotImportContext(portal_ca, "utf-8")
             importer = queryMultiAdapter((portal_ca, environ), IBody)
@@ -42,6 +44,7 @@ class SetupServeistic(BrowserView):
             alsoProvides(portal_es, IHidePloneLeftColumn)
             alsoProvides(portal_es, IHidePloneRightColumn)
             alsoProvides(portal_es, IDisableSmartFacets)
+            alsoProvides(portal_es, IPossibleFacetedNavigable)
             IAnnotations(portal_es)[ANNO_FACETED_LAYOUT] = "faceted-preview-items"
             environ = SnapshotImportContext(portal_es, "utf-8")
             importer = queryMultiAdapter((portal_es, environ), IBody)
@@ -54,9 +57,32 @@ class SetupServeistic(BrowserView):
             alsoProvides(portal_en, IHidePloneLeftColumn)
             alsoProvides(portal_en, IHidePloneRightColumn)
             alsoProvides(portal_en, IDisableSmartFacets)
+            alsoProvides(portal_en, IPossibleFacetedNavigable)
             IAnnotations(portal_en)[ANNO_FACETED_LAYOUT] = "faceted-preview-items"
             environ = SnapshotImportContext(portal_en, "utf-8")
             importer = queryMultiAdapter((portal_en, environ), IBody)
             importer.body = open('{}/genweb6/serveistic/data/faceted_settings_en.xml'.format(egglocation), 'rb').read()
 
         return self.request.response.redirect(portal.absolute_url())
+
+
+class SetupServeisticInFolder(BrowserView):
+
+    def __call__(self):
+        context = self.context
+        context.setLayout('facetednavigation_view')
+
+        alsoProvides(context, IFacetedNavigable)
+        alsoProvides(context, IHidePloneLeftColumn)
+        alsoProvides(context, IHidePloneRightColumn)
+        alsoProvides(context, IDisableSmartFacets)
+        alsoProvides(context, IPossibleFacetedNavigable)
+
+        IAnnotations(context)[ANNO_FACETED_LAYOUT] = "faceted-preview-items"
+
+        environ = SnapshotImportContext(context, "utf-8")
+        importer = queryMultiAdapter((context, environ), IBody)
+        egglocation = pkg_resources.get_distribution('genweb6.serveistic').location
+        importer.body = open('{}/genweb6/serveistic/data/faceted_settings_ca.xml'.format(egglocation), 'rb').read()
+
+        return self.request.response.redirect(self.context.absolute_url())
