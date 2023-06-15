@@ -11,34 +11,33 @@ class headerViewlet(headerViewletBase):
 
   def custom_search(self):
     servei = get_servei(self)
-    
+
     if not servei:
       return {'literal': None,
               'path': None}
-    
+
     return {'literal': _(u'Cerca en el servei'),
             'path': '/'.join(servei.getPhysicalPath()[0:5])}
-    
+
 
 class heroViewlet(heroViewletBase):
-  
+
   def custom_hero(self):
     servei = get_servei(self)
-    
+
     if not servei:
-      return {'is_servei': False}     
-    
-    servei_url = '/'.join(servei.getPhysicalPath()[0:5]) 
-    
+      return {'is_servei': False}
+
+    servei_url = '/'.join(servei.getPhysicalPath()[0:5])
+
     if servei.image:
       image_url = servei_url + '/@@images/image'
     else:
       base_hero = self.getHeroHeader()
-      image_url = base_hero['src'] if base_hero else None
-      
+      image_url = base_hero if base_hero else None
+
     return {'is_servei': True,
             'is_current_servei': IServeiTIC.providedBy(self.context),
             'servei_url': servei_url,
             'image': image_url,
-            'title': servei.title} 
-    
+            'title': servei.title}
