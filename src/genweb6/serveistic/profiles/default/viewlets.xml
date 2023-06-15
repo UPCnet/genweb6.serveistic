@@ -30,7 +30,7 @@
   <viewlet name="plone.footer"/>
   <viewlet name="plone.colophon"/>
   <viewlet name="plone.site_actions"/>
-  <viewlet name="genweb.resources"/>
+  <viewlet name="genweb.resources.js"/>
  </order>
  <order manager="plone.portalheader" skinname="Plone Default">
   <viewlet name="plone.favicon"/>
