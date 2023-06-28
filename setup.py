@@ -58,7 +58,7 @@ setup(
         'z3c.form',
         'eea.facetednavigation',
         'simplejson',
-        'google-api-python-client',
+        # 'google-api-python-client',
         'oauth2client',
         'pyOpenSSL',
     ],
