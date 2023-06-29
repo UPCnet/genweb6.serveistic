@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<object name="portal_catalog">
+
+  <column value="tipus" remove="True" />
+  <column value="website_url" remove="True" />
+
+</object>
