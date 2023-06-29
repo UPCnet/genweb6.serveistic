@@ -2,7 +2,6 @@
 <object name="portal_catalog">
 
   <column value="tipus"/>
-  <column value="image"/>
   <column value="website_url"/>
 
 </object>
