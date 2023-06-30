@@ -44,7 +44,7 @@ class FacetedContainerView(FacetedContainerView, NotificacioViewHelper):
             benvingut_workflow = wf_tool.getWorkflowsFor(benvingut)[0].id
             benvingut_status = wf_tool.getStatusOf(benvingut_workflow, benvingut)
             if workflows['states'][benvingut_status['review_state']].id == 'published':
-                return benvingut.text.raw
+                return benvingut.text.output
             else:
                 return None
         except KeyError:
