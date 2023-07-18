@@ -12,7 +12,7 @@
          tal:attributes="class style"
          tal:define="hero_title python:getattr(header_config, 'html_title_' + pref_lang, '');">
 
-      <img alt="" title="" 
+      <img alt="" title=""
            tal:define="heroImage custom_hero/image"
            tal:condition="heroImage"
            tal:attributes="src heroImage;
@@ -45,20 +45,33 @@
 
       </div>
 
-      <div class="servei_title">
+      <div class="servei_zone">
 
-        <h2>
-        
-          <a class="text-decoration-none"
-             tal:attributes="href custom_hero/servei_url"
-             tal:content="custom_hero/title"></a>
-      
-        </h2>
+        <div class="container d-flex justify-content-between align-items-center"
+             tal:define="render_serveinav view/render_serveinav">
+
+          <h2 class="text-primary me-4">
+
+            <a class="text-decoration-none"
+              tal:attributes="href custom_hero/servei_url"
+              tal:content="custom_hero/title"></a>
+
+          </h2>
+
+          <ul class="navbar-nav mb-2 mb-lg-0 d-flex flex-row justify-content-end"
+              id="portal-serveinav"
+              tal:condition="render_serveinav">
+
+            <navtree tal:replace="structure render_serveinav" />
+
+          </ul>
+
+        </div>
 
       </div>
 
     </div>
-    
+
   </tal:hero_custom>
 
 </tal:hero_serveistic>

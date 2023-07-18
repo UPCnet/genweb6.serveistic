@@ -1,133 +1,319 @@
-/* line 5, ../scss/_content_serveitic.scss */
+/* line 3, ../scss/_content_serveitic.scss */
+body.portaltype-serveitic div#social_tags {
+  margin-top: 0;
+}
+/* line 9, ../scss/_content_serveitic.scss */
 body.portaltype-serveitic.template-manage-homeportlets .menu_l2 {
   display: none;
 }
-/* line 11, ../scss/_content_serveitic.scss */
+/* line 15, ../scss/_content_serveitic.scss */
 body.portaltype-serveitic.template-manage-homeportlets #content .col-md-10 {
   width: 100%;
   margin-top: 1rem;
 }
 
 /* line 3, ../scss/_hero.scss */
-#hero .servei_title {
+#hero .servei_zone {
   order: 2;
-  padding: 0.5em 4em;
+  padding: 0.5em 0em;
   text-align: left;
   border-bottom: 1px solid var(--bs-gray-300);
 }
 @media (max-width: 992px) {
   /* line 3, ../scss/_hero.scss */
-  #hero .servei_title {
+  #hero .servei_zone {
     padding: 0.5em 1em;
   }
 }
-/* line 13, ../scss/_hero.scss */
-#hero .servei_title h2 {
-  font-size: 1.75rem;
+@media (max-width: 992px) {
+  /* line 13, ../scss/_hero.scss */
+  #hero .servei_zone .container {
+    padding: 0;
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
-/* line 16, ../scss/_hero.scss */
-#hero .servei_title h2 a {
+/* line 21, ../scss/_hero.scss */
+#hero .servei_zone .container h2 {
+  font-size: 1.75rem;
+  max-width: 40%;
+}
+@media (max-width: 992px) {
+  /* line 21, ../scss/_hero.scss */
+  #hero .servei_zone .container h2 {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+/* line 30, ../scss/_hero.scss */
+#hero .servei_zone .container h2 a {
   color: var(---bs-black);
 }
-/* line 19, ../scss/_hero.scss */
-#hero .servei_title h2 a:hover {
+/* line 33, ../scss/_hero.scss */
+#hero .servei_zone .container h2 a:hover {
   color: var(--bs-primary);
+}
+/* line 39, ../scss/_hero.scss */
+#hero .servei_zone .container #portal-serveinav {
+  flex-direction: row;
+}
+@media (max-width: 992px) {
+  /* line 39, ../scss/_hero.scss */
+  #hero .servei_zone .container #portal-serveinav {
+    justify-content: flex-start;
+    margin-left: -18px;
+  }
+}
+/* line 51, ../scss/_hero.scss */
+#hero .servei_zone .container #portal-serveinav > .nav-item.current > a {
+  padding: 6px 3px 3px 3px !important;
+  border-bottom: 2px solid var(--bs-primary);
+}
+/* line 58, ../scss/_hero.scss */
+#hero .servei_zone .container #portal-serveinav .nav-item {
+  font-weight: 400;
+  padding: 0 15px 0 15px;
+}
+/* line 62, ../scss/_hero.scss */
+#hero .servei_zone .container #portal-serveinav .nav-item a {
+  padding: 6px 0px 6px 0px;
+}
+/* line 67, ../scss/_hero.scss */
+#hero .servei_zone .container #portal-serveinav > li.has_subtree {
+  display: inline;
+  vertical-align: middle;
+  padding: 0 0 0 15px;
+  border: 1px solid transparent;
+}
+/* line 73, ../scss/_hero.scss */
+#hero .servei_zone .container #portal-serveinav > li.has_subtree.nav-action, #hero .servei_zone .container #portal-serveinav > li.has_subtree.nav-lang {
+  padding: 0 15px 0 15px;
+}
+/* line 78, ../scss/_hero.scss */
+#hero .servei_zone .container #portal-serveinav > li.has_subtree a.nav-link {
+  padding: 6px 3px 6px 3px;
+}
+/* line 82, ../scss/_hero.scss */
+#hero .servei_zone .container #portal-serveinav > li.has_subtree > a.nav-link {
+  float: left;
+}
+/* line 86, ../scss/_hero.scss */
+#hero .servei_zone .container #portal-serveinav > li.has_subtree > label {
+  position: relative;
+  height: 2.1em;
+  margin-top: 2px;
+}
+@media (max-width: 992px) {
+  /* line 86, ../scss/_hero.scss */
+  #hero .servei_zone .container #portal-serveinav > li.has_subtree > label {
+    width: 2em;
+  }
+}
+/* line 95, ../scss/_hero.scss */
+#hero .servei_zone .container #portal-serveinav > li.has_subtree > label::after {
+  font-family: bootstrap-icons !important;
+  content: "\f282";
+  transition: ease-in .35s transform;
+  font-size: .75em;
+}
+/* line 103, ../scss/_hero.scss */
+#hero .servei_zone .container #portal-serveinav > li.has_subtree:hover {
+  background-color: var(--bs-white);
+  border: 1px solid #eee;
+  border-bottom: 0;
+}
+/* line 108, ../scss/_hero.scss */
+#hero .servei_zone .container #portal-serveinav > li.has_subtree:hover:after {
+  content: "";
+  width: 100%;
+  height: 5px;
+  background: var(--bs-white);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+/* line 119, ../scss/_hero.scss */
+#hero .servei_zone .container #portal-serveinav > li.has_subtree:hover > label:after, #hero .servei_zone .container #portal-serveinav > li.has_subtree:hover > a {
+  color: var(--bs-primary-hover) !important;
+}
+/* line 126, ../scss/_hero.scss */
+#hero .servei_zone .container #portal-serveinav > li.has_subtree:hover > label::after {
+  transform: rotate(180deg);
+}
+/* line 132, ../scss/_hero.scss */
+#hero .servei_zone .container #portal-serveinav > li.has_subtree ul.dropdown {
+  top: 38px;
+  border: 1px solid #eee;
+  right: -1px;
+  width: max-content;
+  max-width: 350px;
+  min-width: 115%;
+  height: auto;
+  max-height: 50dvh;
+  overflow-y: auto;
+  background-color: var(--bs-white);
+  box-shadow: 0 7px 8px #00000033;
+  position: absolute;
+  z-index: 1000;
+}
+/* line 147, ../scss/_hero.scss */
+#hero .servei_zone .container #portal-serveinav > li.has_subtree ul.dropdown .nav-item {
+  background-color: #fff;
+  text-align: left;
+  border-bottom: 0px solid transparent;
+  margin-bottom: 0.25rem;
+  margin-top: 0.25rem;
+  border-left: 2px solid var(--bs-gray-dark);
+  margin-left: 5px;
+}
+/* line 156, ../scss/_hero.scss */
+#hero .servei_zone .container #portal-serveinav > li.has_subtree ul.dropdown .nav-item.current, #hero .servei_zone .container #portal-serveinav > li.has_subtree ul.dropdown .nav-item:hover {
+  border-left: 2px solid var(--bs-primary);
+}
+/* line 163, ../scss/_hero.scss */
+#hero .servei_zone .container #portal-serveinav > li.has_subtree ul.dropdown .nav-item.current .nav-link {
+  font-weight: 600;
+}
+/* line 168, ../scss/_hero.scss */
+#hero .servei_zone .container #portal-serveinav > li.has_subtree ul.dropdown .nav-item:hover {
+  background-color: #fff !important;
+}
+/* line 171, ../scss/_hero.scss */
+#hero .servei_zone .container #portal-serveinav > li.has_subtree ul.dropdown .nav-item:hover a {
+  color: var(--bs-gray-dark) !important;
+}
+/* line 174, ../scss/_hero.scss */
+#hero .servei_zone .container #portal-serveinav > li.has_subtree ul.dropdown .nav-item:hover a:hover {
+  color: var(--bs-primary) !important;
+}
+/* line 180, ../scss/_hero.scss */
+#hero .servei_zone .container #portal-serveinav > li.has_subtree ul.dropdown .nav-item a.nav-link {
+  color: var(--bs-body-color);
+  font-weight: 400;
+  font-size: 16px;
+}
+/* line 185, ../scss/_hero.scss */
+#hero .servei_zone .container #portal-serveinav > li.has_subtree ul.dropdown .nav-item a.nav-link:hover {
+  color: var(--bs-primary);
+}
+/* line 192, ../scss/_hero.scss */
+#hero .servei_zone .container #portal-serveinav > li.has_subtree ul.dropdown .nav-item li.has_subtree ul, #hero .servei_zone .container #portal-serveinav > li.has_subtree ul.dropdown .nav-item li.has_subtree > label {
+  display: none;
+}
+/* line 204, ../scss/_hero.scss */
+#hero .servei_zone .container #portal-serveinav > li.has_subtree > ul li.nav-item::last-child {
+  border-bottom: 0px solid;
+}
+/* line 208, ../scss/_hero.scss */
+#hero .servei_zone .container #portal-serveinav > li.has_subtree > ul li.nav-item a.nav-link {
+  min-width: auto;
+  padding-right: 0em;
+  font-weight: normal;
+  line-height: 18px;
 }
 
 /* line 1, ../scss/_homepage.scss */
 body.template-facetednavigation_view {
+  /* BREADCRUMB + SOCIAL + TITULO */
   /* BUSCADOR */
   /* POPULARES */
   /* FILTROS */
   /* ITEM */
 }
-/* line 7, ../scss/_homepage.scss */
+/* line 5, ../scss/_homepage.scss */
+body.template-facetednavigation_view #content > header > h1,
+body.template-facetednavigation_view #social_tags,
+body.template-facetednavigation_view #portal-breadcrumbs {
+  display: none;
+}
+/* line 15, ../scss/_homepage.scss */
 body.template-facetednavigation_view .faceted-text-widget fieldset {
   border: 0px solid transparent;
   padding: 1rem 0;
 }
-/* line 15, ../scss/_homepage.scss */
+/* line 23, ../scss/_homepage.scss */
 body.template-facetednavigation_view #popular {
   width: calc(100dvw - 75px);
   left: calc(-1 * (100dvw - 100% - var(--plone-toolbar-width-collapsed) - 15px) / 2);
 }
-/* line 22, ../scss/_homepage.scss */
+/* line 30, ../scss/_homepage.scss */
 body.template-facetednavigation_view.plone-toolbar-left-expanded #popular {
   width: calc(100dvw - 235px);
   left: calc(-1 * (100dvw - 100% - var(--plone-toolbar-width) - 15px) / 2);
 }
-/* line 30, ../scss/_homepage.scss */
+/* line 38, ../scss/_homepage.scss */
 body.template-facetednavigation_view #center-top-area {
   display: none;
 }
-/* line 33, ../scss/_homepage.scss */
+/* line 41, ../scss/_homepage.scss */
 body.template-facetednavigation_view #center-top-area:has(li:not(.faceted-checkbox-item-disabled)) {
   display: block;
 }
-/* line 39, ../scss/_homepage.scss */
+/* line 47, ../scss/_homepage.scss */
 body.template-facetednavigation_view #center-top-area #toggleFilters:not(.collapsed) i.bi-chevron-down:before {
   transform: rotate(180deg);
 }
-/* line 44, ../scss/_homepage.scss */
+/* line 52, ../scss/_homepage.scss */
 body.template-facetednavigation_view #center-top-area div.faceted-center-widgets {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
-/* line 50, ../scss/_homepage.scss */
+/* line 58, ../scss/_homepage.scss */
 body.template-facetednavigation_view #center-top-area div.faceted-center-widgets div.faceted-checkboxes-widget {
   display: none;
   flex-grow: 1;
   width: calc(calc(100% / 4) - calc(3rem / 4));
 }
 @media (max-width: 992px) {
-  /* line 50, ../scss/_homepage.scss */
+  /* line 58, ../scss/_homepage.scss */
   body.template-facetednavigation_view #center-top-area div.faceted-center-widgets div.faceted-checkboxes-widget {
     width: calc(calc(100% / 3) - calc(2rem / 3));
   }
 }
 @media (max-width: 768px) {
-  /* line 50, ../scss/_homepage.scss */
+  /* line 58, ../scss/_homepage.scss */
   body.template-facetednavigation_view #center-top-area div.faceted-center-widgets div.faceted-checkboxes-widget {
     width: calc(calc(100% / 2) - calc(1rem / 2));
   }
 }
-/* line 63, ../scss/_homepage.scss */
+/* line 71, ../scss/_homepage.scss */
 body.template-facetednavigation_view #center-top-area div.faceted-center-widgets div.faceted-checkboxes-widget:has(li:not(.faceted-checkbox-item-disabled)) {
   display: flex;
 }
-/* line 67, ../scss/_homepage.scss */
+/* line 75, ../scss/_homepage.scss */
 body.template-facetednavigation_view #center-top-area div.faceted-center-widgets div.faceted-checkboxes-widget li {
   display: flex;
   gap: 0.5rem;
   align-items: flex-start;
 }
-/* line 72, ../scss/_homepage.scss */
+/* line 80, ../scss/_homepage.scss */
 body.template-facetednavigation_view #center-top-area div.faceted-center-widgets div.faceted-checkboxes-widget li.faceted-checkbox-item-disabled.faceted-checkbox-item-zerocount {
   display: none;
 }
-/* line 77, ../scss/_homepage.scss */
+/* line 85, ../scss/_homepage.scss */
 body.template-facetednavigation_view #center-top-area div.faceted-center-widgets div.faceted-checkboxes-widget input {
   min-width: 18px;
 }
-/* line 80, ../scss/_homepage.scss */
+/* line 88, ../scss/_homepage.scss */
 body.template-facetednavigation_view #center-top-area div.faceted-center-widgets div.faceted-checkboxes-widget input + label {
   line-height: 1.5rem;
 }
-/* line 83, ../scss/_homepage.scss */
+/* line 91, ../scss/_homepage.scss */
 body.template-facetednavigation_view #center-top-area div.faceted-center-widgets div.faceted-checkboxes-widget input + label span {
   color: var(--bs-gray-500);
 }
-/* line 96, ../scss/_homepage.scss */
+/* line 104, ../scss/_homepage.scss */
 body.template-facetednavigation_view .preview-item .card.shadow-sm {
   transition: ease-out .35s;
 }
-/* line 99, ../scss/_homepage.scss */
+/* line 107, ../scss/_homepage.scss */
 body.template-facetednavigation_view .preview-item .card.shadow-sm img {
   height: 56px;
 }
-/* line 106, ../scss/_homepage.scss */
+/* line 114, ../scss/_homepage.scss */
 body.template-facetednavigation_view .preview-item:hover .card.shadow-sm {
   box-shadow: 0 0.5rem 1rem #00000026;
 }

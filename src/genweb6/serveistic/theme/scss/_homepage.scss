@@ -1,5 +1,13 @@
 body.template-facetednavigation_view {
 
+    /* BREADCRUMB + SOCIAL + TITULO */
+
+    #content > header > h1,
+    #social_tags,
+    #portal-breadcrumbs {
+        display: none;
+    }
+
     /* BUSCADOR */
 
     .faceted-text-widget {

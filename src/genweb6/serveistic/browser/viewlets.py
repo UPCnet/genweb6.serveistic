@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from genweb6.core.browser.viewlets import GWGlobalSectionsViewlet
 from genweb6.core.browser.viewlets import headerViewlet as headerViewletBase
 from genweb6.core.browser.viewlets import heroViewlet as heroViewletBase
 from genweb6.serveistic import _
@@ -9,8 +10,12 @@ from genweb6.serveistic.utilities import get_servei
 
 class headerViewlet(headerViewletBase):
 
+  @property
+  def servei(self):
+    return get_servei(self)
+
   def custom_search(self):
-    servei = get_servei(self)
+    servei = self.servei
 
     if not servei:
       return {'literal': None,
@@ -19,11 +24,18 @@ class headerViewlet(headerViewletBase):
     return {'literal': _(u'Cerca en el servei'),
             'path': '/'.join(servei.getPhysicalPath()[0:5])}
 
+  def render_serveinav(self):
+    return self.build_tree('/'.join(self.servei.getPhysicalPath()))
 
-class heroViewlet(heroViewletBase):
+
+class heroViewlet(heroViewletBase, GWGlobalSectionsViewlet):
+
+  @property
+  def servei(self):
+    return get_servei(self)
 
   def custom_hero(self):
-    servei = get_servei(self)
+    servei = self.servei
 
     if not servei:
       return {'is_servei': False}
@@ -41,3 +53,10 @@ class heroViewlet(heroViewletBase):
             'servei_url': servei_url,
             'image': image_url,
             'title': servei.title}
+
+  @property
+  def navtree_path(self):
+      return '/'.join(self.servei.getPhysicalPath())
+
+  def render_serveinav(self):
+    return self.build_tree('/'.join(self.servei.getPhysicalPath()))
