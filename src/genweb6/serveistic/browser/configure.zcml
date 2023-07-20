@@ -39,7 +39,7 @@
     name="setup-serveistic"
     layer="..interfaces.IGenweb6ServeisticLayer"
     class=".setup.SetupServeistic"
-    permission="zope2.View"
+    permission="cmf.ManagePortal"
     />
 
   <browser:page
@@ -47,7 +47,7 @@
     name="setup-serveistic-in-folder"
     layer="..interfaces.IGenweb6ServeisticLayer"
     class=".setup.SetupServeisticInFolder"
-    permission="zope2.View"
+    permission="cmf.ModifyPortalContent"
     />
 
   <browser:page
