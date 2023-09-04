@@ -24,9 +24,6 @@ class headerViewlet(headerViewletBase):
     return {'literal': _(u'Cerca en el servei'),
             'path': '/'.join(servei.getPhysicalPath()[0:5])}
 
-  def render_serveinav(self):
-    return self.build_tree('/'.join(self.servei.getPhysicalPath()))
-
 
 class heroViewlet(heroViewletBase, GWGlobalSectionsViewlet):
 
@@ -40,7 +37,7 @@ class heroViewlet(heroViewletBase, GWGlobalSectionsViewlet):
     if not servei:
       return {'is_servei': False}
 
-    servei_url = '/'.join(servei.getPhysicalPath()[0:5])
+    servei_url = servei.absolute_url()
 
     if servei.image:
       image_url = servei_url + '/@@images/image'
@@ -56,7 +53,7 @@ class heroViewlet(heroViewletBase, GWGlobalSectionsViewlet):
 
   @property
   def navtree_path(self):
-      return '/'.join(self.servei.getPhysicalPath())
+    return '/'.join(self.servei.getPhysicalPath())
 
   def render_serveinav(self):
     return self.build_tree('/'.join(self.servei.getPhysicalPath()))
