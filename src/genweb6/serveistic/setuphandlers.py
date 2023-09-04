@@ -107,10 +107,10 @@ def add_default_settings():
         with open(facets_file_path, 'r') as facets_file:
             try:
                 settings.facetes_table = [
-                    {'faceta': row[0].decode('utf-8'),
-                     'valor': row[1].decode('utf-8'),
-                     'valor_es': row[2].decode('utf-8'),
-                     'valor_en': row[3].decode('utf-8'),
+                    {'faceta': row[0],
+                     'valor': row[1],
+                     'valor_es': row[2],
+                     'valor_en': row[3],
                      }
                     for row in csv.reader(
                         facets_file, delimiter=',', quotechar='"')]
@@ -158,5 +158,3 @@ def setupVarious(context):
 
     add_default_settings()
     add_default_folders()
-    
-    

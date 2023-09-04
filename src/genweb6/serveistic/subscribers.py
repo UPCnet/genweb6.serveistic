@@ -69,7 +69,7 @@ def initialize_servei(serveitic, event):
     for folder_data in folder_structure:
         try:
             if isinstance(folder_data[0], str):
-                flattened = unicodedata.normalize('NFKD', folder_data[0].decode('utf-8')).encode('ascii', errors='ignore')
+                flattened = unicodedata.normalize('NFKD', folder_data[0]).encode('ascii', errors='ignore')
             else:
                 flattened = unicodedata.normalize('NFKD', folder_data[0]).encode('ascii', errors='ignore')
 
