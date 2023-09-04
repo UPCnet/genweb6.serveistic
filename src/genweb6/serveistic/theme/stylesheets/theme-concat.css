@@ -157,7 +157,14 @@ body.portaltype-serveitic.template-manage-homeportlets #content .col-md-10 {
   position: absolute;
   z-index: 1000;
 }
-/* line 147, ../scss/_hero.scss */
+@media (max-width: 992px) {
+  /* line 132, ../scss/_hero.scss */
+  #hero .servei_zone .container #portal-serveinav > li.has_subtree ul.dropdown {
+    right: unset;
+    left: -1px;
+  }
+}
+/* line 152, ../scss/_hero.scss */
 #hero .servei_zone .container #portal-serveinav > li.has_subtree ul.dropdown .nav-item {
   background-color: #fff;
   text-align: left;
@@ -167,45 +174,45 @@ body.portaltype-serveitic.template-manage-homeportlets #content .col-md-10 {
   border-left: 2px solid var(--bs-gray-dark);
   margin-left: 5px;
 }
-/* line 156, ../scss/_hero.scss */
+/* line 161, ../scss/_hero.scss */
 #hero .servei_zone .container #portal-serveinav > li.has_subtree ul.dropdown .nav-item.current, #hero .servei_zone .container #portal-serveinav > li.has_subtree ul.dropdown .nav-item:hover {
   border-left: 2px solid var(--bs-primary);
 }
-/* line 163, ../scss/_hero.scss */
+/* line 168, ../scss/_hero.scss */
 #hero .servei_zone .container #portal-serveinav > li.has_subtree ul.dropdown .nav-item.current .nav-link {
   font-weight: 600;
 }
-/* line 168, ../scss/_hero.scss */
+/* line 173, ../scss/_hero.scss */
 #hero .servei_zone .container #portal-serveinav > li.has_subtree ul.dropdown .nav-item:hover {
   background-color: #fff !important;
 }
-/* line 171, ../scss/_hero.scss */
+/* line 176, ../scss/_hero.scss */
 #hero .servei_zone .container #portal-serveinav > li.has_subtree ul.dropdown .nav-item:hover a {
   color: var(--bs-gray-dark) !important;
 }
-/* line 174, ../scss/_hero.scss */
+/* line 179, ../scss/_hero.scss */
 #hero .servei_zone .container #portal-serveinav > li.has_subtree ul.dropdown .nav-item:hover a:hover {
   color: var(--bs-primary) !important;
 }
-/* line 180, ../scss/_hero.scss */
+/* line 185, ../scss/_hero.scss */
 #hero .servei_zone .container #portal-serveinav > li.has_subtree ul.dropdown .nav-item a.nav-link {
   color: var(--bs-body-color);
   font-weight: 400;
   font-size: 16px;
 }
-/* line 185, ../scss/_hero.scss */
+/* line 190, ../scss/_hero.scss */
 #hero .servei_zone .container #portal-serveinav > li.has_subtree ul.dropdown .nav-item a.nav-link:hover {
   color: var(--bs-primary);
 }
-/* line 192, ../scss/_hero.scss */
+/* line 197, ../scss/_hero.scss */
 #hero .servei_zone .container #portal-serveinav > li.has_subtree ul.dropdown .nav-item li.has_subtree ul, #hero .servei_zone .container #portal-serveinav > li.has_subtree ul.dropdown .nav-item li.has_subtree > label {
   display: none;
 }
-/* line 204, ../scss/_hero.scss */
+/* line 209, ../scss/_hero.scss */
 #hero .servei_zone .container #portal-serveinav > li.has_subtree > ul li.nav-item::last-child {
   border-bottom: 0px solid;
 }
-/* line 208, ../scss/_hero.scss */
+/* line 213, ../scss/_hero.scss */
 #hero .servei_zone .container #portal-serveinav > li.has_subtree > ul li.nav-item a.nav-link {
   min-width: auto;
   padding-right: 0em;

@@ -144,6 +144,11 @@
             position: absolute;
             z-index: 1000;
 
+            @media (max-width: 992px) {
+              right: unset;
+              left: -1px;
+            }
+
             .nav-item {
               background-color: #fff;
               text-align: left;
