@@ -4,7 +4,9 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="genweb6.serveistic">
 
-<metal:block metal:define-macro="content" i18n:domain="plone">
+<metal:block metal:define-macro="content" i18n:domain="plone"
+             tal:define="plone_view context/@@plone;
+                         normalizeString nocall:plone_view/normalizeString;">
 
     <div class="mb-4" tal:repeat="indicador indicadors">
 
@@ -16,7 +18,7 @@
             <tal:item tal:repeat="category indicador/categories">
 
                 <div class="accordion-item"
-                     tal:define="category_id python:category['identifier'].lower();
+                     tal:define="category_id python:normalizeString(category['identifier'].lower());
                                  category_id_collpase string:${category_id}-collapse">
 
                     <h2 class="accordion-header"
