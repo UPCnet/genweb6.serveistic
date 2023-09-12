@@ -14,7 +14,7 @@ long_description = '\n\n'.join([
 
 setup(
     name='genweb6.serveistic',
-    version='1.0a1',
+    version='1.0',
     description=" Genweb 6 Serveistic package",
     long_description=long_description,
     # Get more from https://pypi.org/classifiers/
