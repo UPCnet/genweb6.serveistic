@@ -28,6 +28,15 @@
         name="tipus"
         />
 
+    <adapter
+        for="Products.CMFCore.interfaces.IFolderish
+             zope.publisher.interfaces.browser.IDefaultBrowserLayer
+             plone.dexterity.interfaces.IDexterityFTI"
+        provides="zope.publisher.interfaces.browser.IBrowserPage"
+        factory=".notificaciotic.notificaciotic.AddView"
+        name="notificaciotic"
+        />
+
     <class class=".notificaciotic.notificaciotic.AddView">
         <require
             permission="cmf.AddPortalContent"
