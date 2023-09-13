@@ -57,12 +57,12 @@ def tipus(context):
 
 
 class AddForm(add.DefaultAddForm):
+    portal_type = 'notificaciotic'
 
     def updateFields(self):
-        super(AddForm, self).updateWidgets()
+        super(AddForm, self).updateFields()
         if not get_servei(self):
-            self.widgets['is_general'].mode = interfaces.HIDDEN_MODE
-            self.widgets['is_general'].value = True
+            self.fields = self.fields.omit('is_general')
 
 
 class AddView(add.DefaultAddView):
@@ -72,9 +72,9 @@ class AddView(add.DefaultAddView):
 class EditForm(edit.DefaultEditForm):
 
     def updateFields(self):
-        super(EditForm, self).updateWidgets()
+        super(EditForm, self).updateFields()
         if not get_servei(self):
-            self.widgets['is_general'].mode = interfaces.HIDDEN_MODE
+            self.fields = self.fields.omit('is_general')
 
 
 @implementer(INotificacioTIC)
