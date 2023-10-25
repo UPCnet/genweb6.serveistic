@@ -55,5 +55,9 @@ class heroViewlet(heroViewletBase, GWGlobalSectionsViewlet):
   def navtree_path(self):
     return '/'.join(self.servei.getPhysicalPath())
 
+  @property
+  def portal_tabs(self):
+    return []
+
   def render_serveinav(self):
     return self.build_tree('/'.join(self.servei.getPhysicalPath()))
