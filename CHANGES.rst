@@ -2,11 +2,11 @@ Changelog
 =========
 
 
-1.2 (unreleased)
+1.2 (2023-10-27)
 ----------------
 
-- Nothing changed yet.
-
+* Fix menu serveistic [Iago López]
+* Fix grunt issues [Ruben Padilla Mateu]
 
 1.1 (2023-09-14)
 ----------------
