@@ -59,5 +59,8 @@ class heroViewlet(heroViewletBase, GWGlobalSectionsViewlet):
   def portal_tabs(self):
     return []
 
+  def customize_query(self, query):
+      query.pop('Language')
+
   def render_serveinav(self):
     return self.build_tree('/'.join(self.servei.getPhysicalPath()))
