@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.3 (unreleased)
+1.3 (2023-11-13)
 ----------------
 
-- Nothing changed yet.
-
+* No controlar idioma enn el menu del serveistic [Iago López]
 
 1.2 (2023-10-27)
 ----------------
