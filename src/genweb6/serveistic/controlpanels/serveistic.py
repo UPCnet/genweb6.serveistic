@@ -3,10 +3,12 @@
 from Products.statusmessages.interfaces import IStatusMessage
 
 from plone.app.registry.browser import controlpanel
+from plone.autoform.directives import read_permission
+from plone.autoform.directives import write_permission
 from plone.supermodel import model
 from z3c.form import button
 from zope import schema
-from zope.ramcache import ram 
+from zope.ramcache import ram
 
 from genweb6.serveistic import _
 
@@ -103,6 +105,22 @@ class IServeisTICControlPanelSettings(model.Schema):
         required=False
     )
 
+    # MIGRACIO
+
+    model.fieldset(
+        'Migration',
+        _(u'Migració'),
+        fields=['enable_suscribers'],
+    )
+
+    read_permission(enable_suscribers='genweb.webmaster')
+    write_permission(enable_suscribers='genweb.manager')
+    enable_suscribers = schema.Bool(
+        title=_(u'Habilitar notificacions'),
+        required=False,
+        default=False,
+    )
+
 
 class ServeisTICControlPanelSettingsForm(controlpanel.RegistryEditForm):
 
@@ -139,12 +157,12 @@ class ServeisTICControlPanelSettingsForm(controlpanel.RegistryEditForm):
         if errors:
             self.status = self.formErrorsMessage
             return
-        
+
         self.fix_password_fields(data)
         self.applyChanges(data)
-        
+
         ram.caches.clear()
-        
+
         IStatusMessage(self.request).addStatusMessage(_(u'Changes saved'),
                                                       'info')
         self.context.REQUEST.RESPONSE.redirect('@@serveistic-controlpanel')

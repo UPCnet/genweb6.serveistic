@@ -9,6 +9,7 @@ from plone.dexterity.utils import createContentInContainer
 from plone.i18n.normalizer.interfaces import IIDNormalizer
 from plone.portlets.interfaces import IPortletAssignmentMapping
 from plone.portlets.interfaces import IPortletManager
+from plone.registry.interfaces import IRegistry
 from zope.component import getMultiAdapter
 from zope.component import getUtility
 from zope.component import queryUtility
@@ -18,6 +19,7 @@ from genweb6.core.indicators import RegistryException
 from genweb6.core.indicators import ReporterException
 from genweb6.serveistic.content.serveitic.serveitic import IInitializedServeiTIC
 from genweb6.serveistic.content.serveitic.serveitic import IServeiTIC
+from genweb6.serveistic.controlpanels.serveistic import IServeisTICControlPanelSettings
 from genweb6.serveistic.data.folder_structure import folder_structure
 from genweb6.serveistic.indicators.updating import update_indicators
 from genweb6.serveistic.indicators.updating import update_indicators_if_state
@@ -34,6 +36,10 @@ logger = logging.getLogger(name='genweb6.serveistic.indicators')
 
 def Added(content, event):
     """ MAX hooks main handler """
+    registry = queryUtility(IRegistry)
+    tfe_tool = registry.forInterface(IServeisTICControlPanelSettings)
+    if not tfe_tool.enable_suscribers:
+        return
 
     servei = findContainerServei(content)
     if not servei:
@@ -45,6 +51,11 @@ def Added(content, event):
 
 
 def initialize_servei(serveitic, event):
+    registry = queryUtility(IRegistry)
+    tfe_tool = registry.forInterface(IServeisTICControlPanelSettings)
+    if not tfe_tool.enable_suscribers:
+        return
+
     # If it is a copy do not execute
     if 'copy_of_' in event.newName:
         return
@@ -151,6 +162,11 @@ def serveiModifyAddSubjects(content, event):
 
 
 def update_indicators_on_serveitic_deletion(obj, event):
+    registry = queryUtility(IRegistry)
+    tfe_tool = registry.forInterface(IServeisTICControlPanelSettings)
+    if not tfe_tool.enable_suscribers:
+        return
+
     try:
         update_indicators_if_state(
             obj, ('published',),
@@ -165,6 +181,11 @@ def update_indicators_on_serveitic_deletion(obj, event):
 
 
 def update_indicators_on_serveitic_review_state_change(obj, event):
+    registry = queryUtility(IRegistry)
+    tfe_tool = registry.forInterface(IServeisTICControlPanelSettings)
+    if not tfe_tool.enable_suscribers:
+        return
+
     try:
         update_indicators(
             obj,
