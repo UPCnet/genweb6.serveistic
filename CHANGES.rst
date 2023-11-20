@@ -2,11 +2,11 @@ Changelog
 =========
 
 
-1.4 (unreleased)
+1.4 (2023-11-20)
 ----------------
 
-- Nothing changed yet.
-
+* [ADD] Campo en controlpanel para no acceder a los subscribers durante laaaaa migracion [Iago López]
+* Posición viewlet genweb.important [Iago López]
 
 1.3 (2023-11-13)
 ----------------
