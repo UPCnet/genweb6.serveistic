@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.5 (unreleased)
+1.5 (2023-11-20)
 ----------------
 
-- Nothing changed yet.
-
+* [Fix] subscribers [Iago López]
 
 1.4 (2023-11-20)
 ----------------
