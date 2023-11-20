@@ -36,14 +36,14 @@ logger = logging.getLogger(name='genweb6.serveistic.indicators')
 
 def Added(content, event):
     """ MAX hooks main handler """
-    registry = queryUtility(IRegistry)
-    tfe_tool = registry.forInterface(IServeisTICControlPanelSettings)
-    if not tfe_tool.enable_suscribers:
-        return
-
     servei = findContainerServei(content)
     if not servei:
         # If file we are creating is not inside a servei folder
+        return
+
+    registry = queryUtility(IRegistry)
+    tfe_tool = registry.forInterface(IServeisTICControlPanelSettings)
+    if not tfe_tool.enable_suscribers:
         return
 
     servei_tags = servei.subject
