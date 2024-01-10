@@ -34,7 +34,7 @@
         <vocabulary>plone.app.vocabularies.ReallyUserFriendlyTypes</vocabulary>
       </value_type>
     </field>
-    <value>
+    <value purge="false">
       <element>Folder</element>
       <element>Collection</element>
       <element>packet</element>
