@@ -5,6 +5,7 @@ from collective.z3cform.datagridfield.datagridfield import DataGridFieldFactory
 from collective.z3cform.datagridfield.registry import DictRow
 from plone.app.registry.browser import controlpanel
 from plone.autoform import directives
+from plone.dexterity.interfaces import IDexteritySchema
 from plone.supermodel import model
 from z3c.form import button
 from zope import schema
@@ -13,7 +14,7 @@ from zope.ramcache import ram
 from genweb6.serveistic import _
 
 
-class ITableFacetes(model.Schema):
+class ITableFacetes(model.Schema, IDexteritySchema):
 
     faceta = schema.Choice(
         title=_(u'Faceta'),
@@ -33,7 +34,7 @@ class ITableFacetes(model.Schema):
         required=False)
 
 
-class IServeisTICFacetesControlPanelSettings(model.Schema):
+class IServeisTICFacetesControlPanelSettings(model.Schema, IDexteritySchema):
 
     model.fieldset('Facetes', _(u'Facetes'), fields=['facetes_table'])
     directives.widget(facetes_table=DataGridFieldFactory)
@@ -74,7 +75,7 @@ class ServeisTICFacetesControlPanelSettingsForm(controlpanel.RegistryEditForm):
 
         data['facetes_table'] = replace_facetes_table
         self.applyChanges(data)
-        
+
         ram.caches.clear()
 
         IStatusMessage(self.request).addStatusMessage(_("Changes saved"), "info")

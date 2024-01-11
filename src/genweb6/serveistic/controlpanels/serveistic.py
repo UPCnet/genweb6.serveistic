@@ -5,6 +5,7 @@ from Products.statusmessages.interfaces import IStatusMessage
 from plone.app.registry.browser import controlpanel
 from plone.autoform.directives import read_permission
 from plone.autoform.directives import write_permission
+from plone.dexterity.interfaces import IDexteritySchema
 from plone.supermodel import model
 from z3c.form import button
 from zope import schema
@@ -13,7 +14,7 @@ from zope.ramcache import ram
 from genweb6.serveistic import _
 
 
-class IServeisTICControlPanelSettings(model.Schema):
+class IServeisTICControlPanelSettings(model.Schema, IDexteritySchema):
     """ Global Genweb settings. This describes records stored in the
     configuration registry and obtainable via plone.registry.
     """

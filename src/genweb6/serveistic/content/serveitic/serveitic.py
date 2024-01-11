@@ -8,12 +8,13 @@ from plone.autoform import directives
 from plone.autoform.directives import read_permission
 from plone.autoform.directives import write_permission
 from plone.dexterity.content import Item
+from plone.dexterity.interfaces import IDexteritySchema
 from plone.namedfile.field import NamedBlobImage as BlobImage
 from plone.supermodel import model
 from zope import schema
-from zope.interface import implementer
 from zope.interface import Interface
 from zope.interface import Invalid
+from zope.interface import implementer
 
 from genweb6.core.browser.views import HomePageBase
 from genweb6.core.interfaces import IHomePageView
@@ -66,7 +67,7 @@ def parse_service_indicators_order(order):
     return result
 
 
-class IServeiTIC(model.Schema):
+class IServeiTIC(model.Schema, IDexteritySchema):
 
     textindexer.searchable('title')
     title = schema.TextLine(

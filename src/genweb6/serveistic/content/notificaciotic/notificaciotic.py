@@ -7,6 +7,7 @@ from plone.app.textfield import RichText
 from plone.dexterity.browser import add
 from plone.dexterity.browser import edit
 from plone.dexterity.content import Item
+from plone.dexterity.interfaces import IDexteritySchema
 from plone.indexer import indexer
 from plone.supermodel import model
 from z3c.form import interfaces
@@ -22,7 +23,7 @@ from genweb6.serveistic.utilities import get_servei
 tipus_values = [u"Avís", u"Notificació", u"Novetat"]
 
 
-class INotificacioTIC(model.Schema):
+class INotificacioTIC(model.Schema, IDexteritySchema):
 
     title = schema.TextLine(
         title=_(u"Títol"),
