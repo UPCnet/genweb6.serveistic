@@ -17,6 +17,7 @@ from zope.interface import alsoProvides
 
 from genweb6.core.indicators import RegistryException
 from genweb6.core.indicators import ReporterException
+from genweb6.core.portlets.manage_portlets.manager import ISpanStorage
 from genweb6.serveistic.content.serveitic.serveitic import IInitializedServeiTIC
 from genweb6.serveistic.content.serveitic.serveitic import IServeiTIC
 from genweb6.serveistic.controlpanels.serveistic import IServeisTICControlPanelSettings
@@ -67,9 +68,18 @@ def initialize_servei(serveitic, event):
     if 'banners_local' not in assignments:
         assignments['banners_local'] = BannersAssignment(banner_type=u"Local")
 
+
+    portletManager = getUtility(IPortletManager, 'genweb.portlets.HomePortletManager3')
+    spanstorage = getMultiAdapter((serveitic, portletManager), ISpanStorage)
+    spanstorage.span = '6'
+
     assignments = get_portlet_assignments(serveitic, 'genweb.portlets.HomePortletManager3')
     if 'notificacions' not in assignments:
         assignments['notificacions'] = NotificacionsAssignment()
+
+    portletManager = getUtility(IPortletManager, 'genweb.portlets.HomePortletManager4')
+    spanstorage = getMultiAdapter((serveitic, portletManager), ISpanStorage)
+    spanstorage.span = '6'
 
     assignments = get_portlet_assignments(serveitic, 'genweb.portlets.HomePortletManager4')
     if 'indicadors' not in assignments:
