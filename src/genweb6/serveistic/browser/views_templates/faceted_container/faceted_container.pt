@@ -78,8 +78,8 @@
 
               <div class="card-body">
 
-                <h5 class="card-title text-dark"
-                    tal:content="popular/title">Image title</h5>
+                <p class="h5 card-title text-dark"
+                    tal:content="popular/title">Image title</p>
 
                 <p class="card-text text-dark"
                    tal:content="popular/description">Description</p>
