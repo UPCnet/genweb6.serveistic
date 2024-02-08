@@ -46,6 +46,10 @@
 
         & > .nav-item {
 
+          & > a {
+            color: var(--bs-primary);
+          }
+
           &.current {
 
             & > a {

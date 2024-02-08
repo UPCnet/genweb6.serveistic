@@ -50,7 +50,7 @@
         <div class="container d-flex justify-content-between align-items-center"
              tal:define="render_serveinav view/render_serveinav">
 
-          <h2 class="text-primary me-4">
+          <h2 class="me-4">
 
             <a class="text-decoration-none"
               tal:attributes="href custom_hero/servei_url"
