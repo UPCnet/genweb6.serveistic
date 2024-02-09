@@ -10,7 +10,7 @@
   <metal:custom_title fill-slot="content-title">
   </metal:custom_title>
 
-  <metal:content-core fill-slot="content-core">
+  <metal:content-core fill-slot="content-core" tal:define="init_homepage view/getPortletContainer">
 
   <div class="col-md-12">
 
