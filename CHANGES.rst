@@ -2,11 +2,13 @@ Changelog
 =========
 
 
-1.8 (unreleased)
+1.8 (2024-02-13)
 ----------------
 
-- Nothing changed yet.
-
+* [FIX] Mostrar portlets homepage [Iago López]
+* [UPD] Al crear por defecto un serveistic dejar los portlets con col-md-6 [Iago López]
+* [UPD] Quitar h5 de los card en los resultados de facetas [Iago López]
+* [UPD] Estilos menu serveistic [Iago López]
 
 1.7 (2024-01-15)
 ----------------
