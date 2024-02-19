@@ -21,7 +21,7 @@
 
       <div class="site_title">
 
-        <div class="h1" tal:condition="not:custom_hero/is_current_servei">
+        <div class="h1">
 
             <a accesskey="1" class="text-decoration-none"
                tal:attributes="href string:${view/root_url}/${view/pref_lang}">
@@ -32,17 +32,6 @@
 
         </div>
 
-        <h1 tal:condition="custom_hero/is_current_servei">
-
-            <a accesskey="1" class="text-decoration-none"
-               tal:attributes="href string:${view/root_url}/${view/pref_lang}">
-
-                <tal:block tal:replace="structure hero_title"></tal:block>
-
-            </a>
-
-        </h1>
-
       </div>
 
       <div class="servei_zone">
@@ -50,13 +39,18 @@
         <div class="container d-flex justify-content-between align-items-center"
              tal:define="render_serveinav view/render_serveinav">
 
-          <h2 class="me-4">
+          <h1 class="h2 me-4" tal:condition="custom_hero/is_title_servei_h1">
 
             <a class="text-decoration-none"
               tal:attributes="href custom_hero/servei_url"
               tal:content="custom_hero/title"></a>
 
-          </h2>
+          </h1>
+
+          <a class="h2 text-decoration-none"
+             tal:condition="not:custom_hero/is_title_servei_h1"
+             tal:attributes="href custom_hero/servei_url"
+             tal:content="custom_hero/title"></a>
 
           <ul class="navbar-nav mb-2 mb-lg-0 d-flex flex-row justify-content-end"
               id="portal-serveinav"

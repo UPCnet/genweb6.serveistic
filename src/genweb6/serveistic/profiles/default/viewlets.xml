@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <object>
+ <order manager="plone.htmlhead" skinname="Plone Default">
+  <viewlet name="plone.htmlhead.title.serveistic"/>
+ </order>
  <order manager="plone.abovecontent" skinname="Plone Default">
   <viewlet name="genweb.header"/>
   <viewlet name="genweb.serveistic.header"/>
@@ -52,6 +55,9 @@
  <order manager="plone.toolbar" skinname="Plone Default">
   <viewlet name="plone.contentviews"/>
  </order>
+ <hidden manager="plone.htmlhead" skinname="Plone Default">
+  <viewlet name="plone.htmlhead.title"/>
+ </hidden>
  <hidden manager="plone.abovecontent" skinname="Plone Default">
   <viewlet name="genweb.header"/>
   <viewlet name="genweb.hero"/>
