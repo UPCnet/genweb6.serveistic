@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.9 (unreleased)
+1.9 (2024-02-20)
 ----------------
 
-- Nothing changed yet.
-
+* [UPD] Cambios en los encabezados de las páginas (title + h1) [Iago López]
 
 1.8 (2024-02-13)
 ----------------
