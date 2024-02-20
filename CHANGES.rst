@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.10 (unreleased)
+1.10 (2024-02-20)
 -----------------
 
-- Nothing changed yet.
-
+* [DEL] uninstall viewlets.xml [Iago López]
 
 1.9 (2024-02-20)
 ----------------
