@@ -109,8 +109,7 @@ class titleViewletServeistic(titleViewlet):
       self.site_title = u"%s &mdash; %s" % (genweb_title, marca_UPC)
     else:
       servei = self.servei
-      servei_title = escape(safe_text(servei.title))
-      if servei and page_title != servei_title:
-        self.site_title = u"%s &mdash; %s &mdash; %s &mdash; %s" % (page_title, servei_title, genweb_title, marca_UPC)
+      if servei and hasattr(servei, 'title') and page_title != escape(safe_text(servei.title)):
+        self.site_title = u"%s &mdash; %s &mdash; %s &mdash; %s" % (page_title, escape(safe_text(servei.title)), genweb_title, marca_UPC)
       else:
         self.site_title = u"%s &mdash; %s &mdash; %s" % (page_title, genweb_title, marca_UPC)
