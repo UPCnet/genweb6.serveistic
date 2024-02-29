@@ -46,20 +46,6 @@
         name="genweb6.serveistic"
         />
 
-    <browser:page
-        name="serveistic-controlpanel"
-        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-        class=".controlpanels.serveistic.ServeisTICControlPanel"
-        permission="cmf.ManagePortal"
-        />
-
-    <browser:page
-        name="serveistic-facetes-controlpanel"
-        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-        class=".controlpanels.facetes.ServeisTICFacetesControlPanel"
-        permission="genweb.webmaster"
-        />
-
     <include package="z3c.jbot" file="meta.zcml" />
 
     <browser:jbot
