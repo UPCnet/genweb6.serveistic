@@ -2,11 +2,15 @@ Changelog
 =========
 
 
-1.11 (unreleased)
+1.11 (2024-03-07)
 -----------------
 
-- Nothing changed yet.
-
+* Add .DS_Store in gitignore [Pilar Marinas]
+* [UPD] Quitar customizacion de los contenidos que se muestran en la navegacion, pillamos los de por defecto de core [Iago López]
+* [UPD] Cambiar posicion contentleadimage [Iago López]
+* [DEL] .zcml controlpanels repetido [Iago López]
+* [DEL] uninstall viewlets.xml [Iago López]
+* [FIX] viewlet plone.htmlhead.title.serveistic [Iago López]
 
 1.10 (2024-02-20)
 -----------------
