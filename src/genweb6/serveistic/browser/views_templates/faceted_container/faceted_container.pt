@@ -81,7 +81,7 @@
                 <p class="h5 card-title text-dark"
                     tal:content="popular/title">Image title</p>
 
-                <p class="card-text text-dark"
+                <p class="card-text text-dark fs-m"
                    tal:content="popular/description">Description</p>
 
               </div>
