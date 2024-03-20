@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.12 (unreleased)
+1.12 (2024-03-20)
 -----------------
 
-- Nothing changed yet.
-
+* [UPD] Hacer más pequeña la letra de la descripción de los servicios [Iago López]
 
 1.11 (2024-03-07)
 -----------------
