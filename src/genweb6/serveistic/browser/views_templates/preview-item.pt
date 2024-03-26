@@ -27,7 +27,7 @@
         <p class="h5 card-title text-dark"
             tal:content="view/title">Image title</p>
 
-        <p class="card-text text-dark"
+        <p class="card-text text-dark fs-m"
            tal:content="view/description">Description</p>
 
         <tal:comment replace="nothing">
