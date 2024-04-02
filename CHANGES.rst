@@ -2,11 +2,11 @@ Changelog
 =========
 
 
-1.13 (unreleased)
+1.13 (2024-04-02)
 -----------------
 
-- Nothing changed yet.
-
+* [UPD] Hacer letra más pequeña de los cards [Iago López]
+* [FIX] Actions URL [Iago López]
 
 1.12 (2024-03-20)
 -----------------
