@@ -12,12 +12,16 @@
          tal:attributes="class style"
          tal:define="hero_title python:getattr(header_config, 'html_title_' + pref_lang, '');">
 
-      <img alt="" title=""
-           tal:define="heroImage custom_hero/image"
-           tal:condition="heroImage"
-           tal:attributes="src heroImage;
-                           alt custom_hero/title;
-                           title custom_hero/title" />
+      <section>
+
+        <img alt="" title=""
+            tal:define="heroImage custom_hero/image"
+            tal:condition="heroImage"
+            tal:attributes="src heroImage;
+                            alt custom_hero/title;
+                            title custom_hero/title" />
+
+      </section>
 
       <div class="site_title">
 
