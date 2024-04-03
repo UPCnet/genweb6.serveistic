@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.14 (unreleased)
+1.14 (2024-04-03)
 -----------------
 
-- Nothing changed yet.
-
+* [UPD] Cambio cabecera [Iago López]
 
 1.13 (2024-04-02)
 -----------------
