@@ -231,6 +231,7 @@ body.template-facetednavigation_view {
   /* POPULARES */
   /* FILTROS */
   /* ITEM */
+  /* RESULTADOS */
 }
 /* line 5, ../scss/_homepage.scss */
 body.template-facetednavigation_view #content > header > h1,
@@ -327,4 +328,8 @@ body.template-facetednavigation_view .preview-item .card.shadow-sm img {
 /* line 114, ../scss/_homepage.scss */
 body.template-facetednavigation_view .preview-item:hover .card.shadow-sm {
   box-shadow: 0 0.5rem 1rem #00000026;
+}
+/* line 122, ../scss/_homepage.scss */
+body.template-facetednavigation_view .eea-preview-items {
+  margin-bottom: 2rem;
 }

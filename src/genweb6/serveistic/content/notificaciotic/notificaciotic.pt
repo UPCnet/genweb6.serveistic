@@ -5,6 +5,12 @@
       i18n:domain="genweb6.serveistic"
       metal:use-macro="context/main_template/macros/master">
 
+<head>
+    <metal:block fill-slot="top_slot"
+                 tal:define="dummy python:request.set('disable_border',1);
+                             disable_column_two python:request.set('disable_plone.rightcolumn',1);" />
+</head>
+
 <body>
 
   <metal:custom_title fill-slot="content-title">

@@ -10,11 +10,11 @@
 
 <div metal:fill-slot="content-core">
 
-<metal:block tal:define="doctext view/page_content">
+<div tal:define="doctext view/page_content">
 
     <span tal:replace="structure doctext"></span>
 
-</metal:block>
+</div>
 
 <!-- Folder contents -->
 <div class="faceted-form" metal:define-macro="widgets" id="faceted-form"
