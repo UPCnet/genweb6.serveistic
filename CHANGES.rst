@@ -2,11 +2,11 @@ Changelog
 =========
 
 
-1.16 (unreleased)
+1.16 (2024-04-18)
 -----------------
 
-- Nothing changed yet.
-
+* [UPD] Poder buscar por textos incompletos [Iago López]
+* [UPD] Estilos + Quitar portlets derecha [Iago López]
 
 1.15 (2024-04-08)
 -----------------
