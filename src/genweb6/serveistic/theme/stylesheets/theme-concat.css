@@ -317,19 +317,24 @@ body.template-facetednavigation_view #center-top-area div.faceted-center-widgets
 body.template-facetednavigation_view #center-top-area div.faceted-center-widgets div.faceted-checkboxes-widget input + label span {
   color: var(--bs-gray-500);
 }
-/* line 104, ../scss/_homepage.scss */
+/* line 97, ../scss/_homepage.scss */
+body.template-facetednavigation_view #center-top-area div.faceted-center-widgets div.faceted-checkboxes-widget .card-body {
+  max-height: 400px;
+  overflow-x: auto;
+}
+/* line 109, ../scss/_homepage.scss */
 body.template-facetednavigation_view .preview-item .card.shadow-sm {
   transition: ease-out .35s;
 }
-/* line 107, ../scss/_homepage.scss */
+/* line 112, ../scss/_homepage.scss */
 body.template-facetednavigation_view .preview-item .card.shadow-sm img {
   height: 56px;
 }
-/* line 114, ../scss/_homepage.scss */
+/* line 119, ../scss/_homepage.scss */
 body.template-facetednavigation_view .preview-item:hover .card.shadow-sm {
   box-shadow: 0 0.5rem 1rem #00000026;
 }
-/* line 122, ../scss/_homepage.scss */
+/* line 127, ../scss/_homepage.scss */
 body.template-facetednavigation_view .eea-preview-items {
   margin-bottom: 2rem;
 }

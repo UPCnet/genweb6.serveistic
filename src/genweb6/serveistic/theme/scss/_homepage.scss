@@ -93,6 +93,11 @@ body.template-facetednavigation_view {
                         }
                     }
                 }
+
+                .card-body {
+                    max-height: 400px;
+                    overflow-x: auto;
+                }
             }
         }
     }

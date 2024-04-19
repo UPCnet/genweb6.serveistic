@@ -50,7 +50,7 @@
 
           <metal:position use-macro="here/@@faceted_macros/macros/position" />
 
-          </div>
+        </div>
 
       </div>
 

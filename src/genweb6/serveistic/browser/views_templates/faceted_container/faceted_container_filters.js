@@ -1,5 +1,11 @@
 $(document).ready(function(){
 
-  $.showFilters();
+  setTimeout(function(){
+
+    const bsCollapse = new bootstrap.Collapse('#collapseFilters', {
+      show: true
+    });
+
+  }, 1000);
 
 });
