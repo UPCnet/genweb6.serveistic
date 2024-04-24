@@ -2,11 +2,11 @@ Changelog
 =========
 
 
-1.17 (unreleased)
+1.17 (2024-04-24)
 -----------------
 
-- Nothing changed yet.
-
+* [FIX] Edit bar serveistic [Iago López]
+* [FIX] Abrir caja de filtros si esta marcado en el controlpanel + [UPD] Mejora estilos de la cafa de filtros para que tenga un height máximo [Iago López]
 
 1.16 (2024-04-18)
 -----------------
