@@ -10,7 +10,7 @@
 
 <div metal:fill-slot="content-core">
 
-<div tal:define="doctext view/page_content">
+<div id="parent-fieldname-text" tal:define="doctext view/page_content">
 
     <span tal:replace="structure doctext"></span>
 

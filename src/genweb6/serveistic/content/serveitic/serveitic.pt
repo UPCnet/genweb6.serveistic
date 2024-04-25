@@ -31,7 +31,9 @@
                      have_portlets_slot9 python:view.have_portlets('genweb.portlets.HomePortletManager9', view);
                      have_portlets_slot10 python:view.have_portlets('genweb.portlets.HomePortletManager10', view);">
 
-      <div tal:replace="structure view/descripcio" />
+      <div id="parent-fieldname-text">
+        <div tal:replace="structure view/descripcio" />
+      </div>
 
       <div class="my-5 border-top"></div>
 
