@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.18 (unreleased)
+1.18 (2024-04-29)
 -----------------
 
-- Nothing changed yet.
-
+* [UPD] Estilos antiguos [Iago López]
 
 1.17 (2024-04-24)
 -----------------
