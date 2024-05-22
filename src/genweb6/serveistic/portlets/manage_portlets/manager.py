@@ -17,8 +17,7 @@ class gwManagePortletsFallbackViewletForServeiTic(gwManagePortletsFallbackViewle
 
     def available(self):
         secman = getSecurityManager()
-        if secman.checkPermission('Genweb: Manage home portlets', self.context):
+        if secman.checkPermission('Genweb: Webmaster Users', self.context):
             if self.request.steps[-1] in ['view']:
                 return True
         return False
-
