@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.19 (unreleased)
+1.19 (2024-05-29)
 -----------------
 
-- Nothing changed yet.
-
+* [UPD] Cambiar permisos para ver boton de administrar portlets de serveistic [Iago López]
 
 1.18 (2024-04-29)
 -----------------
