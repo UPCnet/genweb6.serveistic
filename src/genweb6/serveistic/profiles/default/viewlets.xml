@@ -58,6 +58,7 @@
   <viewlet name="plone.contentviews"/>
  </order>
  <hidden manager="plone.htmlhead" skinname="Plone Default">
+  <viewlet name="plone.htmlhead.title.serveistic" remove="True" />
   <viewlet name="plone.htmlhead.title"/>
  </hidden>
  <hidden manager="plone.abovecontent" skinname="Plone Default">
