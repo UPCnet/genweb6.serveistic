@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.20 (unreleased)
+1.20 (2024-07-17)
 -----------------
 
-- Nothing changed yet.
-
+* [FIX] plone.htmlhead.title.serveistic - Al reinstalar se quitaba y se mostraba la web sin title [Iago López]
 
 1.19 (2024-05-29)
 -----------------
