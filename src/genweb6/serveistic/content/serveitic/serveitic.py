@@ -130,13 +130,6 @@ class IServeiTIC(model.Schema, IDexteritySchema):
                       u"pixels)"),
         required=False)
 
-    product_id = schema.TextLine(
-        title=_(u"Identificador gn6"),
-        description=_(u"Identificador del servei al gn6, s'utilitza per a "
-                      u"consultar els problemes relacionats amb el servei"),
-        required=False,
-        defaultFactory=lambda: u'')
-
     service_id = schema.TextLine(
         title=_(u"Identificador indicadors"),
         description=_(u"Identificador del servei al servei web d'indicadors, "

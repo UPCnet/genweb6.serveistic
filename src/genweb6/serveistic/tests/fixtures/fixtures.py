@@ -39,7 +39,6 @@ servei_mylist = {
     'description': u'Autoservei de llistes de correu electrònic',
     'responsable': u'Santi Cortés',
     'responsableMail': u'santi.cortes@gmail.com',
-    'product_id': 'mylist',
     'service_id': 'mylist',
     'prestador': ['upcnet'],
     'ubicacio': ['cnord', 'csud'],
@@ -55,7 +54,6 @@ servei_wrcx = dict(
     description=u"Servei Web de Recerca Ubicat als Campus",
     responsable=u"José García",
     responsableMail=u"jose.garcia@upc.edu",
-    product_id="servei_wrcx",
     service_id="servei_wrcx",
     tipologia=[u"Web", u"Gestor continguts"],
     ambit=[u"Recerca"],
@@ -71,7 +69,6 @@ servei_wgcu = dict(
     description=u"Servei Web de Gestió als Campus per UPCnet",
     responsable=u"José García",
     responsableMail=u"jose.garcia@upc.edu",
-    product_id="servei_wgcu",
     service_id="servei_wgcu",
     tipologia=[u"Web", u"Eines comunicació"],
     ambit=[u"Gestió"],
@@ -87,7 +84,6 @@ servei_wgct = dict(
     description=u"Servei Web de Gestió per Terrassa",
     responsable=u"José García",
     responsableMail=u"jose.garcia@upc.edu",
-    product_id="servei_wgct",
     service_id="servei_wgct",
     tipologia=[u"Web", u"Ofimàtica"],
     ambit=[u"Gestió"],
@@ -103,7 +99,6 @@ servei_exlm = dict(
     description=u"Servei ERP al CBLlobregat per Movistar",
     responsable=u"José García",
     responsableMail=u"jose.garcia@upc.edu",
-    product_id="servei_exlm",
     service_id="servei_exlm",
     tipologia=[u"ERP", u"Ofimàtica"],
     ambit=[],
@@ -116,21 +111,6 @@ servei_1 = {
     'type': 'serveitic',
     'id': 'servei-1',
     'title': 'Servei 1'
-    }
-
-
-servei_with_product_id = {
-    'type': 'serveitic',
-    'id': 'servei-1',
-    'title': 'Servei 1',
-    'product_id': 'myproduct'
-    }
-
-
-servei_without_product_id = {
-    'type': 'serveitic',
-    'id': 'servei-1',
-    'title': 'Servei 1',
     }
 
 
