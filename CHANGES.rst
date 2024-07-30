@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.21 (unreleased)
+1.21 (2024-07-30)
 -----------------
 
-- Nothing changed yet.
-
+* [UPD] Remove product_id [Iago López]
 
 1.20 (2024-07-17)
 -----------------
