@@ -106,22 +106,6 @@ class IServeisTICControlPanelSettings(model.Schema, IDexteritySchema):
         required=False
     )
 
-    # MIGRACIO
-
-    model.fieldset(
-        'Migration',
-        _(u'Migració'),
-        fields=['enable_suscribers'],
-    )
-
-    read_permission(enable_suscribers='genweb.webmaster')
-    write_permission(enable_suscribers='genweb.manager')
-    enable_suscribers = schema.Bool(
-        title=_(u'Habilitar notificacions'),
-        required=False,
-        default=False,
-    )
-
 
 class ServeisTICControlPanelSettingsForm(controlpanel.RegistryEditForm):
 
