@@ -18,11 +18,7 @@
             <li class="list-group-item ps-0">
 
                 <a class="d-block text-decoration-none"
-                   tal:define="class_icon python:view.get_bootstrap_icon_class(notificacio)"
                    tal:attributes="href notificacio/url">
-
-                    <i tal:condition="class_icon"
-                       tal:attributes="class string:${class_icon} me-1 text-secondary"></i>
 
                     <span tal:replace="notificacio/titol">Title</span>
 

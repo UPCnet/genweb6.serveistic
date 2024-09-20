@@ -23,19 +23,6 @@ from genweb6.serveistic.controlpanels.serveistic import IServeisTICControlPanelS
 from genweb6.serveistic.controlpanels.facetes import IServeisTICFacetesControlPanelSettings
 
 
-class NotificacioViewHelper(object):
-
-    def get_bootstrap_icon_class(self, notificacio):
-        if notificacio["tipus"] == u"Avís":
-            return "bi bi-exclamation-triangle-fill"
-        elif notificacio["tipus"] == u"Notificació":
-            return "bi bi-info-circle-fill"
-        elif notificacio["tipus"] == u"Novetat":
-            return "bi bi-exclamation-circle-fill"
-        else:
-            return ""
-
-
 def build_vocabulary(values):
     return SimpleVocabulary([
         SimpleTerm(title=_(value), value=value, token=token)

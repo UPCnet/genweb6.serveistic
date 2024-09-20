@@ -20,9 +20,6 @@ from genweb6.serveistic.utilities import build_vocabulary
 from genweb6.serveistic.utilities import get_servei
 
 
-tipus_values = [u"Avís", u"Notificació", u"Novetat"]
-
-
 class INotificacioTIC(model.Schema, IDexteritySchema):
 
     title = schema.TextLine(
@@ -39,22 +36,11 @@ class INotificacioTIC(model.Schema, IDexteritySchema):
         required=True,
     )
 
-    textindexer.searchable('tipus')
-    tipus = schema.Choice(
-        title=_(u'Tipus de notificació'),
-        required=True,
-        vocabulary=SimpleVocabulary(build_vocabulary(tipus_values)))
-
     is_general = schema.Bool(
         title=_(u"Fes que aparegui a la pàgina d'inici"),
         description=_(u"Marca la caixa si vols que la notificació aparegui "
                       u"també a la pàgina d'inici"),
         required=False)
-
-
-@indexer(INotificacioTIC)
-def tipus(context):
-    return context.tipus
 
 
 class AddForm(add.DefaultAddForm):

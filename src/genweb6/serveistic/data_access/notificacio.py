@@ -35,7 +35,6 @@ class NotificacioDataReporter(object):
                 "data": DateTime(notificacio.effective).strftime('%d/%m/%Y'),
                 "titol": notificacio.Title,
                 "descripcio": notificacio.Description,
-                "tipus": notificacio.tipus,
                 "url": notificacio.getURL()})
         return results[:count] if count else results
 
@@ -53,6 +52,5 @@ class NotificacioDataReporter(object):
                 "data": DateTime(notificacio.effective).strftime('%d/%m/%Y'),
                 "titol": notificacio.Title,
                 "descripcio": notificacio.Description,
-                "tipus": notificacio.tipus,
                 "url": notificacio.getURL()})
         return results

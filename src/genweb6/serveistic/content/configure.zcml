@@ -24,11 +24,6 @@
         />
 
     <adapter
-        factory=".notificaciotic.notificaciotic.tipus"
-        name="tipus"
-        />
-
-    <adapter
         for="Products.CMFCore.interfaces.IFolderish
              zope.publisher.interfaces.browser.IDefaultBrowserLayer
              plone.dexterity.interfaces.IDexterityFTI"

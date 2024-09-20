@@ -10,7 +10,6 @@ from zope import schema
 from zope.formlib import form
 from zope.interface import implementer
 
-from genweb6.serveistic.utilities import NotificacioViewHelper
 from genweb6.serveistic.data_access.notificacio import NotificacioDataReporter
 from genweb6.serveistic.utilities import get_servei
 
@@ -34,7 +33,7 @@ class Assignment(base.Assignment):
         return _(u"Notificacions TIC")
 
 
-class Renderer(base.Renderer, NotificacioViewHelper):
+class Renderer(base.Renderer):
     render = ViewPageTemplateFile('notificacions.pt')
 
     @property

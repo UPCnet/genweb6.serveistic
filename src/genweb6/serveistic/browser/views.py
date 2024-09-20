@@ -14,10 +14,9 @@ from zope.component.hooks import getSite
 from genweb6.serveistic.controlpanels.serveistic import IServeisTICControlPanelSettings
 from genweb6.serveistic.data_access.notificacio import NotificacioDataReporter
 from genweb6.serveistic.utilities import default_serveistic_url_preview_image
-from genweb6.serveistic.utilities import NotificacioViewHelper
 
 
-class FacetedContainerView(FacetedContainerView, NotificacioViewHelper):
+class FacetedContainerView(FacetedContainerView):
 
     SHORT_SUMMARY_MAX_LENGTH = 115
 
