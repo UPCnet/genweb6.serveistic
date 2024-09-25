@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.23 (unreleased)
+1.23 (2024-09-25)
 -----------------
 
-- Nothing changed yet.
-
+* [UPD] Carpeta buscador - que no pete si no hay texto en benvingut [Iago López]
 
 1.22 (2024-09-25)
 -----------------
