@@ -35,14 +35,17 @@ class FacetedContainerView(FacetedContainerView):
             elif lang == 'en':
                 benvingut = self.context["welcome"]
             else:
-                benvingut = self.context["benvingut"]
+                if "benvingut" in self.context:
+                    benvingut = self.context["benvingut"]
+                else:
+                    return None
 
             wf_tool = api.portal.get_tool("portal_workflow")
             tools = getMultiAdapter((self.context, self.request), name='plone_tools')
             workflows = tools.workflow().getWorkflowsFor(benvingut)[0]
             benvingut_workflow = wf_tool.getWorkflowsFor(benvingut)[0].id
             benvingut_status = wf_tool.getStatusOf(benvingut_workflow, benvingut)
-            if workflows['states'][benvingut_status['review_state']].id == 'published':
+            if workflows['states'][benvingut_status['review_state']].id == 'published' and benvingut.text:
                 return benvingut.text.output
             else:
                 return None
