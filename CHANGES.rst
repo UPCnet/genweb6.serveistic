@@ -2,11 +2,12 @@ Changelog
 =========
 
 
-1.22 (unreleased)
+1.22 (2024-09-25)
 -----------------
 
-- Nothing changed yet.
-
+* [DEL] notificacio camp tipus [Iago López]
+* [UPD] Quitar enable_suscribers [Iago López]
+* [UPD] Content notificaciotic - Que salga la barra de herramientas [Iago López]
 
 1.21 (2024-07-30)
 -----------------
