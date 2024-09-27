@@ -25,6 +25,7 @@
     <element value="plone.excludefromnavigation" />
     <element value="plone.textindexer" />
     <element value="plone.versioning" />
+    <element value="plone.translatable" />
   </property>
 
   <property name="filter_content_types">False</property>
@@ -55,4 +56,3 @@
   </action>
 
 </object>
-
