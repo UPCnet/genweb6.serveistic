@@ -2,11 +2,12 @@ Changelog
 =========
 
 
-1.24 (unreleased)
+1.24 (2024-10-08)
 -----------------
 
-- Nothing changed yet.
-
+* [UPD] Permisos eea.facetednavigation: Configure faceted [Iago López]
+* [UPD] Mejora accordion indicadores [Iago López]
+* [ADD] plone.translatable [Iago López]
 
 1.23 (2024-09-25)
 -----------------
