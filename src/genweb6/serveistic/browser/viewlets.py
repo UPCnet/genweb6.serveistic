@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 from eea.facetednavigation.subtypes.interfaces import IFacetedNavigable
 from html import escape
+from plone.app.multilingual.interfaces import ILanguageRootFolder
 from plone.base.utils import safe_text
 from zope.component import getMultiAdapter
 
 from genweb6.core.browser.viewlets import GWGlobalSectionsViewlet
 from genweb6.core.browser.viewlets import headerViewlet as headerViewletBase
 from genweb6.core.browser.viewlets import heroViewlet as heroViewletBase
+from genweb6.core.interfaces import IHomePage
 from genweb6.core.utils import genwebHeaderConfig
 from genweb6.serveistic import _
 from genweb6.serveistic.content.serveitic.serveitic import IServeiTIC
@@ -74,7 +76,19 @@ class heroViewlet(heroViewletBase, GWGlobalSectionsViewlet):
     return self.build_tree('/'.join(self.servei.getPhysicalPath()))
 
   def isHomepage(self):
-    return IFacetedNavigable.providedBy(self.context)
+    if IHomePage.providedBy(self.context):
+
+      # Homepage normal
+      if ILanguageRootFolder.providedBy(self.context) and self.request.steps[-1] == 'homepage':
+          return True
+
+      # Homepage con tiles
+      parent = self.context.aq_parent
+      if ILanguageRootFolder.providedBy(parent) and hasattr(parent, 'default_page') and parent.default_page == self.context.id and self.request.steps[-1] == 'layout_view':
+          return True
+
+    else:
+      return ILanguageRootFolder.providedBy(self.context) and IFacetedNavigable.providedBy(self.context)
 
 
 class titleViewletServeistic(titleViewlet):
