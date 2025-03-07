@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.25 (unreleased)
+1.25 (2025-03-07)
 -----------------
 
-- Nothing changed yet.
-
+* [UPD] Mostrar hero solo si es la página principal [Iago López]
 
 1.24 (2024-10-08)
 -----------------
