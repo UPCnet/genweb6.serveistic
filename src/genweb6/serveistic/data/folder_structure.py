@@ -208,3 +208,18 @@ folder_structure = (
         (),
     )
 )
+
+folderless_structure = (
+    (
+        "Notificacions", "Folder", True, False,
+        ('notificaciotic',),
+        None, None,
+        ()
+    ),
+    (
+        "Banners", "BannerContainer", True, False,
+        ('Banner',),
+        None, None,
+        (),
+    )
+)

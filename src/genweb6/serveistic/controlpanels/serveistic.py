@@ -22,7 +22,7 @@ class IServeisTICControlPanelSettings(model.Schema, IDexteritySchema):
     model.fieldset(
         'General',
         _(u'General'),
-        fields=['url_info_serveistic', 'show_filters'])
+        fields=['url_info_serveistic', 'show_filters', 'disable_default_structure'])
 
     url_info_serveistic = schema.TextLine(
         title=_(u"URL d'informació de Serveis TIC"),
@@ -34,6 +34,11 @@ class IServeisTICControlPanelSettings(model.Schema, IDexteritySchema):
         title=_(u"Desplegar filtres de cerca"),
         description=_(u"Desplega el filtres de cerca que trobem a la pàgina  "
                       u"principal"),
+        required=False)
+    
+    disable_default_structure = schema.Bool(
+        title=_(u"Desactivar estructura per defecte"),
+        description=_(u"Desactiva la estructura per defecte de Serveis TIC"),
         required=False)
 
     model.fieldset(

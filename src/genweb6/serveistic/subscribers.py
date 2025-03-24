@@ -20,6 +20,7 @@ from genweb6.core.portlets.manage_portlets.manager import ISpanStorage
 from genweb6.serveistic.content.serveitic.serveitic import IInitializedServeiTIC
 from genweb6.serveistic.content.serveitic.serveitic import IServeiTIC
 from genweb6.serveistic.data.folder_structure import folder_structure
+from genweb6.serveistic.data.folder_structure import folderless_structure
 from genweb6.serveistic.indicators.updating import update_indicators
 from genweb6.serveistic.indicators.updating import update_indicators_if_state
 from genweb6.serveistic.portlets.bannersportlet.bannersportlet import Assignment as BannersAssignment
@@ -50,32 +51,34 @@ def initialize_servei(serveitic, event):
         return
 
     # Configure portlets
-    assignments = get_portlet_assignments(serveitic, 'plone.leftcolumn')
-    if 'banners_global' not in assignments:
-        assignments['banners_global'] = BannersAssignment(banner_type=u"Global")
-    if 'banners_local' not in assignments:
-        assignments['banners_local'] = BannersAssignment(banner_type=u"Local")
+    if not tfe_tool.disable_default_structure:
+        assignments = get_portlet_assignments(serveitic, 'plone.leftcolumn')
+        if 'banners_global' not in assignments:
+            assignments['banners_global'] = BannersAssignment(banner_type=u"Global")
+        if 'banners_local' not in assignments:
+            assignments['banners_local'] = BannersAssignment(banner_type=u"Local")
 
 
-    portletManager = getUtility(IPortletManager, 'genweb.portlets.HomePortletManager3')
-    spanstorage = getMultiAdapter((serveitic, portletManager), ISpanStorage)
-    spanstorage.span = '6'
+        portletManager = getUtility(IPortletManager, 'genweb.portlets.HomePortletManager3')
+        spanstorage = getMultiAdapter((serveitic, portletManager), ISpanStorage)
+        spanstorage.span = '6'
 
-    assignments = get_portlet_assignments(serveitic, 'genweb.portlets.HomePortletManager3')
-    if 'notificacions' not in assignments:
-        assignments['notificacions'] = NotificacionsAssignment()
+        assignments = get_portlet_assignments(serveitic, 'genweb.portlets.HomePortletManager3')
+        if 'notificacions' not in assignments:
+            assignments['notificacions'] = NotificacionsAssignment()
 
-    portletManager = getUtility(IPortletManager, 'genweb.portlets.HomePortletManager4')
-    spanstorage = getMultiAdapter((serveitic, portletManager), ISpanStorage)
-    spanstorage.span = '6'
+        portletManager = getUtility(IPortletManager, 'genweb.portlets.HomePortletManager4')
+        spanstorage = getMultiAdapter((serveitic, portletManager), ISpanStorage)
+        spanstorage.span = '6'
 
-    assignments = get_portlet_assignments(serveitic, 'genweb.portlets.HomePortletManager4')
-    if 'indicadors' not in assignments:
-        assignments['indicadors'] = IndicadorsAssignment()
+        assignments = get_portlet_assignments(serveitic, 'genweb.portlets.HomePortletManager4')
+        if 'indicadors' not in assignments:
+            assignments['indicadors'] = IndicadorsAssignment()
 
     # Create folder structure
     normalizer = getUtility(IIDNormalizer)
-    for folder_data in folder_structure:
+
+    for folder_data in folder_structure if not tfe_tool.disable_default_structure else folderless_structure:
         try:
             if isinstance(folder_data[0], str):
                 flattened = unicodedata.normalize('NFKD', folder_data[0]).encode('ascii', errors='ignore')
