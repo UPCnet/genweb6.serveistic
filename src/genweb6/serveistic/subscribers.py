@@ -51,7 +51,8 @@ def initialize_servei(serveitic, event):
         return
 
     # Configure portlets
-    if not tfe_tool.disable_default_structure:
+    stool = serveistic_config()
+    if not stool.disable_default_structure:
         assignments = get_portlet_assignments(serveitic, 'plone.leftcolumn')
         if 'banners_global' not in assignments:
             assignments['banners_global'] = BannersAssignment(banner_type=u"Global")
@@ -78,7 +79,7 @@ def initialize_servei(serveitic, event):
     # Create folder structure
     normalizer = getUtility(IIDNormalizer)
 
-    for folder_data in folder_structure if not tfe_tool.disable_default_structure else folderless_structure:
+    for folder_data in folder_structure if not stool.disable_default_structure else folderless_structure:
         try:
             if isinstance(folder_data[0], str):
                 flattened = unicodedata.normalize('NFKD', folder_data[0]).encode('ascii', errors='ignore')
