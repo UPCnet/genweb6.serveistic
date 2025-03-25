@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.27 (unreleased)
+1.27 (2025-03-25)
 -----------------
 
-- Nothing changed yet.
-
+* [UPD] controlpanel checkbox to disable default content [Iago López]
 
 1.26 (2025-03-25)
 -----------------
