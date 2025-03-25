@@ -2,11 +2,11 @@ Changelog
 =========
 
 
-1.26 (unreleased)
+1.26 (2025-03-25)
 -----------------
 
-- Nothing changed yet.
-
+* [UPD] Traducciones [Iago López]
+* [ADD] controlpanel checkbox to disable default content [Clàudia Andreu]
 
 1.25 (2025-03-07)
 -----------------
