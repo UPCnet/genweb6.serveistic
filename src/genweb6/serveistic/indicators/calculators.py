@@ -26,7 +26,7 @@ class GoogleAnalyticsCalculator(Calculator):
     def _get_reporter(self):
         try:
             return GoogleAnalyticsReporter(
-                json.loads(serveistic_config().ga_key_json))
+                json.loads(serveistic_config().get('ga_key_json', '')))
         except (TypeError, ValueError) as e:
             raise CalculatorException(
                 "Invalid GA JSON key ({0})".format(e))
@@ -35,8 +35,9 @@ class GoogleAnalyticsCalculator(Calculator):
                 "Cannot instantiate GA reporter ({0})".format(e))
 
     def _get_ids(self):
-        if serveistic_config().ga_view_id:
-            return "ga:{0}".format(serveistic_config().ga_view_id)
+        ga_view_id = serveistic_config().get('ga_view_id', '')
+        if ga_view_id:
+            return "ga:{0}".format(ga_view_id)
         return None
 
 

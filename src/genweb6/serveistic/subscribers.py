@@ -52,7 +52,7 @@ def initialize_servei(serveitic, event):
 
     # Configure portlets
     stool = serveistic_config()
-    if not stool.disable_default_structure:
+    if not stool.get('disable_default_structure', False):
         assignments = get_portlet_assignments(serveitic, 'plone.leftcolumn')
         if 'banners_global' not in assignments:
             assignments['banners_global'] = BannersAssignment(banner_type=u"Global")
@@ -79,7 +79,7 @@ def initialize_servei(serveitic, event):
     # Create folder structure
     normalizer = getUtility(IIDNormalizer)
 
-    for folder_data in folder_structure if not stool.disable_default_structure else folderless_structure:
+    for folder_data in folder_structure if not stool.get('disable_default_structure', False) else folderless_structure:
         try:
             if isinstance(folder_data[0], str):
                 flattened = unicodedata.normalize('NFKD', folder_data[0]).encode('ascii', errors='ignore')
@@ -167,7 +167,7 @@ def update_indicators_on_serveitic_deletion(obj, event):
     try:
         update_indicators_if_state(
             obj, ('published',),
-            service=serveistic_config().ws_indicadors_service_id,
+            service=serveistic_config().get('ws_indicadors_service_id', ''),
             indicator='servei-n')
         logger.info("Indicators were successfully reported")
     except RegistryException as e:
@@ -181,7 +181,7 @@ def update_indicators_on_serveitic_review_state_change(obj, event):
     try:
         update_indicators(
             obj,
-            service=serveistic_config().ws_indicadors_service_id,
+            service=serveistic_config().get('ws_indicadors_service_id', ''),
             indicator='servei-n', after_commit=True)
         logger.info("Indicators were successfully reported")
     except RegistryException as e:

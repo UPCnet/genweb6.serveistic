@@ -33,14 +33,29 @@ def build_vocabulary(values):
 def serveistic_config():
     """ Funcio que retorna les configuracions del controlpanel """
     registry = queryUtility(IRegistry)
-    return registry.forInterface(IServeisTICControlPanelSettings)
+    controlpanel = registry.forInterface(IServeisTICControlPanelSettings)
+    return {
+        'url_info_serveistic': controlpanel.url_info_serveistic,
+        'show_filters': controlpanel.show_filters,
+        'disable_default_structure': controlpanel.disable_default_structure,
+        'ws_problemes_endpoint': controlpanel.ws_problemes_endpoint,
+        'ws_problemes_login_username': controlpanel.ws_problemes_login_username,
+        'ws_problemes_login_password': controlpanel.ws_problemes_login_password,
+        'ws_indicadors_service_id': controlpanel.ws_indicadors_service_id,
+        'ws_indicadors_endpoint': controlpanel.ws_indicadors_endpoint,
+        'ws_indicadors_key': controlpanel.ws_indicadors_key,
+        'update_indicadors_passphrase': controlpanel.update_indicadors_passphrase,
+        'ga_key_json': controlpanel.ga_key_json,
+        'ga_view_id': controlpanel.ga_view_id,
+    }
 
 
 @ram.cache(lambda *args: time() // (24 * 60 * 60))
 def serveistic_facetes_config():
     """ Funcio que retorna les configuracions del controlpanel """
     registry = queryUtility(IRegistry)
-    return registry.forInterface(IServeisTICFacetesControlPanelSettings)
+    controlpanel = registry.forInterface(IServeisTICFacetesControlPanelSettings)
+    return controlpanel.facetes_table
 
 
 def get_servei(self):
@@ -52,7 +67,7 @@ def get_servei(self):
 
 
 def get_ws_indicadors_client():
-    endpoint = serveistic_config().ws_indicadors_endpoint
+    endpoint = serveistic_config().get('ws_indicadors_endpoint', '')
     return IndicadorsClient(endpoint)
 
 
@@ -112,7 +127,7 @@ class FacetValuesVocabularyBase(object):
         self.lang = ""
 
     def __call__(self, context):
-        facets = serveistic_facetes_config().facetes_table
+        facets = serveistic_facetes_config()
         facets = [] if facets is None else facets
 
         vocabulary = []
