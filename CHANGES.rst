@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.29 (unreleased)
+1.29 (2025-04-09)
 -----------------
 
-- Nothing changed yet.
-
+* [FIX] Cambiar como pillamos los datos de los controlpanel [Iago López]
 
 1.28 (2025-03-26)
 -----------------
