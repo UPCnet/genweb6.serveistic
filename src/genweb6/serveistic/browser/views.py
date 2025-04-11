@@ -14,6 +14,7 @@ from zope.component.hooks import getSite
 from genweb6.serveistic.controlpanels.serveistic import IServeisTICControlPanelSettings
 from genweb6.serveistic.data_access.notificacio import NotificacioDataReporter
 from genweb6.serveistic.utilities import default_serveistic_url_preview_image
+from genweb6.serveistic.utilities import serveistic_config
 
 
 class FacetedContainerView(FacetedContainerView):
@@ -63,9 +64,7 @@ class FacetedContainerView(FacetedContainerView):
         return populars
 
     def showFilters(self):
-        registry = queryUtility(IRegistry)
-        serveistic_tool = registry.forInterface(IServeisTICControlPanelSettings)
-        return serveistic_tool.show_filters
+        return serveistic_config().get('show_filters', False)
 
     def default_preview_url(self):
         return default_serveistic_url_preview_image()

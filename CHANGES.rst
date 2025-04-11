@@ -2,11 +2,32 @@ Changelog
 =========
 
 
-1.26 (unreleased)
+1.30 (unreleased)
 -----------------
 
 - Nothing changed yet.
 
+
+1.29 (2025-04-09)
+-----------------
+
+* [FIX] Cambiar como pillamos los datos de los controlpanel [Iago López]
+
+1.28 (2025-03-26)
+-----------------
+
+* [UPD] allow_discussion a False [Iago López]
+
+1.27 (2025-03-25)
+-----------------
+
+* [UPD] controlpanel checkbox to disable default content [Iago López]
+
+1.26 (2025-03-25)
+-----------------
+
+* [UPD] Traducciones [Iago López]
+* [ADD] controlpanel checkbox to disable default content [Clàudia Andreu]
 
 1.25 (2025-03-07)
 -----------------

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-02-01 08:00+0000\n"
+"POT-Creation-Date: 2025-03-24 09:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,3 +16,464 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: genweb6.serveistic\n"
+
+#: ../controlpanels/serveistic.py:78
+msgid "API key"
+msgstr ""
+
+#: ../controlpanels/serveistic.py:83
+msgid "Actualització d'Indicadors"
+msgstr ""
+
+#: ../content/serveitic/serveitic.py:115
+msgid "Adreça e-mail del responsable funcional del servei"
+msgstr ""
+
+#: ../portlets/indicadors/indicadors.py:73
+msgid "Afegeix portlet d'indicadors"
+msgstr ""
+
+#: ../portlets/bannersportlet/bannersportlet.py:82
+#: ../portlets/notificacions/notificacions.py:52
+msgid "Afegeix portlet de notifications"
+msgstr ""
+
+#: ../portlets/bannersportlet/bannersportlet.py:93
+msgid "Aquest portlet mostra els banners TIC"
+msgstr ""
+
+#: ../portlets/bannersportlet/bannersportlet.py:83
+#: ../portlets/notificacions/notificacions.py:53
+msgid "Aquest portlet mostra les notificacions"
+msgstr ""
+
+#: ../portlets/notificacions/notificacions.py:64
+msgid "Aquest portlet mostra les notificacions d'un servei TIC"
+msgstr ""
+
+#. Default: "banner_type"
+#: ../portlets/bannersportlet/bannersportlet.py:45
+msgid "Banners TIC ({0})"
+msgstr ""
+
+#: ../content/serveitic/serveitic.py:88
+msgid "Breu resum del servei"
+msgstr ""
+
+#: ../controlpanels/facetes.py:84
+#: ../controlpanels/serveistic.py:160
+msgid "Cancel"
+msgstr ""
+
+#: ../browser/viewlets.py:34
+msgid "Cerca en el servei"
+msgstr ""
+
+#: ../controlpanels/facetes.py:86
+msgid "Changes canceled."
+msgstr ""
+
+#: ../controlpanels/facetes.py:81
+#: ../controlpanels/serveistic.py:156
+msgid "Changes saved"
+msgstr ""
+
+#: ../controlpanels/serveistic.py:102
+msgid "Clau de la API"
+msgstr ""
+
+#: ../profiles/default/actions.xml
+msgid "Configuracio facetes"
+msgstr ""
+
+#: ../patches.py:17
+msgid "Configure"
+msgstr ""
+
+#: ../controlpanels/serveistic.py:103
+msgid "Contingut JSON de la clau de la API"
+msgstr ""
+
+#: ../controlpanels/serveistic.py:59
+msgid "Contrasenya"
+msgstr ""
+
+#: ../controlpanels/serveistic.py:89
+msgid "Contrasenya necessària per a fer servir la vista d'actualització (valor del paràmetre 'passphrase')"
+msgstr ""
+
+#: ../content/notificaciotic/notificaciotic.py:35
+msgid "Cos de la notificació"
+msgstr ""
+
+#: ../controlpanels/serveistic.py:41
+msgid "Desactiva la estructura per defecte de Serveis TIC"
+msgstr ""
+
+#: ../controlpanels/serveistic.py:40
+msgid "Desactivar estructura per defecte"
+msgstr ""
+
+#: ../content/notificaciotic/notificaciotic.py:30
+#: ../content/serveitic/serveitic.py:80
+msgid "Descripció"
+msgstr ""
+
+#: ../content/serveitic/serveitic.py:81
+msgid "Descripció del servei que es veurà al buscador"
+msgstr ""
+
+#: ../controlpanels/serveistic.py:35
+msgid "Desplega el filtres de cerca que trobem a la pàgina  principal"
+msgstr ""
+
+#: ../controlpanels/serveistic.py:34
+msgid "Desplegar filtres de cerca"
+msgstr ""
+
+#: ../content/serveitic/serveitic.py:103
+msgid "Direcció URL del web del servei"
+msgstr ""
+
+#: ../controlpanels/serveistic.py:162
+msgid "Edit cancelled"
+msgstr ""
+
+#: ../portlets/indicadors/indicadors.py:85
+msgid "Edita el portlet d'indicadors"
+msgstr ""
+
+#: ../portlets/bannersportlet/bannersportlet.py:92
+msgid "Edita el portlet de banners TIC"
+msgstr ""
+
+#: ../portlets/notificacions/notificacions.py:63
+msgid "Edita el portlet de notificacions"
+msgstr ""
+
+#: ../content/serveitic/serveitic.py:41
+msgid "El format ha de ser 3.1, 1.2, 1.3"
+msgstr ""
+
+#: ../content/serveitic/serveitic.py:114
+msgid "Email del responsable funcional"
+msgstr ""
+
+#: ../content/serveitic/serveitic.py:128
+msgid "Es mostrarà com a imatge del servei en els resultats del cercador de Serveis TIC (mida recomanada 180x50 pixels)"
+msgstr ""
+
+#: ../controlpanels/facetes.py:20
+msgid "Faceta"
+msgstr ""
+
+#: ../content/serveitic/serveitic.py:159
+msgid "Faceta 1"
+msgstr ""
+
+#: ../content/serveitic/serveitic.py:165
+msgid "Faceta 2"
+msgstr ""
+
+#: ../content/serveitic/serveitic.py:171
+msgid "Faceta 3"
+msgstr ""
+
+#: ../content/serveitic/serveitic.py:177
+msgid "Faceta 4"
+msgstr ""
+
+#: ../content/serveitic/serveitic.py:183
+msgid "Faceta 5"
+msgstr ""
+
+#: ../content/serveitic/serveitic.py:189
+msgid "Faceta 6"
+msgstr ""
+
+#: ../content/serveitic/serveitic.py:195
+msgid "Faceta 7"
+msgstr ""
+
+#: ../content/serveitic/serveitic.py:201
+msgid "Faceta 8"
+msgstr ""
+
+#: ../controlpanels/facetes.py:39
+msgid "Facetes"
+msgstr ""
+
+#: ../content/notificaciotic/notificaciotic.py:40
+msgid "Fes que aparegui a la pàgina d'inici"
+msgstr ""
+
+#: ../templates/eea.facetednavigation.browser.template.widgets.pt:44
+msgid "Filtra els resultats"
+msgstr ""
+
+#: ../controlpanels/serveistic.py:24
+msgid "General"
+msgstr ""
+
+#: ../controlpanels/facetes.py:53
+#: ../controlpanels/serveistic.py:119
+msgid "Genweb ServeisTIC settings"
+msgstr ""
+
+#: ../controlpanels/serveistic.py:97
+msgid "Google Analytics"
+msgstr ""
+
+#: ../controlpanels/serveistic.py:108
+msgid "Id de visualització"
+msgstr ""
+
+#: ../controlpanels/serveistic.py:69
+msgid "Identificador al servei web d'Indicadors"
+msgstr ""
+
+#: ../controlpanels/serveistic.py:70
+msgid "Identificador de Serveis TIC al servei web"
+msgstr ""
+
+#: ../controlpanels/serveistic.py:109
+msgid "Identificador de la visualització de serveistic.upc.edu"
+msgstr ""
+
+#: ../content/serveitic/serveitic.py:135
+msgid "Identificador del servei al servei web d'indicadors, s'utilitza per a consultar els indicadors relacionats amb el servei"
+msgstr ""
+
+#: ../content/serveitic/serveitic.py:134
+msgid "Identificador indicadors"
+msgstr ""
+
+#: ../content/serveitic/serveitic.py:121
+msgid "Imatge de capçalera"
+msgstr ""
+
+#: ../content/serveitic/serveitic.py:127
+msgid "Imatge del servei en el resultat de cerca"
+msgstr ""
+
+#: ../browser/views_templates/indicadors.pt:18
+#: ../portlets/indicadors/indicadors.py:43
+msgid "Indicadors"
+msgstr ""
+
+#: ../configure.zcml:27
+msgid "Installs the genweb6.serveistic add-on."
+msgstr ""
+
+#: ../portlets/indicadors/indicadors.py:74
+msgid "Llistat d'indicadors associats a un Servei TIC"
+msgstr ""
+
+#: ../portlets/indicadors/indicadors.py:86
+msgid "Llistat d'indicadors associats amb un Servei TIC"
+msgstr ""
+
+#: ../content/notificaciotic/notificaciotic.py:41
+msgid "Marca la caixa si vols que la notificació aparegui també a la pàgina d'inici"
+msgstr ""
+
+#: ../content/serveitic/serveitic.py:122
+msgid "Mida recomanada de la imatge 1920x82 pixels"
+msgstr ""
+
+#: ../content/serveitic/serveitic.py:108
+msgid "Nom del responsable funcional"
+msgstr ""
+
+#: ../content/serveitic/serveitic.py:109
+msgid "Nom del responsable funcional del servei"
+msgstr ""
+
+#: ../portlets/indicadors/indicadors.py:24
+msgid "Nombre màxim d'indicadors"
+msgstr ""
+
+#: ../portlets/indicadors/indicadors.py:29
+msgid "Nombre màxim de categories"
+msgstr ""
+
+#: ../portlets/notificacions/notificacions.py:19
+msgid "Nombre màxim de notificacions"
+msgstr ""
+
+#: ../profiles/default/types/notificaciotic.xml
+msgid "Notificacio TIC"
+msgstr ""
+
+#: ../browser/views_templates/notificacions.pt:18
+msgid "Notificacions"
+msgstr ""
+
+#: ../portlets/notificacions/notificacions.py:33
+msgid "Notificacions TIC"
+msgstr ""
+
+#: ../content/serveitic/serveitic.py:143
+msgid "Ordre en el qual es mostren els indicadors relacionats amb el servei. Té el format \"3.1, 1.2, 1.3\", on el número abans de la coma representa l'ordre original de l'indicador i el de després l'ordre original de la categoria"
+msgstr ""
+
+#: ../content/serveitic/serveitic.py:142
+msgid "Ordre indicadors"
+msgstr ""
+
+#: ../content/serveitic/serveitic.py:154
+msgid "Popular"
+msgstr ""
+
+#: ../browser/views_templates/problemes.pt:15
+msgid "Problemes"
+msgstr ""
+
+#: ../templates/eea.facetednavigation.views.preview-items.pt:27
+msgid "Resultats"
+msgstr ""
+
+#: ../controlpanels/facetes.py:63
+#: ../controlpanels/serveistic.py:144
+msgid "Save"
+msgstr ""
+
+#: ../controlpanels/serveistic.py:64
+msgid "Servei Web Indicadors"
+msgstr ""
+
+#: ../controlpanels/serveistic.py:46
+msgid "Servei Web Problemes"
+msgstr ""
+
+#: ../profiles/default/types/serveitic.xml
+msgid "Serveis TIC"
+msgstr ""
+
+#: ../portlets/bannersportlet/bannersportlet.py:30
+msgid "Tipus"
+msgstr ""
+
+#: ../portlets/indicadors/indicadors.pt:12
+msgid "Tot els indicadors"
+msgstr ""
+
+#: ../portlets/notificacions/notificacions.pt:12
+msgid "Totes les notificacions"
+msgstr ""
+
+#: ../content/notificaciotic/notificaciotic.py:26
+#: ../content/serveitic/serveitic.py:74
+msgid "Títol"
+msgstr ""
+
+#: ../content/serveitic/serveitic.py:102
+#: ../controlpanels/serveistic.py:51
+msgid "URL"
+msgstr ""
+
+#: ../controlpanels/serveistic.py:28
+msgid "URL d'informació de Serveis TIC"
+msgstr ""
+
+#: ../controlpanels/serveistic.py:29
+msgid "URL on enllaça la i de la barra superior del lloc web de Serveis TIC"
+msgstr ""
+
+#: ../configure.zcml:36
+msgid "Uninstalls the genweb6.serveistic add-on."
+msgstr ""
+
+#: ../controlpanels/serveistic.py:55
+msgid "Usuari"
+msgstr ""
+
+#: ../controlpanels/facetes.py:25
+msgid "Valor"
+msgstr ""
+
+#: ../controlpanels/facetes.py:33
+msgid "Valor EN"
+msgstr ""
+
+#: ../controlpanels/facetes.py:29
+msgid "Valor ES"
+msgstr ""
+
+#: ../setuphandlers.py:27
+msgid "category_freq_anual"
+msgstr ""
+
+#: ../setuphandlers.py:21
+msgid "category_freq_diaria"
+msgstr ""
+
+#: ../setuphandlers.py:20
+msgid "category_freq_horaria"
+msgstr ""
+
+#: ../setuphandlers.py:23
+msgid "category_freq_mensual"
+msgstr ""
+
+#: ../setuphandlers.py:25
+msgid "category_freq_quadrimestral"
+msgstr ""
+
+#: ../setuphandlers.py:26
+msgid "category_freq_semestral"
+msgstr ""
+
+#: ../setuphandlers.py:22
+msgid "category_freq_setmanal"
+msgstr ""
+
+#: ../setuphandlers.py:24
+msgid "category_freq_trimestral"
+msgstr ""
+
+#: ../setuphandlers.py:19
+msgid "category_freq_unknown"
+msgstr ""
+
+#: ../data_access/indicadors.py:131
+msgid "category_freq_{0}"
+msgstr ""
+
+#: ../configure.zcml:27
+msgid "genweb6.serveistic"
+msgstr ""
+
+#: ../configure.zcml:36
+msgid "genweb6.serveistic (uninstall)"
+msgstr ""
+
+#: ../controlpanels/facetes.py:43
+msgid "help_facetes_table"
+msgstr ""
+
+#. Default: "ServeisTIC configuration."
+#: ../controlpanels/facetes.py:54
+#: ../controlpanels/serveistic.py:120
+msgid "help_serveistic_settings_editform"
+msgstr ""
+
+#. Default: "Serveis Tic Banners"
+#: ../portlets/bannersportlet/bannersportlet.py:38
+msgid "label_banner_serveis"
+msgstr ""
+
+#. Default: "Serveis més populars"
+#: ../browser/views_templates/faceted_container/faceted_container.pt:31
+msgid "most_popular"
+msgstr ""
+
+#. Default: "(obriu en una finestra nova)"
+#: ../portlets/bannersportlet/bannersportlet.py:75
+msgid "obrir_link_finestra_nova"
+msgstr ""
+
+#. Default: "Servei TIC"
+#: ../profiles/default/types/serveitic.xml
+msgid "serveitic"
+msgstr ""

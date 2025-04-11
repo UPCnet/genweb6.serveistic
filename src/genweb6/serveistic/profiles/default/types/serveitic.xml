@@ -5,7 +5,7 @@
   <property name="title" i18n:translate="serveitic">Servei TIC</property>
   <property name="description" i18n:translate="">Serveis TIC</property>
   <property name="icon_expr">string:briefcase-fill</property>
-  <property name="allow_discussion">True</property>
+  <property name="allow_discussion">False</property>
   <property name="global_allow">True</property>
 
   <property name="schema">genweb6.serveistic.content.serveitic.serveitic.IServeiTIC</property>

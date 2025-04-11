@@ -79,7 +79,7 @@ class UpdateIndicadors(BrowserView):
                     'visita-n-data_ahir'):
                 update_indicators(
                     self.context,
-                    service=serveistic_config().ws_indicadors_service_id,
+                    service=serveistic_config().get('ws_indicadors_service_id', ''),
                     indicator=indicator)
             return "Indicators were successfully reported"
         except (RegistryException, ReporterException) as e:
@@ -89,7 +89,7 @@ class UpdateIndicadors(BrowserView):
             self.request.response.setBody("Error while reporting indicators")
 
     def _is_authorised(self):
-        passphrase = serveistic_config().update_indicadors_passphrase
+        passphrase = serveistic_config().get('update_indicadors_passphrase', '')
         return self._parse_passphrase() == passphrase
 
     def _parse_passphrase(self):
