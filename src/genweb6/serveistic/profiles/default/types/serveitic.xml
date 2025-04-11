@@ -39,6 +39,7 @@
     <element value="Link" />
     <element value="packet" />
     <element value="genweb.upc.subhome" />
+    <element value="genweb.core.existing_content" />
   </property>
 
   <property name="default_view">view</property>
