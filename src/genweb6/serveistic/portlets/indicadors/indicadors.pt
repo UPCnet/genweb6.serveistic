@@ -5,7 +5,7 @@
     <h2 class="portlet-title" i18n:domain="genweb"
         i18n:translate="">Indicadors</h2>
 
-    <tal:content metal:use-macro="context/macros-serveistic-indicador/content"></tal:content>
+    <tal:content metal:use-macro="context/@@macros-serveistic-indicador/content"></tal:content>
 
     <div class="portlet-footer" tal:condition="indicadors">
 

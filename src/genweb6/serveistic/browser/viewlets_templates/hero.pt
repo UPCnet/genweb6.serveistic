@@ -1,7 +1,7 @@
 <tal:hero_serveistic tal:define="custom_hero view/custom_hero">
 
   <tal:block tal:condition="not:custom_hero/is_servei"
-         metal:use-macro="context/@@macros-genweb-hero/content"></tal:block>
+             metal:use-macro="context/@@macros-genweb-hero/content"></tal:block>
 
   <tal:hero_custom tal:condition="custom_hero/is_servei"
                    tal:define="pref_lang context/@@genweb.utils/pref_lang;
