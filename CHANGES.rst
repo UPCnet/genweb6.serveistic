@@ -2,10 +2,9 @@ Changelog
 =========
 
 
-1.31 (unreleased)
+1.31 (2025-05-20)
 -----------------
 
-- Nothing changed yet.
 
 
 1.30 (2025-05-20)
