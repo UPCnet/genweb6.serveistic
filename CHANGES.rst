@@ -2,11 +2,12 @@ Changelog
 =========
 
 
-1.30 (unreleased)
+1.30 (2025-05-20)
 -----------------
 
-- Nothing changed yet.
-
+* [UPD] Cambiar como llamamos a las macros [«Iago]
+* [FIX] macro calls when it cannot be found on the context [Alberto Durán]
+* [ADD] existing content type to serveis tic [Clàudia Andreu]
 
 1.29 (2025-04-09)
 -----------------
