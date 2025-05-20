@@ -5,7 +5,7 @@
     <h2 class="portlet-title" i18n:domain="genweb"
         i18n:translate="">Notificacions</h2>
 
-    <tal:content metal:use-macro="context/macros-serveistic-notificacio/content"></tal:content>
+    <tal:content metal:use-macro="context/@@macros-serveistic-notificacio/content"></tal:content>
 
     <div class="portlet-footer" tal:condition="notificacions">
 

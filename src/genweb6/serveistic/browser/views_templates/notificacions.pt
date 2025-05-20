@@ -25,7 +25,7 @@
 
     <metal:content-core fill-slot="content-core">
 
-        <tal:content metal:use-macro="context/macros-serveistic-notificacio/content"
+        <tal:content metal:use-macro="context/@@macros-serveistic-notificacio/content"
                      tal:define="notificacions view/notificacions"></tal:content>
 
     </metal:content-core>
