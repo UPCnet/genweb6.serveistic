@@ -50,12 +50,18 @@ def serveistic_config():
     }
 
 
-@ram.cache(lambda *args: time() // (24 * 60 * 60))
-def serveistic_facetes_config():
-    """ Funcio que retorna les configuracions del controlpanel """
+def serveistic_facetes_config(request=None):
+    if request is not None and hasattr(request, '_facetes_table'):
+        return request._facetes_table
     registry = queryUtility(IRegistry)
     controlpanel = registry.forInterface(IServeisTICFacetesControlPanelSettings)
-    return controlpanel.facetes_table
+    try:
+        res = controlpanel.facetes_table
+    except:
+        res = []
+    if request is not None:
+        request._facetes_table = res
+    return res
 
 
 def get_servei(self):
@@ -127,7 +133,8 @@ class FacetValuesVocabularyBase(object):
         self.lang = ""
 
     def __call__(self, context):
-        facets = serveistic_facetes_config()
+        request = getattr(context, 'REQUEST', None)
+        facets = serveistic_facetes_config(request)
         facets = [] if facets is None else facets
 
         vocabulary = []

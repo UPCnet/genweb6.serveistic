@@ -10,6 +10,7 @@ from plone.supermodel import model
 from z3c.form import button
 from zope import schema
 from zope.ramcache import ram
+import json
 
 from genweb6.serveistic import _
 
@@ -45,6 +46,14 @@ class IServeisTICFacetesControlPanelSettings(model.Schema, IDexteritySchema):
         required=False
         )
 
+    # TODO: Si vemos que es muy lento podemos modificar a esto que devulve solo string.
+    # facetes_table_cached = schema.Text(
+    #     title=u"Facetes cachejades",
+    #     description=u"Còpia de les facetes cachejades compartida entre Zope clients",
+    #     required=False,
+    #     default=u'[]'
+    # )
+
 
 class ServeisTICFacetesControlPanelSettingsForm(controlpanel.RegistryEditForm):
 
@@ -74,9 +83,9 @@ class ServeisTICFacetesControlPanelSettingsForm(controlpanel.RegistryEditForm):
             replace_facetes_table.append(facet)
 
         data['facetes_table'] = replace_facetes_table
-        self.applyChanges(data)
+        # data['facetes_table_cached'] = json.dumps(replace_facetes_table, ensure_ascii=False)
 
-        ram.caches.clear()
+        self.applyChanges(data)
 
         IStatusMessage(self.request).addStatusMessage(_("Changes saved"), "info")
         self.request.response.redirect(self.request.getURL())
