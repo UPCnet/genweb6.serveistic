@@ -64,7 +64,8 @@ class FacetedContainerView(FacetedContainerView):
         return populars
 
     def showFilters(self):
-        return serveistic_config().get('show_filters', False)
+        request = getattr(self.context, 'REQUEST', None)
+        return serveistic_config(request).get('show_filters', False)
 
     def default_preview_url(self):
         return default_serveistic_url_preview_image()
