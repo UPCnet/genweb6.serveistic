@@ -2,11 +2,12 @@ Changelog
 =========
 
 
-1.32 (unreleased)
+1.32 (2025-06-03)
 -----------------
 
-- Nothing changed yet.
-
+* Merge remote-tracking branch 'origin/develop' [Pilar Marinas]
+* [FIX] Quitar ram.cache del controlpanel serveistic_config [pilar.marinas]
+* [FIX] Quitar ram.cache del controlpanel facetes [Pilar Marinas]
 
 1.31 (2025-05-20)
 -----------------
