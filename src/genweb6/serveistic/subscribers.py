@@ -165,9 +165,10 @@ def serveiModifyAddSubjects(content, event):
 
 def update_indicators_on_serveitic_deletion(obj, event):
     try:
+        request = getattr(obj.context, 'REQUEST', None)
         update_indicators_if_state(
             obj, ('published',),
-            service=serveistic_config().get('ws_indicadors_service_id', ''),
+            service=serveistic_config(request).get('ws_indicadors_service_id', ''),
             indicator='servei-n')
         logger.info("Indicators were successfully reported")
     except RegistryException as e:
@@ -179,9 +180,10 @@ def update_indicators_on_serveitic_deletion(obj, event):
 
 def update_indicators_on_serveitic_review_state_change(obj, event):
     try:
+        request = getattr(obj.context, 'REQUEST', None)
         update_indicators(
             obj,
-            service=serveistic_config().get('ws_indicadors_service_id', ''),
+            service=serveistic_config(request).get('ws_indicadors_service_id', ''),
             indicator='servei-n', after_commit=True)
         logger.info("Indicators were successfully reported")
     except RegistryException as e:
