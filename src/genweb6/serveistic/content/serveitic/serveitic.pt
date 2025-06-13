@@ -19,7 +19,7 @@
 
   <div class="col-md-12">
 
-    <div class="serveitic-desc col-md-12"
+    <div class="serveitic-desc mt-5 col-md-12"
          tal:define="view nocall:view;
                      have_portlets_slot2 python:view.have_portlets('genweb.portlets.HomePortletManager2', view);
                      have_portlets_slot3 python:view.have_portlets('genweb.portlets.HomePortletManager3', view);
