@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.33 (unreleased)
+1.33 (2025-06-18)
 -----------------
 
-- Nothing changed yet.
-
+* [UPD] Añadir mt-5 al template de serveistic para que no choque con las redes sociales [«Iago]
 
 1.32 (2025-06-03)
 -----------------
