@@ -32,7 +32,8 @@ def update_after_commit_hook(is_commit_successful, context, service, indicator):
 
 
 def update(context, service, indicator):
-    st_tools = serveistic_config()
+    request = getattr(context, 'REQUEST', None)
+    st_tools = serveistic_config(request)
     ws_url = st_tools.get('ws_indicadors_endpoint', '')
     ws_key = st_tools.get('ws_indicadors_key', '')
     registry = get_registry(context)

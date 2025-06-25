@@ -35,7 +35,8 @@ class GoogleAnalyticsCalculator(Calculator):
                 "Cannot instantiate GA reporter ({0})".format(e))
 
     def _get_ids(self):
-        ga_view_id = serveistic_config().get('ga_view_id', '')
+        request = getattr(self.context, 'REQUEST', None)
+        ga_view_id = serveistic_config(request).get('ga_view_id', '')
         if ga_view_id:
             return "ga:{0}".format(ga_view_id)
         return None

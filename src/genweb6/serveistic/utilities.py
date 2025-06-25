@@ -29,33 +29,45 @@ def build_vocabulary(values):
         for token, value in enumerate(values)])
 
 
-@ram.cache(lambda *args: time() // (24 * 60 * 60))
-def serveistic_config():
+def serveistic_config(request=None):
     """ Funcio que retorna les configuracions del controlpanel """
+    if request is not None and hasattr(request, '_serveistic_config'):
+        return request._serveistic_config
     registry = queryUtility(IRegistry)
     controlpanel = registry.forInterface(IServeisTICControlPanelSettings)
-    return {
-        'url_info_serveistic': controlpanel.url_info_serveistic,
-        'show_filters': controlpanel.show_filters,
-        'disable_default_structure': controlpanel.disable_default_structure,
-        'ws_problemes_endpoint': controlpanel.ws_problemes_endpoint,
-        'ws_problemes_login_username': controlpanel.ws_problemes_login_username,
-        'ws_problemes_login_password': controlpanel.ws_problemes_login_password,
-        'ws_indicadors_service_id': controlpanel.ws_indicadors_service_id,
-        'ws_indicadors_endpoint': controlpanel.ws_indicadors_endpoint,
-        'ws_indicadors_key': controlpanel.ws_indicadors_key,
-        'update_indicadors_passphrase': controlpanel.update_indicadors_passphrase,
-        'ga_key_json': controlpanel.ga_key_json,
-        'ga_view_id': controlpanel.ga_view_id,
-    }
+    try:
+        res = {
+            'url_info_serveistic': controlpanel.url_info_serveistic,
+            'show_filters': controlpanel.show_filters,
+            'disable_default_structure': controlpanel.disable_default_structure,
+            'ws_problemes_endpoint': controlpanel.ws_problemes_endpoint,
+            'ws_problemes_login_username': controlpanel.ws_problemes_login_username,
+            'ws_problemes_login_password': controlpanel.ws_problemes_login_password,
+            'ws_indicadors_service_id': controlpanel.ws_indicadors_service_id,
+            'ws_indicadors_endpoint': controlpanel.ws_indicadors_endpoint,
+            'ws_indicadors_key': controlpanel.ws_indicadors_key,
+            'update_indicadors_passphrase': controlpanel.update_indicadors_passphrase,
+            'ga_key_json': controlpanel.ga_key_json,
+            'ga_view_id': controlpanel.ga_view_id,
+        }
+    except:
+        res = {}
+    if request is not None:
+        request._serveistic_config = res
+    return res
 
-
-@ram.cache(lambda *args: time() // (24 * 60 * 60))
-def serveistic_facetes_config():
-    """ Funcio que retorna les configuracions del controlpanel """
+def serveistic_facetes_config(request=None):
+    if request is not None and hasattr(request, '_facetes_table'):
+        return request._facetes_table
     registry = queryUtility(IRegistry)
     controlpanel = registry.forInterface(IServeisTICFacetesControlPanelSettings)
-    return controlpanel.facetes_table
+    try:
+        res = controlpanel.facetes_table
+    except:
+        res = []
+    if request is not None:
+        request._facetes_table = res
+    return res
 
 
 def get_servei(self):
@@ -127,7 +139,8 @@ class FacetValuesVocabularyBase(object):
         self.lang = ""
 
     def __call__(self, context):
-        facets = serveistic_facetes_config()
+        request = getattr(context, 'REQUEST', None)
+        facets = serveistic_facetes_config(request)
         facets = [] if facets is None else facets
 
         vocabulary = []

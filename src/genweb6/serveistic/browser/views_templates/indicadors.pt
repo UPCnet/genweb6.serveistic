@@ -25,7 +25,7 @@
 
     <metal:content-core fill-slot="content-core">
 
-        <tal:content metal:use-macro="context/macros-serveistic-indicador/content"
+        <tal:content metal:use-macro="context/@@macros-serveistic-indicador/content"
                      tal:define="indicadors view/indicadors"></tal:content>
 
     </metal:content-core>

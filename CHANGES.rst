@@ -2,11 +2,35 @@ Changelog
 =========
 
 
-1.30 (unreleased)
+1.34 (unreleased)
 -----------------
 
 - Nothing changed yet.
 
+
+1.33 (2025-06-18)
+-----------------
+
+* [UPD] Añadir mt-5 al template de serveistic para que no choque con las redes sociales [«Iago]
+
+1.32 (2025-06-03)
+-----------------
+
+* Merge remote-tracking branch 'origin/develop' [Pilar Marinas]
+* [FIX] Quitar ram.cache del controlpanel serveistic_config [pilar.marinas]
+* [FIX] Quitar ram.cache del controlpanel facetes [Pilar Marinas]
+
+1.31 (2025-05-20)
+-----------------
+
+
+
+1.30 (2025-05-20)
+-----------------
+
+* [UPD] Cambiar como llamamos a las macros [«Iago]
+* [FIX] macro calls when it cannot be found on the context [Alberto Durán]
+* [ADD] existing content type to serveis tic [Clàudia Andreu]
 
 1.29 (2025-04-09)
 -----------------
