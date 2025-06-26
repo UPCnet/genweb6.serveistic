@@ -108,6 +108,10 @@ class titleViewletServeistic(titleViewlet):
     )
 
     page_title = escape(safe_text(context_state.object_title()))
+    seo_title = getattr(self.context, 'seo_title', None)
+    if seo_title:
+      page_title = escape(safe_text(seo_title))
+
     portal_title = escape(safe_text(portal_state.navigation_root_title()))
 
     genweb_title = getattr(genwebHeaderConfig(), 'html_title_%s' % self.pref_lang(), 'Genweb UPC')
