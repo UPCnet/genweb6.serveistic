@@ -4,6 +4,7 @@ from Acquisition import aq_inner, aq_chain
 from Products.CMFPlone import PloneMessageFactory as _
 from Products.CMFPlone.browser.navtree import getNavigationRoot
 
+from eea.facetednavigation.subtypes.interfaces import IFacetedNavigable
 from plone import api
 from plone.i18n.normalizer.interfaces import IIDNormalizer
 from plone.memoize import ram
@@ -74,6 +75,14 @@ def get_servei(self):
     context = aq_inner(self.context)
     for obj in aq_chain(context):
         if IServeiTIC.providedBy(obj):
+            return obj
+    return None
+
+
+def get_faceted(self):
+    context = aq_inner(self.context)
+    for obj in aq_chain(context):
+        if IFacetedNavigable.providedBy(obj):
             return obj
     return None
 

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from genweb6.core import utils
 
 
 class BannerDataReporter(object):
@@ -32,4 +33,17 @@ class BannerDataReporter(object):
             review_state=('published', 'intranet'),
             path={'query': path},
             sort_on='getObjPositionInParent')
+        return results[:count] if count else results
+
+    def list_by_faceted(self, faceted, count=None):
+        lang = utils.pref_lang()
+        path = '/'.join(faceted.getPhysicalPath())
+        banners_path = f'{path}/banners-{lang}' if f'banners-{lang}' in faceted else f'{path}/banners'
+
+        results = self.catalog.searchResults(
+            portal_type='Banner',
+            review_state=('published', 'intranet'),
+            path={'query': banners_path},
+            sort_on='getObjPositionInParent')
+
         return results[:count] if count else results

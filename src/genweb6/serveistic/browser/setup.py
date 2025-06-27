@@ -11,9 +11,13 @@ from eea.facetednavigation.settings.interfaces import IHidePloneRightColumn
 from eea.facetednavigation.subtypes.interfaces import IFacetedNavigable
 from eea.facetednavigation.subtypes.interfaces import IPossibleFacetedNavigable
 from plone import api
+from plone.dexterity.utils import createContentInContainer
 from zope.annotation.interfaces import IAnnotations
 from zope.component import queryMultiAdapter
 from zope.interface import alsoProvides
+
+from genweb6.core import utils
+from genweb6.core.interfaces import IProtectedContent
 
 import pkg_resources
 
@@ -66,6 +70,13 @@ class SetupServeistic(BrowserView):
         return self.request.response.redirect(portal.absolute_url())
 
 
+def create_content(container, portal_type, id, **kwargs):
+    if not getattr(container, id, False):
+        obj = createContentInContainer(
+            container, portal_type, checkConstraints=False, **kwargs)
+    return getattr(container, id)
+
+
 class SetupServeisticInFolder(BrowserView):
 
     def __call__(self):
@@ -83,6 +94,32 @@ class SetupServeisticInFolder(BrowserView):
         environ = SnapshotImportContext(context, "utf-8")
         importer = queryMultiAdapter((context, environ), IBody)
         egglocation = pkg_resources.get_distribution('genweb6.serveistic').location
-        importer.body = open('{}/genweb6/serveistic/data/faceted_settings_ca.xml'.format(egglocation), 'rb').read()
+
+        lang = utils.pref_lang()
+        importer.body = open('{}/genweb6/serveistic/data/faceted_settings_{}.xml'.format(egglocation, lang), 'rb').read()
+
+        banners = create_content(
+            self.context, 'BannerContainer', 'banners', title='banners',
+            description=u'Banners')
+
+        banners.title = 'Banners'
+        banners.exclude_from_nav = True
+        banners.reindexObject()
+        alsoProvides(banners, IProtectedContent)
+
+        return self.request.response.redirect(self.context.absolute_url())
+
+
+class CreateBannerFolder(BrowserView):
+
+    def __call__(self):
+        banners = create_content(
+            self.context, 'BannerContainer', 'banners', title='banners',
+            description=u'Banners')
+
+        banners.title = 'Banners'
+        banners.exclude_from_nav = True
+        banners.reindexObject()
+        alsoProvides(banners, IProtectedContent)
 
         return self.request.response.redirect(self.context.absolute_url())

@@ -13,6 +13,7 @@ from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
 from zope.component.hooks import getSite
 
+from genweb6.serveistic.utilities import get_faceted
 from genweb6.serveistic.utilities import get_servei
 from genweb6.serveistic.data_access.banner import BannerDataReporter
 
@@ -64,25 +65,7 @@ class Renderer(base.Renderer):
             return reporter.list_by_servei(get_servei(self))
 
         elif self.data.banner_type == u"Global":
-
-            context_path = self.context.getPhysicalPath()
-            site = getSite()
-            site_path = site.getPhysicalPath()
-            relative_path_parts = context_path[len(site_path):]
-
-            if relative_path_parts:
-                lang_folder = relative_path_parts[0]
-            else:
-                lang_folder = 'ca'
-
-            banners_path = '/'.join(site_path + (lang_folder, f'banners-{lang_folder}'))
-            banners = reporter.list_by_path(banners_path)
-
-            if not banners:
-                banners_path_ca = '/'.join(site_path + ('ca', 'banners-ca'))
-                banners = reporter.list_by_path(banners_path_ca)
-
-            return banners
+            return reporter.list_by_faceted(get_faceted(self))
 
         else:
             return []

@@ -51,6 +51,14 @@
     />
 
   <browser:page
+    for="*"
+    name="create-banner-folder"
+    layer="..interfaces.IGenweb6ServeisticLayer"
+    class=".setup.CreateBannerFolder"
+    permission="cmf.ManagePortal"
+    />
+
+  <browser:page
     for="genweb6.serveistic.content.serveitic.serveitic.IServeiTIC"
     name="indicadors_list"
     layer="..interfaces.IGenweb6ServeisticLayer"
