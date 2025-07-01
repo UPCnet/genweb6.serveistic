@@ -2,11 +2,12 @@ Changelog
 =========
 
 
-1.34 (unreleased)
+1.34 (2025-07-01)
 -----------------
 
-- Nothing changed yet.
-
+* [UPD] Actualizada gestión de los banners globales [«Iago]
+* [UPD] SEO title [«Iago]
+* [UPD] load banners from current language folder in serveisTIC [Clàudia Andreu]
 
 1.33 (2025-06-18)
 -----------------
