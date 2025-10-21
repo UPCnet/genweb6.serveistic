@@ -88,6 +88,7 @@ class SetupServeisticInFolder(BrowserView):
         alsoProvides(context, IHidePloneRightColumn)
         alsoProvides(context, IDisableSmartFacets)
         alsoProvides(context, IPossibleFacetedNavigable)
+        alsoProvides(context, IProtectedContent)
 
         IAnnotations(context)[ANNO_FACETED_LAYOUT] = "faceted-preview-items"
 
