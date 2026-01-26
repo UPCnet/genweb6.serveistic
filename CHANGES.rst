@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.35 (unreleased)
+1.35 (2026-01-26)
 -----------------
 
-- Nothing changed yet.
-
+* [ADD] Añadir proteccion de renombramiento a los servestic dentro de carpetas [Iago López]
 
 1.34 (2025-07-01)
 -----------------
