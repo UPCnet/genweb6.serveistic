@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.36 (unreleased)
+1.36 (2026-02-11)
 -----------------
 
-- Nothing changed yet.
-
+* [FIX] npm audit [Iago López]
 
 1.35 (2026-01-26)
 -----------------
