@@ -41,15 +41,16 @@ class FacetedContainerView(FacetedContainerView):
                 else:
                     return None
 
-            wf_tool = api.portal.get_tool("portal_workflow")
-            tools = getMultiAdapter((self.context, self.request), name='plone_tools')
-            workflows = tools.workflow().getWorkflowsFor(benvingut)[0]
-            benvingut_workflow = wf_tool.getWorkflowsFor(benvingut)[0].id
-            benvingut_status = wf_tool.getStatusOf(benvingut_workflow, benvingut)
-            if workflows['states'][benvingut_status['review_state']].id == 'published' and benvingut.text:
-                return benvingut.text.output
-            else:
+            if not getattr(benvingut, 'text', None):
                 return None
+
+            # Publicat: tothom el veu. Esborrany: només qui té permís View (com Genweb estàndard)
+            from plone.api.content import get_state
+            is_published = get_state(benvingut) == 'published'
+            can_view = api.user.has_permission('View', obj=benvingut)
+            if is_published or can_view:
+                return benvingut.text.output
+            return None
         except KeyError:
             return None
 
