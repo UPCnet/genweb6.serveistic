@@ -45,10 +45,8 @@ class FacetedContainerView(FacetedContainerView):
                 return None
 
             # Publicat: tothom el veu. Esborrany: només qui té permís View (com Genweb estàndard)
-            from plone.api.content import get_state
-            is_published = get_state(benvingut) == 'published'
             can_view = api.user.has_permission('View', obj=benvingut)
-            if is_published or can_view:
+            if can_view:
                 return benvingut.text.output
             return None
         except KeyError:
