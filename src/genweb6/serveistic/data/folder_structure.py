@@ -17,7 +17,7 @@ folder_structure = (
                 None,
                 u"""<p style="text-align: center; "><strong>*** Pàgina imprescindible per publicar el servei ***</strong></p>
                     <p>Aquest apartat descriu a l’usuari el model de funcionament del servei i les seves funcionalitats. ATENCIÓ: No s'ha de confondre amb el manual de l'usuari.</p>
-                    <p>Parlar  de:</p>
+                    <p>Parlar de:</p>
                     <ul>
                     <li>Com s’usa el servei (portal web, mòbil, telèfon...)</li>
                     <li>Els rols que pot prendre l’usuari</li>
@@ -26,17 +26,17 @@ folder_structure = (
                     </ul>
                     <p style="text-align: left; ">Podeu consultar la descripció del servei de <a class="internal-link" href="resolveuid/d22f551c904b40458179e27ee115d4bb" target="_self" title="">correuUPC</a> i la <a class="internal-link" href="resolveuid/e1540bb0c5ac4f2b93615155bc7a0955" target="_blank" title="">guia d'estil</a></p>"""),
 
-            ("Normativa", "Document", False, False, None, None,
+            ("Condicions d'ús", "Document", False, False, None, None,
                 None,
                 u"""<p style="text-align: center; "><strong>*** Pàgina imprescindible per publicar el servei ***</strong></p>
-                    <p>L’apartat de normativa descriu clarament les normes d’ús del servei. Generalment  correspon a la Direcció TIC emplenar aquest apartat.</p>
+                    <p>L’apartat de condicions d'ús descriu clarament les normes d’ús del servei. Generalment correspon a la Direcció TIC emplenar aquest apartat.</p>
                     <p>Parla de:</p>
                     <ul>
                     <li>Qui pot utilitzar el servei</li>
                     <li>Normes d'ús per als usuaris del servei</li>
                     <li>Normes d'ús per als administradors del servei i els responsables funcionals (A definir per la direcció TIC).</li>
                     <li>Compromís que adquireix l'usuari a l'utilitzar el servei</li>
-                    <li>Compromís que adquireix l'administrador o el gestor del servei </li>
+                    <li>Compromís que adquireix l'administrador o el gestor del servei</li>
                     </ul>"""),
 
             ("Procediments", "Document", False, False, None, None,
@@ -51,7 +51,7 @@ folder_structure = (
                     <li>A qui va dirigit</li>
                     </ul>
                     </ul>
-                    <p>Els procediments han d’estar validats per la direcció TIC i els responsables funcionals i tecnològics. En alguns serveis la Normativa i els procediments s'ajunten en un apartat Normativa i procediments.</p>
+                    <p>Els procediments han d’estar validats per la direcció TIC i els responsables funcionals i tecnològics. En alguns serveis les condicions d'ús i els procediments s'ajunten en un apartat Condicions d'ús i procediments.</p>
                     <p> <br /><br /></p>"""),
 
             ("Evolució del servei", "Document", False, False, None, None,
@@ -99,7 +99,7 @@ folder_structure = (
                     <h4><strong>Detall de l'error:</strong></h4>
                     <p><strong></strong><span>Descripció àmplia de l'error</span></p>
                     <p> </p>
-                    <h4><strong>Solució temporal:</strong> </h4>
+                    <h4><strong>Solució temporal:</strong></h4>
                     <p>Si n'hi ha solució temporal al problema (ús d'un altre navegador ...)</p>
                     <h3>Nom Servei-Codi error: Descripció error</h3>"""),
         )
@@ -115,8 +115,8 @@ folder_structure = (
                 (
                     ("Manual", "Document", False, False, None, None,
                         None,
-                        u"""<p>La documentació conté informació de nivell funcional per tal que l'usuari entengui el funcionament del servei i pugui ser autònom en la seva utilització. Explica les funcionalitats del servei, i la seva operativa de tal manera que l'usuari sigui capaç d'utilitzar el servei encara que canviï el seu aspecte o alguna funcionalitat menor.  </p>
-                            <p>Redacta un manual per cada tipus d'usuari: </p>
+                        u"""<p>La documentació conté informació de nivell funcional per tal que l'usuari entengui el funcionament del servei i pugui ser autònom en la seva utilització. Explica les funcionalitats del servei, i la seva operativa de tal manera que l'usuari sigui capaç d'utilitzar el servei encara que canviï el seu aspecte o alguna funcionalitat menor.</p>
+                            <p>Redacta un manual per cada tipus d'usuari:</p>
                             <ul>
                             <li>Manual per a l'usuari</li>
                             <li>Manual per l'administrador</li>
