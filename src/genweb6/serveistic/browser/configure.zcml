@@ -84,4 +84,13 @@
     permission="zope2.View"
     />
 
+  <browser:page
+    name="sitemap_builder_view"
+    for="*"
+    class=".sitemap.ServeisticCatalogSiteMap"
+    layer="..interfaces.IGenweb6ServeisticLayer"
+    allowed_attributes="siteMap"
+    permission="zope.Public"
+    />
+
 </configure>
