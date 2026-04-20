@@ -24,4 +24,18 @@
     <value>2</value>
   </record>
 
+  <!-- folder_contents (pat-structure): plone.icon.contenttype mas portal type normalizado -->
+  <record name="plone.icon.contenttype/notificaciotic">
+    <field type="plone.registry.field.TextLine">
+      <title>ServeiSTIC notificació TIC</title>
+    </field>
+    <value key="resource">++plone++bootstrap-icons/exclamation-circle-fill.svg</value>
+  </record>
+  <record name="plone.icon.contenttype/serveitic">
+    <field type="plone.registry.field.TextLine">
+      <title>ServeiSTIC servei TIC</title>
+    </field>
+    <value key="resource">++plone++bootstrap-icons/briefcase-fill.svg</value>
+  </record>
+
 </registry>
