@@ -2,11 +2,15 @@ Changelog
 =========
 
 
-1.37 (unreleased)
+1.37 (2026-04-21)
 -----------------
 
-- Nothing changed yet.
-
+* [UPD] Registrar iconos que se usan en los tipos de contenido creados [Iago López]
+* [ADD] Forzar que el contenido serveistic salga en el sitemap [Iago López]
+* [UPD] Setup servei, cambiar Normativa a Condicions d'ùs [Iago López]
+* [UPD] Show benvingut in draft for users with View permission [Clàudia Andreu]
+* Merge branch 'develop' of github.com:UPCnet/genweb6.serveistic into develop [Clàudia Andreu]
+* [UPD] show benvingut in draft for users with View permission [Clàudia Andreu]
 
 1.36 (2026-02-11)
 -----------------
