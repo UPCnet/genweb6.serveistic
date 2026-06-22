@@ -2,5 +2,6 @@
 <object name="portal_catalog">
 
   <column value="website_url" remove="True" />
+  <column value="servei_facetas" remove="True" />
 
 </object>

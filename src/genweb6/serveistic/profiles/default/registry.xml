@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<registry>
+<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
   <records
     interface="Products.CMFPlone.interfaces.IBundleRegistry"
@@ -37,5 +37,23 @@
     </field>
     <value key="resource">++plone++bootstrap-icons/briefcase-fill.svg</value>
   </record>
+
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.servei_facetas">
+    <value key="title"
+           i18n:translate="">Facetes servei</value>
+    <value key="description"
+           i18n:translate="">Totes les facetes del servei TIC en un sol camp de cerca</value>
+    <value key="enabled">True</value>
+    <value key="sortable">False</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.selection.any</element>
+      <element>plone.app.querystring.operation.selection.all</element>
+      <element>plone.app.querystring.operation.selection.none</element>
+    </value>
+    <value key="vocabulary">genweb.serveistic.vocabularies.servei_facetas</value>
+    <value key="group"
+           i18n:translate="">Text</value>
+  </records>
 
 </registry>

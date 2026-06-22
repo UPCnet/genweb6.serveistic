@@ -13,6 +13,7 @@
     <include package=".controlpanels" />
     <include package=".portlets" />
 
+    <include file="catalog.zcml" />
     <include file="patches.zcml" />
     <include file="subscribers.zcml" />
     <include file="upgrades.zcml" />
@@ -57,6 +58,12 @@
         provides="zope.schema.interfaces.IVocabularyFactory"
         factory=".utilities.FacetsVocabulary"
         name="genweb.serveistic.vocabularies.facets"
+        />
+
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        factory=".utilities.ServeiFacetesUnifiedVocabulary"
+        name="genweb.serveistic.vocabularies.servei_facetas"
         />
 
     <utility

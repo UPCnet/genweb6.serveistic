@@ -1,0 +1,13 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="genweb6.serveistic">
+
+    <adapter
+        factory=".catalog.servei_facetas"
+        name="servei_facetas"
+        for="genweb6.serveistic.content.notificaciotic.notificaciotic.INotificacioTIC
+             Products.ZCatalog.interfaces.IZCatalog"
+        provides="plone.indexer.interfaces.IIndexer"
+        />
+
+</configure>

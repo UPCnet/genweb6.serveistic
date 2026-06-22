@@ -135,6 +135,32 @@ class FacetsVocabulary(object):
 
 
 @implementer(IVocabularyFactory)
+class ServeiFacetesUnifiedVocabulary(object):
+    """All configured faceta values for collection search criteria."""
+
+    def __call__(self, context):
+        request = getattr(context, 'REQUEST', None)
+        facets = serveistic_facetes_config(request) or []
+        terms = []
+        seen = set()
+        normalizer = getUtility(IIDNormalizer)
+        for facet in facets:
+            valor = facet.get('valor')
+            if not valor:
+                continue
+            token = normalizer.normalize(valor)
+            if token in seen:
+                continue
+            seen.add(token)
+            terms.append(SimpleTerm(
+                value=token,
+                token=token,
+                title=valor,
+            ))
+        return SimpleVocabulary(terms)
+
+
+@implementer(IVocabularyFactory)
 class FacetValuesVocabularyBase(object):
     """
     Base class that represents a vocabulary containing the defined values for

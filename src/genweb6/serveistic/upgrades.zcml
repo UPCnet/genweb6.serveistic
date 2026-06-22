@@ -5,11 +5,11 @@
   i18n_domain="genweb">
 
   <genericsetup:upgradeStep
-      title="Reinstall genweb6.serveistic"
-      description="Reinstall package genweb6.serveistic"
+      title="Reimport genweb6.serveistic profile"
+      description="Reimport profile steps and reindex servei_facetas"
       source="*"
       destination="*"
-      handler="genweb6.serveistic.upgrades.upgrade_by_reinstall"
+      handler="genweb6.serveistic.upgrades.upgrade_import_profile"
       profile="genweb6.serveistic:default"
       />
 

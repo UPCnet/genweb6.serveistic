@@ -9,6 +9,7 @@ from plone.registry.interfaces import IRegistry
 from plone.i18n.normalizer.interfaces import IIDNormalizer
 
 from genweb6.serveistic import _
+from genweb6.serveistic.catalog import SERVEI_FACETAS_PORTAL_TYPE
 from genweb6.serveistic.config_helper import get_absolute_path, config
 from genweb6.serveistic.controlpanels.facetes import IServeisTICFacetesControlPanelSettings
 
@@ -56,6 +57,7 @@ NEW_INDEXES = [
     ('en_faceta_6', 'KeywordIndex'),
     ('en_faceta_7', 'KeywordIndex'),
     ('en_faceta_8', 'KeywordIndex'),
+    ('servei_facetas', 'KeywordIndex'),
     ('is_general', 'FieldIndex'),
 ]
 
@@ -91,8 +93,21 @@ def add_catalog_indexes(catalog):
         if name not in indexes:
             catalog.addIndex(name, meta_type)
             indexables.append(name)
-    if len(indexables) > 0:
-        catalog.manage_reindexIndex(ids=indexables)
+    if indexables:
+        other_indexes = [name for name in indexables if name != 'servei_facetas']
+        if other_indexes:
+            catalog.manage_reindexIndex(ids=other_indexes)
+    return indexables
+
+
+def reindex_servei_facetas(catalog=None):
+    """Reindex servei_facetas only for notificaciotic content."""
+    if catalog is None:
+        catalog = api.portal.get_tool('portal_catalog')
+    if 'servei_facetas' not in catalog.indexes():
+        return
+    for brain in catalog(portal_type=SERVEI_FACETAS_PORTAL_TYPE):
+        brain.getObject().reindexObject(idxs=['servei_facetas'])
 
 
 def add_default_settings():
@@ -155,6 +170,7 @@ def setupVarious(context):
 
     catalog = api.portal.get_tool("portal_catalog")
     add_catalog_indexes(catalog)
+    reindex_servei_facetas(catalog)
 
     add_default_settings()
     add_default_folders()
