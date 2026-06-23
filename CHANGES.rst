@@ -2,11 +2,10 @@ Changelog
 =========
 
 
-1.38 (unreleased)
+1.38 (2026-06-23)
 -----------------
 
-- Nothing changed yet.
-
+* [ADD] Añadir funcionalidad para poder buscar notificaciones en una coleccion usando de filtro la faceta del servicio [Iago López]
 
 1.37 (2026-04-21)
 -----------------
