@@ -24,3 +24,6 @@ msgstr "Serveistic Notificacions"
 
 msgid "Serveistic Indicadors"
 msgstr "Serveistic Indicadors"
+
+msgid "servei_facetas"
+msgstr "Servei facetes"

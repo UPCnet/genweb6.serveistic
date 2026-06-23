@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+          i18n:domain="genweb6.serveistic">
 
   <records
     interface="Products.CMFPlone.interfaces.IBundleRegistry"
@@ -53,7 +54,7 @@
     </value>
     <value key="vocabulary">genweb.serveistic.vocabularies.servei_facetas</value>
     <value key="group"
-           i18n:translate="">Text</value>
+           i18n:translate="">Facetes</value>
   </records>
 
 </registry>
