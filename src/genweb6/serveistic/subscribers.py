@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from Acquisition import aq_chain
 from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
 
 from plone import api
@@ -17,6 +16,8 @@ from zope.interface import alsoProvides
 from genweb6.core.indicators import RegistryException
 from genweb6.core.indicators import ReporterException
 from genweb6.core.portlets.manage_portlets.manager import ISpanStorage
+from genweb6.serveistic.catalog import find_container_servei
+from genweb6.serveistic.catalog import SERVEI_CHILD_PORTAL_TYPES
 from genweb6.serveistic.content.serveitic.serveitic import IInitializedServeiTIC
 from genweb6.serveistic.content.serveitic.serveitic import IServeiTIC
 from genweb6.serveistic.data.folder_structure import folder_structure
@@ -36,7 +37,7 @@ logger = logging.getLogger(name='genweb6.serveistic.indicators')
 
 def Added(content, event):
     """ MAX hooks main handler """
-    servei = findContainerServei(content)
+    servei = find_container_servei(content)
     if not servei:
         # If file we are creating is not inside a servei folder
         return
@@ -124,13 +125,15 @@ def initialize_servei(serveitic, event):
 
 
 def serveiModifyAddSubjects(content, event):
-    """ Servei modified handler """
+    """Servei modified handler: sync child tags and reindex inherited facetas."""
 
     pc = api.portal.get_tool("portal_catalog")
     servei_tags = content.subject
     path = "/".join(content.getPhysicalPath())
-    r_results = pc.searchResults(portal_type=('Document', 'Link', 'File'),
-                                 path=path)
+    r_results = pc.searchResults(
+        portal_type=SERVEI_CHILD_PORTAL_TYPES,
+        path=path,
+    )
 
     for brain in r_results:
         obj = brain.getObject()
@@ -204,11 +207,8 @@ def addTagsToObject(servei_tags, obj):
 
 
 def findContainerServei(content):
-    for parent in aq_chain(content):
-        if IServeiTIC.providedBy(parent):
-            return parent
-
-    return None
+    """Backward-compatible alias."""
+    return find_container_servei(content)
 
 
 def createFolderAndContents(folder_directori, folder_data):

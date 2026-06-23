@@ -200,8 +200,17 @@ msgid "Faceta 8"
 msgstr "Faceta 8"
 
 #: ../controlpanels/facetes.py:39
+#: profiles/default/registry.xml
 msgid "Facetes"
 msgstr "Facetas"
+
+#: profiles/default/registry.xml
+msgid "Facetes servei"
+msgstr "Facetas servicio"
+
+#: profiles/default/registry.xml
+msgid "Totes les facetes del servei TIC en un sol camp de cerca"
+msgstr "Todas las facetas del servicio TIC en un solo campo de búsqueda"
 
 #: ../content/notificaciotic/notificaciotic.py:40
 msgid "Fes que aparegui a la pàgina d'inici"
