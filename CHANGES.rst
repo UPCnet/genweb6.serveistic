@@ -2,11 +2,15 @@ Changelog
 =========
 
 
-1.39 (unreleased)
+1.39 (2026-11-02)
 -----------------
 
-- Nothing changed yet.
-
+* Merge remote-tracking branch 'origin/plone_6_0_15' [pmarinas]
+* [FIX] Actualizar dependencias npm para cerrar alertas de Dependabot [Iago López]
+*  [Iago López]
+* Acotar overrides a la versión mayor que esperan grunt (js-yaml 3) y [Iago López]
+* postcss (nanoid 3), y subir los mínimos a las versiones parcheadas. [Iago López]
+* [FIX] incluir max_length title and description [pmarinas]
 
 1.38 (2026-06-23)
 -----------------
